@@ -1,0 +1,63 @@
+{
+  "commands": {
+    "RESTART": [
+      "restart"
+    ],
+    "NEXT-PAGE": [
+      "Next 5"
+    ]
+  },
+  "settings": {
+    "invalid-replies": [
+      "I am not sure I understood what you said."
+    ],
+    "general-failure": [
+      "We are experiencing technical difficulties at this moment."
+    ],
+    "silence-timeout": 60
+  },
+  "conversations": {
+    "getting-started": {
+      "steps": [
+        {
+          "type": "question",
+          "entity": "conversation",
+          "entity-type": "Conversation",
+          "messages": [
+            [
+              "This is a getting started conversation for your chatbot."
+            ]
+          ],
+          "quick-replies": [
+            "Conversation 1",
+            "Conversation 2"
+          ]
+        }
+      ]
+    },
+    "conversationOne": {
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "This is conversation 1"
+            ]
+          ]
+        }
+      ]
+    },
+    "conversationTwo": {
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "This is conversation 2"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

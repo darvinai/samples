@@ -1,0 +1,27 @@
+{
+  "entity-definitions": [
+    {
+      "name": "Conversation",
+      "type": "static",
+      "lookups": [
+        "trait"
+      ],
+      "values": [
+        {
+          "value": "conversationOne",
+          "expressions": [
+            "Conversation 1"
+          ],
+          "metadata": ""
+        },
+        {
+          "value": "conversationTwo",
+          "expressions": [
+            "Conversation 2"
+          ],
+          "metadata": ""
+        }
+      ]
+    }
+  ]
+}
