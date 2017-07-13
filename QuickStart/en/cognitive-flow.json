@@ -39,10 +39,9 @@
     "contactOperator": {
       "steps": [
         {
-          "type": "question",
+          "type": "confirmation",
           "entity": "confirmation",
-          "entity-type": "Confirmation",
-          "is-explicit": true,
+          "entity-type": "Text",
           "messages": [
             "Do you want to continue the conversation with an operator?"
           ],
@@ -174,10 +173,9 @@
           ]
         },
         {
-          "type": "question",
+          "type": "confirmation",
           "entity": "confirmation",
           "entity-type": "Text",
-          "is-explicit": true,
           "messages": [
             "I am booking you an appointment for {doctor.Title} {doctor.FirstName} {doctor.LastName} on {date} at {time}. Can you please confirm that the information is correct?"
           ],

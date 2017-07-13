@@ -39,10 +39,9 @@
     "contactOperator": {
       "steps": [
         {
-          "type": "question",
+          "type": "confirmation",
           "entity": "confirmation",
-          "entity-type": "Confirmation",
-          "is-explicit": true,
+          "entity-type": "Text",
           "messages": [
             "Искаш ли да прехвърля разговора ни с човек от екипа на Болница ACME София?"
           ],
@@ -175,10 +174,9 @@
           ]
         },
         {
-          "type": "question",
+          "type": "confirmation",
           "entity": "confirmation",
           "entity-type": "Text",
-          "is-explicit": true,
           "messages": [
             "Запазвам ви час за {doctor.Title} {doctor.FirstName} {doctor.LastName} на {date} от {time}. Информацията правилна ли е?"
           ],
