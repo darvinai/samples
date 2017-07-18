@@ -57,6 +57,7 @@
               "type": "match",
               "parameters": {
                 "values": [
+                  "Yes",
                   "yes"
                 ]
               },
