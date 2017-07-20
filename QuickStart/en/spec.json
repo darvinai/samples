@@ -9,7 +9,7 @@
                         [
                             { "text": "Hello there, I am the virtual assistant of ACME Hospital powered by Artificial Intelligence. If you get stuck,you can always restart our conversation by typing 'restart'" },
                             { 
-                                "text": "Here is what I can do for your:",
+                                "text": "Here is what I can do for you:",
                                 "quickReplies": ["Book a doctor", "Contact operator"]
                             }
                         ]

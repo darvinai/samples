@@ -10,14 +10,14 @@
         {
           "value": "conversationOne",
           "expressions": [
-            "Conversation 1"
+            "First Conversation"
           ],
           "metadata": ""
         },
         {
           "value": "conversationTwo",
           "expressions": [
-            "Conversation 2"
+            "Second Conversation"
           ],
           "metadata": ""
         }
