@@ -1,0 +1,30 @@
+{
+    "scenarios": [
+        {
+            "it": "introduces itself and enters into a conversation",
+            "steps": [
+                {
+                    "user": { "text": "hi" },
+                    "bot": [   
+                        [
+                            { 
+                                "text": "This is a getting started conversation for your chatbot.",
+                                "quickReplies": ["Conversation 1", "Conversation 2"]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": { "text": "Conversation 1" },
+                    "bot": [
+                        [
+                            { 
+                                "text": "This is conversation 1"
+                            }
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}

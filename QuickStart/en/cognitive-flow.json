@@ -30,7 +30,7 @@
           "entity": "conversation",
           "entity-type": "Conversation",
           "messages": [
-            "Here is what I can do for your:"
+            "Here is what I can do for you:"
           ],
           "quick-replies": [
             "Book a doctor",
