@@ -9,17 +9,17 @@
                         [
                             { 
                                 "text": "This is a getting started conversation for your chatbot.",
-                                "quickReplies": ["First Conversation", "Second Conversation"]
+                                "quickReplies": ["Conversation 1", "Conversation 2"]
                             }
                         ]
                     ]
                 },
                 {
-                    "user": { "text": "First Conversation" },
+                    "user": { "text": "Conversation 1" },
                     "bot": [
                         [
                             { 
-                                "text": "This is the first conversation"
+                                "text": "This is conversation 1"
                             }
                         ]
                     ]
