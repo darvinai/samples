@@ -16,9 +16,8 @@
     ],
     "silence-timeout": 60
   },
-  "conversations": [
-    {
-      "name": "getting-started",
+  "conversations": {
+    "getting-started": {
       "steps": [
         {
           "type": "question",
@@ -36,8 +35,7 @@
         }
       ]
     },
-    {
-      "name": "conversationOne",
+    "conversationOne": {
       "steps": [
         {
           "type": "message",
@@ -49,8 +47,7 @@
         }
       ]
     },
-    {
-      "name": "conversationTwo",
+    "conversationTwo": {
       "steps": [
         {
           "type": "message",
@@ -62,5 +59,5 @@
         }
       ]
     }
-  ]
+  }
 }

@@ -16,9 +16,8 @@
     ],
     "silence-timeout": 60
   },
-  "conversations": [
-    {
-      "name": "getting-started",
+  "conversations": {
+    "getting-started": {
       "steps": [
         {
           "type": "message",
@@ -40,8 +39,7 @@
         }
       ]
     },
-    {
-      "name": "contactOperator",
+    "contactOperator": {
       "steps": [
         {
           "type": "confirmation",
@@ -78,8 +76,7 @@
         }
       ]
     },
-    {
-      "name": "bookDoctor",
+    "bookDoctor": {
       "steps": [
         {
           "type": "question",
@@ -229,5 +226,5 @@
         }
       ]
     }
-  ]
+  }
 }
