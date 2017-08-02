@@ -1,0 +1,58 @@
+{
+  "entity-definitions": [
+    {
+      "name": "Conversation",
+      "type": "static",
+      "lookups": [
+        "trait"
+      ],
+      "values": [
+        {
+          "value": "bookDoctor",
+          "expressions": [
+            "Запазване на час",
+            "Искам да си запазя час за доктор",
+            "Мога ли да си запазя час за доктор за Вторник?",
+            "Доктор Милчева свободна ли е във Вторник?",
+            "Каква е програмата на доктор Щерев за тази седмица?"
+          ],
+          "metadata": ""
+        },
+        {
+          "value": "contactOperator",
+          "expressions": [
+            "Връзка с оператор",
+            "Мога ли да се свържа с оператор?",
+            "Искам да говоря с оператор",
+            "Има ли възможност да говоря с човек?",
+            "Ти човек ли си?",
+            "Изморих се, искам да говоря с оператор.",
+            "Може ли да говоря с някой вместо с теб?",
+            "Ще ме прехвърлиш ли към някой от екипа на болницата?"
+          ],
+          "metadata": ""
+        }
+      ]
+    },
+    {
+      "name": "Doctor",
+      "lookups": [
+        "keywords"
+      ],
+      "type": "dynamic",
+      "dynamic-data-operation": {
+        "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors?language=bg",
+        "method": "GET",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "value-template": "{Title} {FirstName} {LastName}",
+      "expression-templates": [
+        "{Title} {LastName}",
+        "{LastName}",
+        "{FirstName} {LastName}"
+      ]
+    }
+  ]
+}
