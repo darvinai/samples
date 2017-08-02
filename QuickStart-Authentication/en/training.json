@@ -1,0 +1,56 @@
+{
+  "entity-definitions": [
+    {
+      "name": "Conversation",
+      "type": "static",
+      "lookups": [
+        "trait"
+      ],
+      "values": [
+        {
+          "value": "bookDoctor",
+          "expressions": [
+            "Book a doctor",
+            "I would like to book a doctor",
+            "Can I book a doctor for this Tuesday?",
+            "Is doctor Burke available this Tuesday?",
+            "Can I check doctor Burke's schedule for this week?"
+          ],
+          "metadata": ""
+        },
+        {
+          "value": "contactOperator",
+          "expressions": [
+            "Contact support",
+            "Can I talk to an operator?",
+            "Would you get me in touch with a human?",
+            "It will be great if I can talk to a person.",
+            "Can you get me in touch with an operator?",
+            "Forward me to an operator"
+          ],
+          "metadata": ""
+        }
+      ]
+    },
+    {
+      "name": "Doctor",
+      "lookups": [
+        "keywords"
+      ],
+      "type": "dynamic",
+      "dynamic-data-operation": {
+        "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
+        "method": "GET",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "value-template": "{Title} {FirstName} {LastName}",
+      "expression-templates": [
+        "{Title} {LastName}",
+        "{LastName}",
+        "{FirstName} {LastName}"
+      ]
+    }
+  ]
+}
