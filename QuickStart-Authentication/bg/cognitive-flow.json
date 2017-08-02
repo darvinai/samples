@@ -14,7 +14,22 @@
     "general-failure": [
       "В момента имаме технически проблем, моля да ни извините."
     ],
-    "silence-timeout": 60
+    "silence-timeout": 60,
+    "authentication": {
+      "entity": "auth",
+      "messages": [
+        "Моля влезте в системата, за да продължите."
+      ],
+      "acknowledgements": [
+        "Влязохте успешно в системата."
+      ],
+      "displayTemplate": {
+        "type": "login",
+        "title": "Вход Болница АСМЕ София",
+        "url": "https://bs-login.darvin.ai/login",
+        "image": "https://darvin.ai/img/logo.png"
+      }
+    }
   },
   "conversations": {
     "getting-started": {
@@ -107,7 +122,8 @@
                 "За съжаление, {doctor.Title} {doctor.FirstName} {doctor.LastName} няма свободни часове за момента."
               ]
             }
-          ]
+          ],
+          "protected": true
         },
         {
           "type": "question",
@@ -208,7 +224,8 @@
             "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Appointments",
             "method": "POST",
             "headers": {
-              "Content-Type": "application/json"
+              "Content-Type": "application/json",
+              "Authorization": "Bearer {auth.accessToken}"
             },
             "payload": {
               "DoctorID": "{doctor.ExternalId}",
@@ -216,7 +233,8 @@
               "Date": "{date}",
               "Time": "{time}"
             }
-          }
+          },
+          "protected": true
         },
         {
           "type": "message",
