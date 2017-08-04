@@ -1,0 +1,63 @@
+{
+  "commands": {
+    "RESTART": [
+      "рестарт"
+    ],
+    "NEXT-PAGE": [
+      "Следващи 5"
+    ]
+  },
+  "settings": {
+    "invalid-replies": [
+      "Не съм сигурен, че ви разбирам. Може ли да повторите?"
+    ],
+    "general-failure": [
+      "В момента имаме технически проблем, моля да ни извините."
+    ],
+    "silence-timeout": 60
+  },
+  "conversations": {
+    "getting-started": {
+      "steps": [
+        {
+          "type": "question",
+          "entity": "conversation",
+          "entity-type": "Conversation",
+          "messages": [
+            [
+              "Това е началният разговор на твоя бот."
+            ]
+          ],
+          "quick-replies": [
+            "Разговор 1",
+            "Разговор 2"
+          ]
+        }
+      ]
+    },
+    "conversationOne": {
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "Това е разговор 1"
+            ]
+          ]
+        }
+      ]
+    },
+    "conversationTwo": {
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "Това е разговор 2"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}
