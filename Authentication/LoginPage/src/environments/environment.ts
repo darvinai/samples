@@ -6,14 +6,14 @@
 export const environment = {
   production: false,
   backendServices: {
-    appId: 'niuqpjk7bubu0282'
+    appId: ''
   },
   facebook: {
-    appId: '162809870880287',
+    appId: '',
     apiVersion: 'v2.8'
   },
   channels: {
-    facebook: 'darvindotai',
-    viber: 'darvin.ai'
+    facebook: '',
+    viber: ''
   }
 };
