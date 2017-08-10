@@ -29,7 +29,8 @@
         "url": "https://bs-login.darvin.ai/login",
         "image": "https://darvin.ai/img/logo.png"
       }
-    }
+    },
+    "persist-entities": ["auth"]
   },
   "conversations": {
     "getting-started": {
