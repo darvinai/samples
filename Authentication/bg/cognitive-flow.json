@@ -98,12 +98,12 @@
           "type": "question",
           "entity": "doctor",
           "entity-type": "Doctor",
-          "display": "{FirstName} {LastName}",
+          "display": "{{FirstName}} {{LastName}}",
           "messages": [
             "За кой лекар искате да си запишете час?"
           ],
           "acknowledgements": [
-            "Разбирам, че искате да си запазите час за {doctor.Title} {doctor.FirstName} {doctor.LastName}."
+            "Разбирам, че искате да си запазите час за {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}}."
           ],
           "ambiguity": [
             "Не съм сигурен, че разбрах за кой доктор точно искате да си запишете час. Моля изберете доктор:"
@@ -116,11 +116,11 @@
             {
               "type": "custom",
               "parameters": {
-                "url": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/ValidateDoctor?doctorId={doctor.ExternalId}",
+                "url": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/ValidateDoctor?doctorId={{encodeURI doctor.ExternalId}}",
                 "expected-response": "OK"
               },
               "error-message": [
-                "За съжаление, {doctor.Title} {doctor.FirstName} {doctor.LastName} няма свободни часове за момента."
+                "За съжаление, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} няма свободни часове за момента."
               ]
             }
           ],
@@ -131,21 +131,21 @@
           "entity": "date",
           "entity-type": "Date",
           "messages": [
-            "За кой ден искате да ви запиша час за {doctor.Title} {doctor.FirstName} {doctor.LastName}?"
+            "За кой ден искате да ви запиша час за {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}}?"
           ],
           "quick-reply-operation": {
-            "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={doctor.ExternalId}",
+            "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{encodeURI doctor.ExternalId}}",
             "method": "GET"
           },
           "validation": [
             {
               "type": "custom",
               "parameters": {
-                "url": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/ValidateDate?doctorId={doctor.ExternalId}&date={date}",
+                "url": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/ValidateDate?doctorId={{encodeURI doctor.ExternalId}}&date={{encodeURI this.date}}",
                 "expected-response": "OK"
               },
               "error-message": [
-                "За съжаление, {doctor.Title} {doctor.FirstName} {doctor.LastName} няма свободни часове за {date}."
+                "За съжаление, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} няма свободни часове за {{this.date}}."
               ]
             }
           ]
@@ -155,21 +155,21 @@
           "entity": "time",
           "entity-type": "Time",
           "messages": [
-            "За кой час искате да се видите с {doctor.Title} {doctor.FirstName} {doctor.LastName} на {date}?"
+            "За кой час искате да се видите с {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} на {{this.date}}?"
           ],
           "quick-reply-operation": {
-            "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={doctor.ExternalId}&date={date}",
+            "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{encodeURI doctor.ExternalId}}&date={{encodeURI this.date}}",
             "method": "GET"
           },
           "validation": [
             {
               "type": "custom",
               "parameters": {
-                "url": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/ValidateTime?doctorId={doctor.ExternalId}&date={date}&time={time}",
+                "url": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/ValidateTime?doctorId={{encodeURI doctor.ExternalId}}&date={{encodeURI this.date}}&time={{encodeURI time}}",
                 "expected-response": "OK"
               },
               "error-message": [
-                "За съжаление, {doctor.Title} {doctor.FirstName} {doctor.LastName} не е свободна на {date} от {time}."
+                "За съжаление, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} не е свободна на {{this.date}} от {{time}}."
               ]
             }
           ]
@@ -198,7 +198,7 @@
           "entity": "confirmation",
           "entity-type": "Text",
           "messages": [
-            "Запазвам ви час за {doctor.Title} {doctor.FirstName} {doctor.LastName} на {date} от {time}. Информацията правилна ли е?"
+            "Запазвам ви час за {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} на {{this.date}} от {{time}}. Информацията правилна ли е?"
           ],
           "quick-replies": [
             "Да",
@@ -226,13 +226,13 @@
             "method": "POST",
             "headers": {
               "Content-Type": "application/json",
-              "Authorization": "Bearer {auth.accessToken}"
+              "Authorization": "Bearer {{auth.accessToken}}"
             },
             "payload": {
-              "DoctorID": "{doctor.ExternalId}",
-              "PatientName": "{contactName}",
-              "Date": "{date}",
-              "Time": "{time}"
+              "DoctorID": "{{doctor.ExternalId}}",
+              "PatientName": "{{contactName}}",
+              "Date": "{{this.date}}",
+              "Time": "{{time}}"
             }
           },
           "protected": true
@@ -240,7 +240,7 @@
         {
           "type": "message",
           "messages": [
-            "Поздравления. Имате записан час за {doctor.Title} {doctor.FirstName} {doctor.LastName} на {date} от {time}. Очакваме ви!"
+            "Поздравления. Имате записан час за {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} на {{this.date}} от {{time}}. Очакваме ви!"
           ]
         }
       ]
