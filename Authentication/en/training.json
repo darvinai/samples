@@ -45,11 +45,11 @@
           "Content-Type": "application/json"
         }
       },
-      "value-template": "{{Title}} {{FirstName}} {{LastName}}",
+      "value-template": "{{context.Title}} {{context.FirstName}} {{context.LastName}}",
       "expression-templates": [
-        "{{Title}} {{LastName}}",
-        "{{LastName}}",
-        "{{FirstName}} {{LastName}}"
+        "{{context.Title}} {{context.LastName}}",
+        "{{context.LastName}}",
+        "{{context.FirstName}} {{context.LastName}}"
       ]
     }
   ]
