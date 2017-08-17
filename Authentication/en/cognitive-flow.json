@@ -23,14 +23,18 @@
       "acknowledgements": [
         "You are now logged in."
       ],
-      "displayTemplate": {
+      "display": {
         "type": "login",
-        "title": "ACME Hospital - Login",
-        "url": "https://bs-login.darvin.ai/login",
-        "image": "https://darvin.ai/img/logo.png"
+        "template": {
+          "title": "ACME Hospital - Login",
+          "url": "https://bs-login.darvin.ai/login",
+          "image": "https://darvin.ai/img/logo.png"
+        }
       }
     },
-    "persist-entities": ["auth"]
+    "persist-entities": [
+      "auth"
+    ]
   },
   "conversations": {
     "getting-started": {
@@ -48,10 +52,13 @@
           "messages": [
             "Here is what I can do for you:"
           ],
-          "quick-replies": [
-            "Book a doctor",
-            "Contact operator"
-          ]
+          "display": {
+            "type": "quick-reply",
+            "data": [
+              "Book a doctor",
+              "Contact operator"
+            ]
+          }
         }
       ]
     },
@@ -63,10 +70,6 @@
           "entity-type": "Text",
           "messages": [
             "Do you want to continue the conversation with an operator?"
-          ],
-          "quick-replies": [
-            "Yes",
-            "No"
           ],
           "validation": [
             {
@@ -81,7 +84,14 @@
                 "OK, I won't contact an operator yet. Let me know what you want to do next."
               ]
             }
-          ]
+          ],
+          "display": {
+            "type": "quick-reply",
+            "data": [
+              "Yes",
+              "No"
+            ]
+          }
         },
         {
           "type": "message",
@@ -98,7 +108,6 @@
           "type": "question",
           "entity": "doctor",
           "entity-type": "Doctor",
-          "display": "{{context.FirstName}} {{context.LastName}}",
           "messages": [
             "What's the name of the doctor that you want to see?"
           ],
@@ -108,10 +117,6 @@
           "ambiguity": [
             "I am not sure I understand the doctor you want to meet. Can you select one of the following?"
           ],
-          "quick-reply-operation": {
-            "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
-            "method": "GET"
-          },
           "validation": [
             {
               "type": "custom",
@@ -124,7 +129,15 @@
               ]
             }
           ],
-          "protected": true
+          "protected": true,
+          "display": {
+            "type": "quick-reply",
+            "data-source": {
+              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
+              "method": "GET"
+            },
+            "template": "{{context.FirstName}} {{context.LastName}}"
+          }
         },
         {
           "type": "question",
@@ -133,10 +146,6 @@
           "messages": [
             "What date do you want to meet with {{context.doctor.FirstName}} {{context.doctor.LastName}}?"
           ],
-          "quick-reply-operation": {
-            "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{encodeURI context.doctor.ExternalId}}",
-            "method": "GET"
-          },
           "validation": [
             {
               "type": "custom",
@@ -148,7 +157,14 @@
                 "Unfortunately, {{context.doctor.Title}} {{context.doctor.FirstName}} {{context.doctor.LastName}} is not available on {{context.date}}."
               ]
             }
-          ]
+          ],
+          "display": {
+            "type": "quick-reply",
+            "data-source": {
+              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{encodeURI context.doctor.ExternalId}}",
+              "method": "GET"
+            }
+          }
         },
         {
           "type": "question",
@@ -157,10 +173,6 @@
           "messages": [
             "What time do you want to meet {{context.doctor.FirstName}} {{context.doctor.LastName}} on {{context.date}}?"
           ],
-          "quick-reply-operation": {
-            "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{encodeURI context.doctor.ExternalId}}&date={{encodeURI context.date}}",
-            "method": "GET"
-          },
           "validation": [
             {
               "type": "custom",
@@ -172,7 +184,14 @@
                 "Unfortunately, {{context.doctor.FirstName}} {{context.doctor.LastName}} is not available on {{context.date}} at {{context.time}}."
               ]
             }
-          ]
+          ],
+          "display": {
+            "type": "quick-reply",
+            "data-source": {
+              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{encodeURI context.doctor.ExternalId}}&date={{encodeURI context.date}}",
+              "method": "GET"
+            }
+          }
         },
         {
           "type": "question",
@@ -200,10 +219,6 @@
           "messages": [
             "I am booking you an appointment for {{context.doctor.Title}} {{context.doctor.FirstName}} {{context.doctor.LastName}} on {{context.date}} at {{context.time}}. Can you please confirm that the information is correct?"
           ],
-          "quick-replies": [
-            "Yes",
-            "No"
-          ],
           "validation": [
             {
               "type": "match",
@@ -217,11 +232,19 @@
                 "Let me know what you want to change before I can book you an appointment."
               ]
             }
-          ]
+          ],
+          "display": {
+            "type": "quick-reply",
+            "data": [
+              "Yes",
+              "No"
+            ]
+          }
         },
         {
           "type": "webhook",
-          "request": {
+          "protected": true,
+          "data-source": {
             "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Appointments",
             "method": "POST",
             "headers": {
@@ -234,8 +257,7 @@
               "Date": "{{context.date}}",
               "Time": "{{context.time}}"
             }
-          },
-          "protected": true
+          }
         },
         {
           "type": "message",

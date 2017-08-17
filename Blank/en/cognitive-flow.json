@@ -28,10 +28,13 @@
               "This is a getting started conversation for your chatbot."
             ]
           ],
-          "quick-replies": [
-            "Conversation 1",
-            "Conversation 2"
-          ]
+          "display": {
+            "type": "quick-reply",
+            "data": [
+              "Conversation 1",
+              "Conversation 2"
+            ]
+          }
         }
       ]
     },
