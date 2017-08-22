@@ -2,11 +2,8 @@
   "entity-definitions": [
     {
       "name": "Conversation",
-      "type": "static",
-      "lookups": [
-        "trait"
-      ],
-      "values": [
+      "lookup-strategy": "trait",
+      "data": [
         {
           "value": "conversationOne",
           "expressions": [

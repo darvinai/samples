@@ -2,11 +2,8 @@
   "entity-definitions": [
     {
       "name": "Conversation",
-      "type": "static",
-      "lookups": [
-        "trait"
-      ],
-      "values": [
+      "lookup-strategy": "trait",
+      "data": [
         {
           "value": "bookDoctor",
           "expressions": [
@@ -36,23 +33,23 @@
     },
     {
       "name": "Doctor",
-      "lookups": [
-        "keywords"
-      ],
-      "type": "dynamic",
-      "dynamic-data-operation": {
-        "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors?language=bg",
-        "method": "GET",
-        "headers": {
-          "Content-Type": "application/json"
-        }
-      },
-      "value-template": "{{context.Title}} {{context.FirstName}} {{context.LastName}}",
-      "expression-templates": [
-        "{{context.Title}} {{context.LastName}}",
-        "{{context.LastName}}",
-        "{{context.FirstName}} {{context.LastName}}"
-      ]
+      "lookup-strategy": "keywords",
+      "data": [],
+      "dynamic-data": {
+        "data-source": {
+          "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors?language=bg",
+          "method": "GET",
+          "headers": {
+            "Content-Type": "application/json"
+          }
+        },
+        "value-template": "{{context.Title}} {{context.FirstName}} {{context.LastName}}",
+        "synonym-templates": [
+          "{{context.Title}} {{context.LastName}}",
+          "{{context.LastName}}",
+          "{{context.FirstName}} {{context.LastName}}"
+        ]
+      }
     }
   ]
 }
