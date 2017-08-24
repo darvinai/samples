@@ -41,11 +41,11 @@
             "Content-Type": "application/json"
           }
         },
-        "value-template": "{{context.Title}} {{context.FirstName}} {{context.LastName}}",
+        "value-template": "{{Title}} {{FirstName}} {{LastName}}",
         "synonym-templates": [
-          "{{context.Title}} {{context.LastName}}",
-          "{{context.LastName}}",
-          "{{context.FirstName}} {{context.LastName}}"
+          "{{Title}} {{LastName}}",
+          "{{LastName}}",
+          "{{FirstName}} {{LastName}}"
         ]
       }
     }
