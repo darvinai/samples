@@ -110,12 +110,7 @@
             }
           ],
           "display": {
-            "type": "quick-reply",
-            "data-source": {
-              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors?language=bg",
-              "method": "GET"
-            },
-            "template": "{{FirstName}} {{LastName}}"
+            "type": "quick-reply"
           }
         },
         {
