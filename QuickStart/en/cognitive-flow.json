@@ -101,8 +101,11 @@
             {
               "type": "custom",
               "parameters": {
-                "url": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/ValidateDoctor?doctorId={{$encodeURI doctor.ExternalId}}",
-                "expected-response": "OK"
+                "data-source": {
+                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
+                  "selector": "$[:].ExternalId"
+                },
+                "value": "{{$includes _response doctor.ExternalId}}"
               },
               "error-message": [
                 "Unfortunately, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} is not available."
@@ -124,8 +127,11 @@
             {
               "type": "custom",
               "parameters": {
-                "url": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/ValidateDate?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
-                "expected-response": "OK"
+                "data-source": {
+                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
+                  "method": "GET"
+                },
+                "value": "{{$includes _response ($date date 'YYYY-MM-DD')}}"
               },
               "error-message": [
                 "Unfortunately, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} is not available on {{date}}."
@@ -151,8 +157,11 @@
             {
               "type": "custom",
               "parameters": {
-                "url": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/ValidateTime?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}&time={{$encodeURI time}}",
-                "expected-response": "OK"
+                "data-source": {
+                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
+                  "method": "GET"
+                },
+                "value": "{{$includes _response time}}"
               },
               "error-message": [
                 "Unfortunately, {{doctor.FirstName}} {{doctor.LastName}} is not available on {{date}} at {{time}}."
