@@ -97,7 +97,7 @@
                 "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/ValidateDate?doctorId=24806&date=2017.08.07": {
                     "GET": "OK"
                 },
-                "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/ValidateTime?doctorId=24806&date=2017.08.07&time=10:00": {
+                "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/ValidateTime?doctorId=24806&date=2017.08.07&time=10%3A00": {
                     "GET": "OK"
                 },
                 "https://api.everlive.com/v1/niuqpjk7bubu0282/Appointments": {
@@ -145,7 +145,7 @@
                 "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/ValidateDate?doctorId=24806&date=2017.08.08": {
                     "GET": "OK"
                 },
-                "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/ValidateTime?doctorId=24806&date=2017.08.08&time=15:00": {
+                "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/ValidateTime?doctorId=24806&date=2017.08.08&time=15%3A00": {
                     "GET": "OK"
                 },
                 "https://api.everlive.com/v1/niuqpjk7bubu0282/Appointments": {

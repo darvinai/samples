@@ -92,7 +92,7 @@
             "What's the name of the doctor that you want to see?"
           ],
           "acknowledgements": [
-            "I understand that you want to meet with {{context.doctor.FirstName}} {{context.doctor.LastName}}."
+            "I understand that you want to meet with {{doctor.FirstName}} {{doctor.LastName}}."
           ],
           "ambiguity": [
             "I am not sure I understand the doctor you want to meet. Can you select one of the following?"
@@ -101,21 +101,19 @@
             {
               "type": "custom",
               "parameters": {
-                "url": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/ValidateDoctor?doctorId={{encodeURI context.doctor.ExternalId}}",
-                "expected-response": "OK"
+                "data-source": {
+                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
+                  "selector": "$[:].ExternalId"
+                },
+                "condition": "{{$in doctor.ExternalId _response}}"
               },
               "error-message": [
-                "Unfortunately, {{context.doctor.Title}} {{context.doctor.FirstName}} {{context.doctor.LastName}} is not available."
+                "Unfortunately, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} is not available."
               ]
             }
           ],
           "display": {
-            "type": "quick-reply",
-            "data-source": {
-              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
-              "method": "GET"
-            },
-            "template": "{{context.FirstName}} {{context.LastName}}"
+            "type": "quick-reply"
           }
         },
         {
@@ -123,24 +121,27 @@
           "entity": "date",
           "entity-type": "Date",
           "messages": [
-            "What date do you want to meet with {{context.doctor.FirstName}} {{context.doctor.LastName}}?"
+            "What date do you want to meet with {{doctor.FirstName}} {{doctor.LastName}}?"
           ],
           "validation": [
             {
               "type": "custom",
               "parameters": {
-                "url": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/ValidateDate?doctorId={{encodeURI context.doctor.ExternalId}}&date={{encodeURI context.date}}",
-                "expected-response": "OK"
+                "data-source": {
+                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
+                  "method": "GET"
+                },
+                "condition": "{{$in ($date date 'YYYY-MM-DD') _response}}"
               },
               "error-message": [
-                "Unfortunately, {{context.doctor.Title}} {{context.doctor.FirstName}} {{context.doctor.LastName}} is not available on {{context.date}}."
+                "Unfortunately, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} is not available on {{date}}."
               ]
             }
           ],
           "display": {
             "type": "quick-reply",
             "data-source": {
-              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{encodeURI context.doctor.ExternalId}}",
+              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
               "method": "GET"
             }
           }
@@ -150,24 +151,27 @@
           "entity": "time",
           "entity-type": "Time",
           "messages": [
-            "What time do you want to meet {{context.doctor.FirstName}} {{context.doctor.LastName}} on {{context.date}}?"
+            "What time do you want to meet {{doctor.FirstName}} {{doctor.LastName}} on {{date}}?"
           ],
           "validation": [
             {
               "type": "custom",
               "parameters": {
-                "url": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/ValidateTime?doctorId={{encodeURI context.doctor.ExternalId}}&date={{encodeURI context.date}}&time={{encodeURI context.time}}",
-                "expected-response": "OK"
+                "data-source": {
+                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
+                  "method": "GET"
+                },
+                "condition": "{{$in time _response}}"
               },
               "error-message": [
-                "Unfortunately, {{context.doctor.FirstName}} {{context.doctor.LastName}} is not available on {{context.date}} at {{context.time}}."
+                "Unfortunately, {{doctor.FirstName}} {{doctor.LastName}} is not available on {{date}} at {{time}}."
               ]
             }
           ],
           "display": {
             "type": "quick-reply",
             "data-source": {
-              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{encodeURI context.doctor.ExternalId}}&date={{encodeURI context.date}}",
+              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
               "method": "GET"
             }
           }
@@ -197,7 +201,7 @@
           "entity": "confirmation",
           "entity-type": "Text",
           "messages": [
-            "I am booking you an appointment for {{context.doctor.Title}} {{context.doctor.FirstName}} {{context.doctor.LastName}} on {{context.date}} at {{context.time}}. Can you please confirm that the information is correct?"
+            "I am booking you an appointment for {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} on {{date}} at {{time}}. Can you please confirm that the information is correct?"
           ],
           "validation": [
             {
@@ -230,17 +234,17 @@
               "Content-Type": "application/json"
             },
             "payload": {
-              "DoctorID": "{{context.doctor.ExternalId}}",
-              "PatientName": "{{context.contactName}}",
-              "Date": "{{context.date}}",
-              "Time": "{{context.time}}"
+              "DoctorID": "{{doctor.ExternalId}}",
+              "PatientName": "{{contactName}}",
+              "Date": "{{date}}",
+              "Time": "{{time}}"
             }
           }
         },
         {
           "type": "message",
           "messages": [
-            "Congratulations. You have an appointment with {{context.doctor.Title}} {{context.doctor.FirstName}} {{context.doctor.LastName}} for {{context.date}} at {{context.time}}. See you soon!"
+            "Congratulations. You have an appointment with {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} for {{date}} at {{time}}. See you soon!"
           ]
         }
       ]
