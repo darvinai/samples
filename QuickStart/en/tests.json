@@ -63,24 +63,24 @@
                     "bot": [
                         [
                             {
-                                "text": "What are your first and last names?"
-                            }
-                        ]
-                    ]
-                },
-                {
-                    "user": { "text": "John Smith" },
-                    "bot": [
-                        [
-                            {
                                 "text": "I am booking you an appointment for Dr. John Burke on 2017.08.07 at 10:00. Can you please confirm that the information is correct?",
                                 "quickReplies": ["Yes", "No"]
                             }
                         ]
+                    ] 
+                },
+                {                   
+                   "user": { "text": "Yes" },
+                   "bot": [
+                    [
+                        {
+                            "text": "What are your first and last names?"
+                        }
                     ]
+                ]
                 },
                 {
-                    "user": { "text": "Yes" },
+                    "user": { "text": "John Smith" },
                     "bot": [
                         [
                             {

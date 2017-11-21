@@ -71,20 +71,22 @@
           "messages": [
             "Do you want to continue the conversation with an operator?"
           ],
-          "validation": [
-            {
-              "type": "match",
-              "parameters": {
-                "values": [
-                  "Yes",
-                  "yes"
+          "reactions": {
+            "validation": [
+              {
+                "type": "match",
+                "parameters": {
+                  "values": [
+                    "Yes",
+                    "yes"
+                  ]
+                },
+                "error-message": [
+                  "OK, I won't contact an operator yet. Let me know what you want to do next."
                 ]
-              },
-              "error-message": [
-                "OK, I won't contact an operator yet. Let me know what you want to do next."
-              ]
-            }
-          ],
+              }
+            ]
+          },
           "display": {
             "type": "quick-reply",
             "data": [
@@ -94,6 +96,10 @@
           }
         },
         {
+          "is-goal": true,
+          "conditions": [
+            "{{$has confirmation}}"
+          ],
           "type": "message",
           "stay-silent": true,
           "messages": [
@@ -111,27 +117,30 @@
           "messages": [
             "What's the name of the doctor that you want to see?"
           ],
-          "acknowledgements": [
-            "I understand that you want to meet with {{doctor.FirstName}} {{doctor.LastName}}."
-          ],
-          "ambiguity": [
-            "I am not sure I understand the doctor you want to meet. Can you select one of the following?"
-          ],
-          "validation": [
-            {
-              "type": "custom",
-              "parameters": {
-                "data-source": {
-                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
-                  "selector": "$[:].ExternalId"
+          "reactions": {
+            "acknowledgements": [
+              "I understand that you want to meet with {{doctor.FirstName}} {{doctor.LastName}}."
+            ],
+            "ambiguity": [
+              "I am not sure I understand the doctor you want to meet. Can you select one of the following?"
+            ],
+            "validation": [
+              {
+                "type": "custom",
+                "parameters": {
+                  "data-source": {
+                    "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
+                    "selector": "$[:].ExternalId"
+                  },
+                  "value": "{{$includes _response doctor.ExternalId}}",
+                  "condition": "{{$in doctor.ExternalId _response}}"
                 },
-                "condition": "{{$in doctor.ExternalId _response}}"
-              },
-              "error-message": [
-                "Unfortunately, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} is not available."
-              ]
-            }
-          ],
+                "error-message": [
+                  "Unfortunately, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} is not available."
+                ]
+              }
+            ]
+          },
           "protected": true,
           "display": {
             "type": "quick-reply"
@@ -144,21 +153,24 @@
           "messages": [
             "What date do you want to meet with {{doctor.FirstName}} {{doctor.LastName}}?"
           ],
-          "validation": [
-            {
-              "type": "custom",
-              "parameters": {
-                "data-source": {
-                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
-                  "method": "GET"
+          "reactions": {
+            "validation": [
+              {
+                "type": "custom",
+                "parameters": {
+                  "data-source": {
+                    "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
+                    "method": "GET"
+                  },
+                  "value": "{{$includes _response ($date date 'YYYY-MM-DD')}}",
+                  "condition": "{{$in ($date date 'YYYY-MM-DD') _response}}"
                 },
-                "condition": "{{$in ($date date 'YYYY-MM-DD') _response}}"
-              },
-              "error-message": [
-                "Unfortunately, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} is not available on {{date}}."
-              ]
-            }
-          ],
+                "error-message": [
+                  "Unfortunately, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} is not available on {{date}}."
+                ]
+              }
+            ]
+          },
           "display": {
             "type": "quick-reply",
             "data-source": {
@@ -174,21 +186,24 @@
           "messages": [
             "What time do you want to meet {{doctor.FirstName}} {{doctor.LastName}} on {{date}}?"
           ],
-          "validation": [
-            {
-              "type": "custom",
-              "parameters": {
-                "data-source": {
-                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
-                  "method": "GET"
+          "reactions": {
+            "validation": [
+              {
+                "type": "custom",
+                "parameters": {
+                  "data-source": {
+                    "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
+                    "method": "GET"
+                  },
+                  "value": "{{$includes _response time}}",
+                  "condition": "{{$in time _response}}"
                 },
-                "condition": "{{$in time _response}}"
-              },
-              "error-message": [
-                "Unfortunately, {{doctor.FirstName}} {{doctor.LastName}} is not available on {{date}} at {{time}}."
-              ]
-            }
-          ],
+                "error-message": [
+                  "Unfortunately, {{doctor.FirstName}} {{doctor.LastName}} is not available on {{date}} at {{time}}."
+                ]
+              }
+            ]
+          },
           "display": {
             "type": "quick-reply",
             "data-source": {
@@ -204,17 +219,19 @@
           "messages": [
             "What are your first and last names?"
           ],
-          "validation": [
-            {
-              "type": "regex",
-              "parameters": {
-                "value": "(\\w.+\\s).+"
-              },
-              "error-message": [
-                "Please enter your first and last name."
-              ]
-            }
-          ]
+          "reactions": {
+            "validation": [
+              {
+                "type": "regex",
+                "parameters": {
+                  "value": "(\\w.+\\s).+"
+                },
+                "error-message": [
+                  "Please enter your first and last name."
+                ]
+              }
+            ]
+          }
         },
         {
           "type": "confirmation",
@@ -223,20 +240,22 @@
           "messages": [
             "I am booking you an appointment for {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} on {{date}} at {{time}}. Can you please confirm that the information is correct?"
           ],
-          "validation": [
-            {
-              "type": "match",
-              "parameters": {
-                "values": [
-                  "Yes",
-                  "yes"
+          "reactions": {
+            "validation": [
+              {
+                "type": "match",
+                "parameters": {
+                  "values": [
+                    "Yes",
+                    "yes"
+                  ]
+                },
+                "error-message": [
+                  "Let me know what you want to change before I can book you an appointment."
                 ]
-              },
-              "error-message": [
-                "Let me know what you want to change before I can book you an appointment."
-              ]
-            }
-          ],
+              }
+            ]
+          },
           "display": {
             "type": "quick-reply",
             "data": [
@@ -247,6 +266,9 @@
         },
         {
           "type": "webhook",
+          "messages": [
+            "Congratulations. You have an appointment with {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} for {{date}} at {{time}}. See you soon!"
+          ],
           "protected": true,
           "data-source": {
             "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Appointments",
@@ -261,12 +283,10 @@
               "Date": "{{date}}",
               "Time": "{{time}}"
             }
-          }
-        },
-        {
-          "type": "message",
-          "messages": [
-            "Congratulations. You have an appointment with {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} for {{date}} at {{time}}. See you soon!"
+          },
+          "is-goal": true,
+          "conditions": [
+            "{{$has confirmation}}"
           ]
         }
       ]
