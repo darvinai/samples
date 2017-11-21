@@ -105,7 +105,7 @@
                   "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
                   "selector": "$[:].ExternalId"
                 },
-                "value": "{{$includes _response doctor.ExternalId}}"
+                "condition": "{{$in doctor.ExternalId _response}}"
               },
               "error-message": [
                 "За съжаление, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} няма свободни часове за момента."
@@ -131,7 +131,7 @@
                   "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
                   "method": "GET"
                 },
-                "value": "{{$includes _response ($date date 'YYYY-MM-DD')}}"
+                "condition": "{{$in ($date date 'YYYY-MM-DD') _response}}"
               },
               "error-message": [
                 "За съжаление, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} няма свободни часове за {{date}}."
@@ -161,7 +161,7 @@
                   "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
                   "method": "GET"
                 },
-                "value": "{{$includes _response time}}"
+                "condition": "{{$in time _response}}"
               },
               "error-message": [
                 "За съжаление, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} не е свободна на {{date}} от {{time}}."
