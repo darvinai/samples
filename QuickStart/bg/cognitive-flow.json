@@ -51,20 +51,22 @@
           "messages": [
             "Искаш ли да прехвърля разговора ни с човек от екипа на Болница ACME София?"
           ],
-          "validation": [
-            {
-              "type": "match",
-              "parameters": {
-                "values": [
-                  "Да",
-                  "да"
+          "reactions": {
+            "validation": [
+              {
+                "type": "match",
+                "parameters": {
+                  "values": [
+                    "Да",
+                    "да"
+                  ]
+                },
+                "error-message": [
+                  "Добре, разбирам. Няма да те прехвърлям към оператор. Кажи ми отново с какво мога да ти помогна?"
                 ]
-              },
-              "error-message": [
-                "Добре, разбирам. Няма да те прехвърлям към оператор. Кажи ми отново с какво мога да ти помогна?"
-              ]
-            }
-          ],
+              }
+            ]
+          },
           "display": {
             "type": "quick-reply",
             "data": [
@@ -74,6 +76,10 @@
           }
         },
         {
+          "is-goal": true,
+          "conditions": [
+            "{{$has confirmation}}"
+          ],
           "type": "message",
           "stay-silent": true,
           "messages": [
@@ -91,27 +97,30 @@
           "messages": [
             "За кой лекар искате да си запишете час?"
           ],
-          "acknowledgements": [
-            "Разбирам, че искате да си запазите час за {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}}."
-          ],
-          "ambiguity": [
-            "Не съм сигурен, че разбрах за кой доктор точно искате да си запишете час. Моля изберете доктор:"
-          ],
-          "validation": [
-            {
-              "type": "custom",
-              "parameters": {
-                "data-source": {
-                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
-                  "selector": "$[:].ExternalId"
+          "reactions": {
+            "acknowledgements": [
+              "Разбирам, че искате да си запазите час за {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}}."
+            ],
+            "ambiguity": [
+              "Не съм сигурен, че разбрах за кой доктор точно искате да си запишете час. Моля изберете доктор:"
+            ],
+            "validation": [
+              {
+                "type": "custom",
+                "parameters": {
+                  "data-source": {
+                    "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
+                    "selector": "$[:].ExternalId"
+                  },
+                  "value": "{{$includes _response doctor.ExternalId}}",
+                  "condition": "{{$in doctor.ExternalId _response}}"
                 },
-                "condition": "{{$in doctor.ExternalId _response}}"
-              },
-              "error-message": [
-                "За съжаление, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} няма свободни часове за момента."
-              ]
-            }
-          ],
+                "error-message": [
+                  "За съжаление, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} няма свободни часове за момента."
+                ]
+              }
+            ]
+          },
           "display": {
             "type": "quick-reply"
           }
@@ -123,21 +132,24 @@
           "messages": [
             "За кой ден искате да ви запиша час за {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}}?"
           ],
-          "validation": [
-            {
-              "type": "custom",
-              "parameters": {
-                "data-source": {
-                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
-                  "method": "GET"
+          "reactions": {
+            "validation": [
+              {
+                "type": "custom",
+                "parameters": {
+                  "data-source": {
+                    "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
+                    "method": "GET"
+                  },
+                  "value": "{{$includes _response ($date date 'YYYY-MM-DD')}}",
+                  "condition": "{{$in ($date date 'YYYY-MM-DD') _response}}"
                 },
-                "condition": "{{$in ($date date 'YYYY-MM-DD') _response}}"
-              },
-              "error-message": [
-                "За съжаление, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} няма свободни часове за {{date}}."
-              ]
-            }
-          ],
+                "error-message": [
+                  "За съжаление, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} няма свободни часове за {{date}}."
+                ]
+              }
+            ]
+          },
           "display": {
             "type": "quick-reply",
             "data-source": {
@@ -153,21 +165,24 @@
           "messages": [
             "За кой час искате да се видите с {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} на {{date}}?"
           ],
-          "validation": [
-            {
-              "type": "custom",
-              "parameters": {
-                "data-source": {
-                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
-                  "method": "GET"
+          "reactions": {
+            "validation": [
+              {
+                "type": "custom",
+                "parameters": {
+                  "data-source": {
+                    "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
+                    "method": "GET"
+                  },
+                  "value": "{{$includes _response time}}",
+                  "condition": "{{$in time _response}}"
                 },
-                "condition": "{{$in time _response}}"
-              },
-              "error-message": [
-                "За съжаление, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} не е свободна на {{date}} от {{time}}."
-              ]
-            }
-          ],
+                "error-message": [
+                  "За съжаление, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} не е свободна на {{date}} от {{time}}."
+                ]
+              }
+            ]
+          },
           "display": {
             "type": "quick-reply",
             "data-source": {
@@ -184,17 +199,19 @@
           "messages": [
             "Какви са вашите три имена, изписани на кирилица?"
           ],
-          "validation": [
-            {
-              "type": "regex",
-              "parameters": {
-                "value": "^([а-яА-Я\\-'`]*\\s){2}[а-яА-Я\\-'`]+$"
-              },
-              "error-message": [
-                "Опцията не е възможна. Моля, въведете вашите три имена изписани на кирилица."
-              ]
-            }
-          ]
+          "reactions": {
+            "validation": [
+              {
+                "type": "regex",
+                "parameters": {
+                  "value": "^([а-яА-Я\\-'`]*\\s){2}[а-яА-Я\\-'`]+$"
+                },
+                "error-message": [
+                  "Опцията не е възможна. Моля, въведете вашите три имена изписани на кирилица."
+                ]
+              }
+            ]
+          }
         },
         {
           "type": "confirmation",
@@ -203,20 +220,22 @@
           "messages": [
             "Запазвам ви час за {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} на {{date}} от {{time}}. Информацията правилна ли е?"
           ],
-          "validation": [
-            {
-              "type": "match",
-              "parameters": {
-                "values": [
-                  "Да",
-                  "да"
+          "reactions": {
+            "validation": [
+              {
+                "type": "match",
+                "parameters": {
+                  "values": [
+                    "Да",
+                    "да"
+                  ]
+                },
+                "error-message": [
+                  "Добре, разбирам. Няма да запазвам този час все още. Каква е промяната, която искате да направите?"
                 ]
-              },
-              "error-message": [
-                "Добре, разбирам. Няма да запазвам този час все още. Каква е промяната, която искате да направите?"
-              ]
-            }
-          ],
+              }
+            ]
+          },
           "display": {
             "type": "quick-reply",
             "data": [
@@ -227,6 +246,9 @@
         },
         {
           "type": "webhook",
+          "messages": [
+            "Поздравления. Имате записан час за {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} на {{date}} от {{time}}. Очакваме ви!"
+          ],
           "data-source": {
             "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Appointments",
             "method": "POST",
@@ -239,12 +261,10 @@
               "Date": "{{date}}",
               "Time": "{{time}}"
             }
-          }
-        },
-        {
-          "type": "message",
-          "messages": [
-            "Поздравления. Имате записан час за {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} на {{date}} от {{time}}. Очакваме ви!"
+          },
+          "is-goal": true,
+          "conditions": [
+            "{{$has confirmation}}"
           ]
         }
       ]
