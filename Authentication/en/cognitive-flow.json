@@ -263,9 +263,7 @@
         },
         {
           "type": "webhook",
-          "messages": [
-            "Congratulations. You have an appointment with {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} for {{date}} at {{time}}. See you soon!"
-          ],
+          "entity": "webhookResult",
           "protected": true,
           "data-source": {
             "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Appointments",
@@ -281,10 +279,19 @@
               "Time": "{{time}}"
             }
           },
-          "is-goal": true,
           "conditions": [
             "{{$has confirmation}}"
           ]
+        },
+        {
+          "type": "message",
+          "messages": [
+            "Congratulations. You have an appointment with {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} for {{date}} at {{time}}. See you soon!"
+          ],
+          "conditions": [
+            "{{$has webhookResult}}"
+          ],
+          "is-goal": true
         }
       ]
     }

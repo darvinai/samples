@@ -243,9 +243,7 @@
         },
         {
           "type": "webhook",
-          "messages": [
-            "Поздравления. Имате записан час за {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} на {{date}} от {{time}}. Очакваме ви!"
-          ],
+          "entity": "webhookResult",
           "data-source": {
             "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Appointments",
             "method": "POST",
@@ -259,10 +257,19 @@
               "Time": "{{time}}"
             }
           },
-          "is-goal": true,
           "conditions": [
             "{{$has confirmation}}"
           ]
+        },
+        {
+          "type": "message",
+          "messages": [
+            "Поздравления. Имате записан час за {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} на {{date}} от {{time}}. Очакваме ви!"
+          ],
+          "conditions": [
+            "{{$has webhookResult}}"
+          ],
+          "is-goal": true
         }
       ]
     }
