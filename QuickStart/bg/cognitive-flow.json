@@ -239,7 +239,12 @@
               "Да",
               "Не"
             ]
-          }
+          },
+          "conditions": [
+            "{{$has doctor}}",
+            "{{$has time}}",
+            "{{$has contactName}}"
+          ]
         },
         {
           "type": "webhook",
