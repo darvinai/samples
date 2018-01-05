@@ -50,6 +50,25 @@
           "{{FirstName}} {{LastName}}"
         ]
       }
+    },
+    {
+      "name": "SmallTalk",
+      "lookup-strategy": "trait",
+      "data": [
+        {
+          "value": "thanks",
+          "metadata": {
+            "messages": [
+              "Пак заповядайте!",
+              "Няма защо!"
+            ]
+          },
+          "expressions": [
+            "благодаря",
+            "мерси"
+          ]
+        }
+      ]
     }
   ]
 }
