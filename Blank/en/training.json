@@ -19,6 +19,25 @@
           "metadata": ""
         }
       ]
+    },
+    {
+      "name": "SmallTalk",
+      "lookup-strategy": "trait",
+      "data": [
+        {
+          "value": "thanks",
+          "metadata": {
+            "messages": [
+              "You are welcome!",
+              "Anytime!"
+            ]
+          },
+          "expressions": [
+            "thanks",
+            "thank you"
+          ]
+        }
+      ]
     }
   ]
 }
