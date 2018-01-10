@@ -220,7 +220,12 @@
               "Yes",
               "No"
             ]
-          }
+          },
+          "conditions": [
+            "{{$has doctor}}",
+            "{{$has time}}",
+            "{{$has contactName}}"
+          ]
         },
         {
           "type": "webhook",
