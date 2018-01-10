@@ -37,7 +37,7 @@
     ]
   },
   "conversations": {
-    "getting-started": {
+    "welcome": {
       "steps": [{
           "type": "message",
           "messages": [

@@ -17,7 +17,7 @@
     "silence-timeout": 60
   },
   "conversations": {
-    "getting-started": {
+    "welcome": {
       "steps": [{
           "type": "message",
           "messages": [
