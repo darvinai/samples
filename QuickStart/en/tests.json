@@ -184,7 +184,7 @@
                     "bot": [
                         [
                             { 
-                                "text": "I am transfering you to an operator, and I will stay silent for the next 60 minutes. If you want to get back to me, please type 'restart'."
+                                "text": "I am transferring you to an operator, and I will stay silent for the next 60 minutes. If you want to get back to me, please type 'restart'."
                             }
                         ]
                     ]
