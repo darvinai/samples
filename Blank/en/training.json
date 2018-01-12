@@ -1,10 +1,8 @@
 {
-  "entity-definitions": [
-    {
+  "entity-definitions": [{
       "name": "Conversation",
       "lookup-strategy": "trait",
-      "data": [
-        {
+      "data": [{
           "value": "conversationOne",
           "expressions": [
             "Conversation 1"
@@ -97,7 +95,7 @@
             "\\h",
             "I am lost",
             "i cant find the way i need help",
-            "stop",            
+            "stop",
             "menu"
           ]
         }
@@ -106,21 +104,19 @@
     {
       "name": "SmallTalk",
       "lookup-strategy": "trait",
-      "data": [
-        {
-          "value": "thanks",
-          "metadata": {
-            "messages": [
-              "You are welcome!",
-              "Anytime!"
-            ]
-          },
-          "expressions": [
-            "thanks",
-            "thank you"
+      "data": [{
+        "value": "thanks",
+        "metadata": {
+          "messages": [
+            "You are welcome!",
+            "Anytime!"
           ]
-        }
-      ]
+        },
+        "expressions": [
+          "thanks",
+          "thank you"
+        ]
+      }]
     }
   ]
 }

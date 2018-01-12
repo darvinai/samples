@@ -1,8 +1,5 @@
 {
   "commands": {
-    "RESTART": [
-      "restart"
-    ],
     "NEXT-PAGE": [
       "Next 5"
     ]
@@ -58,6 +55,20 @@
               "Contact operator"
             ]
           }
+        }
+      ]
+    },
+    "restart": {
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "You conversation is restarted."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
         }
       ]
     },
