@@ -1,41 +1,153 @@
 {
-  "entity-definitions": [{
+  "entity-definitions": [
+    {
       "name": "Conversation",
       "lookup-strategy": "trait",
-      "data": [{
+      "data": [
+        {
           "value": "bookDoctor",
-          "expressions": ["Book a doctor", "I would like to book a doctor", "Can I book a doctor for this Tuesday?", "Is doctor Burke available this Tuesday?", "Can I check doctor Burke's schedule for this week?"]
-      }, {
+          "expressions": [
+            "Book a doctor",
+            "I would like to book a doctor",
+            "Can I book a doctor for this Tuesday?",
+            "Is doctor Burke available this Tuesday?",
+            "Can I check doctor Burke's schedule for this week?"
+          ]
+        },
+        {
           "value": "contactOperator",
-          "expressions": ["Contact support", "Can I talk to an operator?", "Would you get me in touch with a human?", "It will be great if I can talk to a person.", "Can you get me in touch with an operator?", "Forward me to an operator"]
-      }, {
+          "expressions": [
+            "Contact support",
+            "Can I talk to an operator?",
+            "Would you get me in touch with a human?",
+            "It will be great if I can talk to a person.",
+            "Can you get me in touch with an operator?",
+            "Forward me to an operator"
+          ]
+        },
+        {
+          "value": "restart",
+          "expressions": [
+            "restart",
+            "Can we start over?",
+            "reset",
+            "restart, plase",
+            "Forward me to an operator",
+            "start again",
+            "restart conversation",
+            "reset conversation",
+            "Reboot the flow",
+            "Please reboot",
+            "I want to start again",
+            "Can we reset the conversation?",
+            "can we start again?",
+            "let's do it again",
+            "It is possible to restart the conversation?",
+            "Let's restart",
+            "I want to reset the conversation",
+            "Forget about it, reset",
+            "Forget, restart"
+          ]
+        },
+        {
           "value": "help",
-          "expressions": ["Help", "What you can do?", "Help me, please."]
-      }]
-  }, {
+          "expressions": [
+            "Help",
+            "Help me, please.",
+            "I need some help !",
+            "Can you help me?",
+            "What do you do?",
+            "How can I use you?",
+            "How can you help me?",
+            "What can you do?",
+            "Help me",
+            "I want to know more about you",
+            "Show me what you do",
+            "What can you tell me?",
+            "i need help",
+            "What can you do?",
+            "what the bot knows to do?",
+            "how does this work?",
+            "what should I do?",
+            "who are you?",
+            "what do you know to do?",
+            "Please help me",
+            "What's your purpose?",
+            "I don't know what to do",
+            "help please?",
+            "What's your utility?",
+            "Are you useless?",
+            "need guidance",
+            "could you help me",
+            "what is this",
+            "more help",
+            "show help",
+            "what is your usage",
+            "You're useless.",
+            "What are you doing?",
+            "What can I say?",
+            "I need some assistance",
+            "list help",
+            "not sure what to do here",
+            "are you useful?",
+            "What are you built for?",
+            "how to",
+            "What are your abilities?",
+            "need some guidance",
+            "What are my options?",
+            "give me help",
+            "i am confused",
+            "Are you intelligent?",
+            "What makes you unique?",
+            "Commands",
+            "assist me",
+            "\h",
+            "I am lost",
+            "i cant find the way i need help",
+            "stop",            
+            "menu"
+          ]
+        }
+      ]
+    },
+    {
       "name": "Doctor",
       "lookup-strategy": "keywords",
       "data": [],
       "dynamic-data": {
-          "data-source": {
-              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
-              "method": "GET",
-              "headers": {
-                  "Content-Type": "application/json"
-              }
-          },
-          "value-template": "{{Title}} {{FirstName}} {{LastName}}",
-          "synonym-templates": ["{{Title}} {{LastName}}", "{{LastName}}", "{{FirstName}} {{LastName}}"]
+        "data-source": {
+          "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
+          "method": "GET",
+          "headers": {
+            "Content-Type": "application/json"
+          }
+        },
+        "value-template": "{{Title}} {{FirstName}} {{LastName}}",
+        "synonym-templates": [
+          "{{Title}} {{LastName}}",
+          "{{LastName}}",
+          "{{FirstName}} {{LastName}}"
+        ]
       }
-  }, {
+    },
+    {
       "name": "SmallTalk",
       "lookup-strategy": "trait",
-      "data": [{
+      "data": [
+        {
           "value": "thanks",
           "metadata": {
-              "messages": ["You are welcome!", "Anytime!"]
+            "messages": [
+              "You are welcome!",
+              "Anytime!"
+            ]
           },
-          "expressions": ["thanks", "thank you"]
-      }]
-  }]
+          "expressions": [
+            "thanks",
+            "thank you"
+          ]
+        }
+      ]
+    }
+  ]
 }
