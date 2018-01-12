@@ -1,10 +1,8 @@
 {
-  "entity-definitions": [
-    {
+  "entity-definitions": [{
       "name": "Conversation",
       "lookup-strategy": "trait",
-      "data": [
-        {
+      "data": [{
           "value": "conversationOne",
           "expressions": [
             "Conversation 1"
@@ -17,27 +15,108 @@
             "Conversation 2"
           ],
           "metadata": ""
+        },
+        {
+          "value": "restart",
+          "expressions": [
+            "restart",
+            "Can we start over?",
+            "reset",
+            "restart, plase",
+            "Forward me to an operator",
+            "start again",
+            "restart conversation",
+            "reset conversation",
+            "Reboot the flow",
+            "Please reboot",
+            "I want to start again",
+            "Can we reset the conversation?",
+            "can we start again?",
+            "let's do it again",
+            "It is possible to restart the conversation?",
+            "Let's restart",
+            "I want to reset the conversation",
+            "Forget about it, reset",
+            "Forget, restart"
+          ]
+        },
+        {
+          "value": "help",
+          "expressions": [
+            "Help",
+            "Help me, please.",
+            "I need some help !",
+            "Can you help me?",
+            "What do you do?",
+            "How can I use you?",
+            "How can you help me?",
+            "What can you do?",
+            "Help me",
+            "I want to know more about you",
+            "Show me what you do",
+            "What can you tell me?",
+            "i need help",
+            "What can you do?",
+            "what the bot knows to do?",
+            "how does this work?",
+            "what should I do?",
+            "who are you?",
+            "what do you know to do?",
+            "Please help me",
+            "What's your purpose?",
+            "I don't know what to do",
+            "help please?",
+            "What's your utility?",
+            "Are you useless?",
+            "need guidance",
+            "could you help me",
+            "what is this",
+            "more help",
+            "show help",
+            "what is your usage",
+            "You're useless.",
+            "What are you doing?",
+            "What can I say?",
+            "I need some assistance",
+            "list help",
+            "not sure what to do here",
+            "are you useful?",
+            "What are you built for?",
+            "how to",
+            "What are your abilities?",
+            "need some guidance",
+            "What are my options?",
+            "give me help",
+            "i am confused",
+            "Are you intelligent?",
+            "What makes you unique?",
+            "Commands",
+            "assist me",
+            "\\h",
+            "I am lost",
+            "i cant find the way i need help",
+            "stop",
+            "menu"
+          ]
         }
       ]
     },
     {
       "name": "SmallTalk",
       "lookup-strategy": "trait",
-      "data": [
-        {
-          "value": "thanks",
-          "metadata": {
-            "messages": [
-              "You are welcome!",
-              "Anytime!"
-            ]
-          },
-          "expressions": [
-            "thanks",
-            "thank you"
+      "data": [{
+        "value": "thanks",
+        "metadata": {
+          "messages": [
+            "You are welcome!",
+            "Anytime!"
           ]
-        }
-      ]
+        },
+        "expressions": [
+          "thanks",
+          "thank you"
+        ]
+      }]
     }
   ]
 }

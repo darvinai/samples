@@ -1,8 +1,5 @@
 {
   "commands": {
-    "RESTART": [
-      "рестарт"
-    ],
     "NEXT-PAGE": [
       "Следващи 5"
     ]
@@ -17,7 +14,7 @@
     "silence-timeout": 60
   },
   "conversations": {
-    "getting-started": {
+    "welcome": {
       "steps": [{
           "type": "message",
           "messages": [
@@ -38,6 +35,34 @@
               "Връзка с оператор"
             ]
           }
+        }
+      ]
+    },
+    "help": {
+      "steps": [{
+        "type": "message",
+        "messages": [
+          "Ако искате да започнеш разговора отначало, може да напишете ключовата дума \"рестарт\" по всяко време. С какво мога да ви асистирам?"
+        ],
+        "display": {
+          "type": "quick-reply",
+          "data": [
+            "Запазване на час",
+            "Връзка с оператор"
+          ]
+        }
+      }]
+    },
+    "restart": {
+      "steps": [{
+          "type": "message",
+          "messages": [
+            "Вашият разговор е подновен."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
         }
       ]
     },

@@ -1,8 +1,5 @@
 {
   "commands": {
-    "RESTART": [
-      "restart"
-    ],
     "NEXT-PAGE": [
       "Next 5"
     ]
@@ -17,24 +14,61 @@
     "silence-timeout": 60
   },
   "conversations": {
-    "getting-started": {
+    "welcome": {
       "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "Hello there, I am the virtual assistant of ACME Hospital powered by Artificial Intelligence."
+          ]
+        },
         {
           "type": "question",
           "entity": "conversation",
           "entity-type": "Conversation",
           "messages": [
-            [
-              "This is a getting started conversation for your chatbot."
-            ]
+            "This is a getting started conversation for your chatbot."
           ],
           "display": {
             "type": "quick-reply",
             "data": [
               "Conversation 1",
-              "Conversation 2"
+              "Conversation 2",
+              "Help"
             ]
           }
+        }
+      ]
+    },
+    "help": {
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "If you get stuck,you can always restart our conversation by typing 'restart'",
+            "Here is what I can do for you:"
+          ],
+          "display": {
+            "type": "quick-reply",
+            "data": [
+              "Book a doctor",
+              "Contact operator"
+            ]
+          }
+        }
+      ]
+    },
+    "restart": {
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "You conversation is restarted."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
         }
       ]
     },

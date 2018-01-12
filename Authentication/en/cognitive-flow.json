@@ -1,8 +1,5 @@
 {
   "commands": {
-    "RESTART": [
-      "restart"
-    ],
     "NEXT-PAGE": [
       "Next 5"
     ]
@@ -37,11 +34,12 @@
     ]
   },
   "conversations": {
-    "getting-started": {
-      "steps": [{
+    "welcome": {
+      "steps": [
+        {
           "type": "message",
           "messages": [
-            "Hello there, I am the virtual assistant of ACME Hospital powered by Artificial Intelligence. If you get stuck,you can always restart our conversation by typing 'restart'"
+            "Hello there, I am the virtual assistant of ACME Hospital powered by Artificial Intelligence."
           ]
         },
         {
@@ -55,9 +53,42 @@
             "type": "quick-reply",
             "data": [
               "Book a doctor",
+              "Contact operator",
+              "Help"
+            ]
+          }
+        }
+      ]
+    },
+    "help": {
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "If you get stuck,you can always restart our conversation by typing 'restart'",
+            "Here is what I can do for you:"
+          ],
+          "display": {
+            "type": "quick-reply",
+            "data": [
+              "Book a doctor",
               "Contact operator"
             ]
           }
+        }
+      ]
+    },
+    "restart": {
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "You conversation is restarted."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
         }
       ]
     },
@@ -95,7 +126,7 @@
           "type": "message",
           "stay-silent": true,
           "messages": [
-            "I am transfering you to an operator, and I will stay silent for the next 60 minutes. If you want to get back to me, please type 'restart'."
+            "I am transferring you to an operator, and I will stay silent for the next 60 minutes. If you want to get back to me, please type 'restart'."
           ]
         }
       ]

@@ -1,10 +1,8 @@
 {
-  "entity-definitions": [
-    {
+  "entity-definitions": [{
       "name": "Conversation",
       "lookup-strategy": "trait",
-      "data": [
-        {
+      "data": [{
           "value": "bookDoctor",
           "expressions": [
             "Запазване на час",
@@ -28,6 +26,23 @@
             "Ще ме прехвърлиш ли към някой от екипа на болницата?"
           ],
           "metadata": ""
+        },
+        {
+          "value": "restart",
+          "expressions": [
+            "рестарт",
+            "Може ли да започнем отначало?",
+            "започни отначало"
+          ]
+        },
+        {
+          "value": "help",
+          "expressions": [
+            "Помощ",
+            "Искам помощ",
+            "Какво можеш да правиш?",
+            "Как мога да те използвам?"
+          ]
         }
       ]
     },
@@ -54,21 +69,19 @@
     {
       "name": "SmallTalk",
       "lookup-strategy": "trait",
-      "data": [
-        {
-          "value": "thanks",
-          "metadata": {
-            "messages": [
-              "Пак заповядайте!",
-              "Няма защо!"
-            ]
-          },
-          "expressions": [
-            "благодаря",
-            "мерси"
+      "data": [{
+        "value": "thanks",
+        "metadata": {
+          "messages": [
+            "Пак заповядайте!",
+            "Няма защо!"
           ]
-        }
-      ]
+        },
+        "expressions": [
+          "благодаря",
+          "мерси"
+        ]
+      }]
     }
   ]
 }
