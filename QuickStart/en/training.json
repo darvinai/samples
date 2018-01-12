@@ -135,17 +135,116 @@
       "lookup-strategy": "trait",
       "data": [
         {
-          "value": "thanks",
+          "value": "goodbye",
+          "expressions": [
+            "bye",
+            "byebye",
+            "bye bye",
+            "bye-bye",
+            "bye now",
+            "byeee",
+            "byeeeee",
+            "ok, bye",
+            "excellent bye-bye",
+            "excellent bye",
+            "I go bye",
+            "I said bye",
+            "bye+",
+            "great bye",
+            "goodbye",
+            "have a good day",
+            "have a nice day",
+            "have a great weekend",
+            "talk to you soon",
+            "I'm outa here",
+            "++",
+            "gtg",
+            "later",
+            "catch you later",
+            "I have to go",
+            "ok I have to go thanks",
+            "got to go",
+            "so long",
+            "see u",
+            "see you soon",
+            "See you later",
+            "see you",
+            "see ya",
+            "see yu",
+            "I'll see you",
+            "cool see you next time",
+            "awesome see ya",
+            "best wishes",
+            "best regards",
+            "goodnight then",
+            "good night",
+            "au revoir",
+            "cia",
+            "cya l8er",
+            "cya",
+            "tciao",
+            "adieu",
+            "adios",
+            "hasta la vista"
+          ],
           "metadata": {
             "messages": [
-              "You are welcome!",
-              "Anytime!"
+              "Bye!",
+              "See you!",
+              "Good bye!"
             ]
-          },
+          }
+        },
+        {
+          "value": "thanks",
           "expressions": [
-            "thanks",
-            "thank you"
-          ]
+            "thnaks",
+            "thanks you too",
+            "thanks bot",
+            "thanks man",
+            "nice thanks",
+            "ok thanks",
+            "awesome thanks",
+            "sweet thanks",
+            "thanks for your help",
+            "thanks for the help",
+            "great! thanks",
+            "thanks again",
+            "thanks a lot",
+            "many thanks",
+            "good to know. thanks",
+            "thankssssssssss",
+            "thank",
+            "thank you",
+            "thank you very much",
+            "thank you so much",
+            "thank you buddy",
+            "great, thank you",
+            "nice, thank you",
+            "okay, thank you",
+            "I know. thank you",
+            "thank you for showing me that",
+            "ty",
+            "cool ty",
+            "thx",
+            "ok thx",
+            "awesome thx",
+            "thx mate",
+            "thx dude",
+            "thnx",
+            "you're good",
+            "that's very kind",
+            "you saved my day",
+            "I appreciate that",
+            "I really appreciate it"
+          ],
+          "metadata": {
+            "messages": [
+              "Any time :)",
+              "Just doing my job!",
+              "You're welcome :)"
+            ]
+          }
         }
       ]
     }
