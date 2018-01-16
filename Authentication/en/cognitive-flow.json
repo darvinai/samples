@@ -53,8 +53,7 @@
             "type": "quick-reply",
             "data": [
               "Book a doctor",
-              "Contact operator",
-              "Help"
+              "Contact operator"
             ]
           }
         }
