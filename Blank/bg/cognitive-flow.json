@@ -15,41 +15,41 @@
   },
   "conversations": {
     "welcome": {
-      "steps": [{
-        "type": "question",
-        "entity": "conversation",
-        "entity-type": "Conversation",
-        "messages": [
-          [
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
             "Това е началният разговор на твоя бот."
           ]
-        ],
-        "display": {
-          "type": "quick-reply",
-          "data": [
-            "Разговор 1",
-            "Разговор 2"
-          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "help"
         }
-      }]
+      ]
     },
     "help": {
-      "steps": [{
-        "type": "message",
-        "messages": [
-          "Ако искате да започнеш разговора отначало, може да напишете ключовата дума \"рестарт\" по всяко време. С какво мога да ви асистирам?"
-        ],
-        "display": {
-          "type": "quick-reply",
-          "data": [
-            "Разговор 1",
-            "Разговор 2"
-          ]
+      "steps": [
+        {
+          "type": "question",
+          "entity": "conversation",
+          "entity-type": "Conversation",
+          "messages": [
+            "Ако искате да започнеш разговора отначало, може да напишете ключовата дума \"рестарт\" по всяко време. С какво мога да ви асистирам?"
+          ],
+          "display": {
+            "type": "quick-reply",
+            "data": [
+              "Разговор 1",
+              "Разговор 2"
+            ]
+          }
         }
-      }]
+      ]
     },
     "restart": {
-      "steps": [{
+      "steps": [
+        {
           "type": "message",
           "messages": [
             "Вашият разговор е подновен."
@@ -62,24 +62,28 @@
       ]
     },
     "conversationOne": {
-      "steps": [{
-        "type": "message",
-        "messages": [
-          [
-            "Това е разговор 1"
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "This is conversation 1"
+            ]
           ]
-        ]
-      }]
+        }
+      ]
     },
     "conversationTwo": {
-      "steps": [{
-        "type": "message",
-        "messages": [
-          [
-            "Това е разговор 2"
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "This is conversation 2"
+            ]
           ]
-        ]
-      }]
+        }
+      ]
     }
   }
-}
+ }
