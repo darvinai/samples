@@ -1,10 +1,8 @@
 {
-  "entity-definitions": [
-    {
+  "entity-definitions": [{
       "name": "Conversation",
       "lookup-strategy": "trait",
-      "data": [
-        {
+      "data": [{
           "value": "bookDoctor",
           "expressions": [
             "Book a doctor",
@@ -104,7 +102,7 @@
             
             "I am lost",
             "i cant find the way i need help",
-            "stop",            
+            "stop",
             "menu"
           ]
         }
@@ -132,9 +130,8 @@
     },
     {
       "name": "SmallTalk",
-      "lookup-strategy": "trait",
-      "data": [
-        {
+      "lookup-strategy": "QnA",
+      "data": [{
           "value": "goodbye",
           "expressions": [
             "bye",
@@ -187,13 +184,11 @@
             "adios",
             "hasta la vista"
           ],
-          "metadata": {
-            "messages": [
-              "Bye!",
-              "See you!",
-              "Good bye!"
-            ]
-          }
+          "answers": [
+            "Bye!",
+            "See you!",
+            "Good bye!"
+          ]
         },
         {
           "value": "thanks",
@@ -239,13 +234,11 @@
             "I appreciate that",
             "I really appreciate it"
           ],
-          "metadata": {
-            "messages": [
-              "Any time :)",
-              "Just doing my job!",
-              "You're welcome :)"
-            ]
-          }
+          "answers": [
+            "Any time :)",
+            "Just doing my job!",
+            "You're welcome :)"
+          ]
         }
       ]
     }
