@@ -35,8 +35,9 @@
           "entity": "conversation",
           "entity-type": "Conversation",
           "messages": [
+            [
             "If you get stuck,you can always restart our conversation by typing 'restart'",
-            "Here is what I can do for you:"
+            "Here is what I can do for you:"]
           ],
           "display": {
             "type": "quick-reply",
