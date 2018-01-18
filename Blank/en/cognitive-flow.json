@@ -15,43 +15,49 @@
   },
   "conversations": {
     "welcome": {
-      "steps": [
-        {
-          "type": "message",
-          "messages": [
-            "This is a welcome conversation for your chatbot."
+      "steps": [{
+        "type": "message",
+        "messages": [
+          "This is a welcome conversation for your chatbot."
+        ]
+      }, {
+        "type": "question",
+        "entity": "conversation",
+        "entity-type": "Conversation",
+        "messages": [
+          [
+            "Here is what I can do for you:"
           ]
-        },
-        {
-          "type": "conversation",
-          "conversation": "help"
+        ],
+        "display": {
+          "type": "quick-reply",
+          "data": [
+            "Conversation 1",
+            "Conversation 2"
+          ]
         }
-      ]
+      }]
     },
     "help": {
-      "steps": [
-        {
-          "type": "question",
-          "entity": "conversation",
-          "entity-type": "Conversation",
-          "messages": [
-            [
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
             "If you get stuck,you can always restart our conversation by typing 'restart'",
-            "Here is what I can do for you:"]
-          ],
-          "display": {
-            "type": "quick-reply",
-            "data": [
-              "Conversation 1",
-              "Conversation 2"
-            ]
-          }
+            "Here is what I can do for you:"
+          ]
+        ],
+        "display": {
+          "type": "quick-reply",
+          "data": [
+            "Conversation 1",
+            "Conversation 2"
+          ]
         }
-      ]
+      }]
     },
     "restart": {
-      "steps": [
-        {
+      "steps": [{
           "type": "message",
           "messages": [
             "Your conversation is restarted."
@@ -64,28 +70,26 @@
       ]
     },
     "conversationOne": {
-      "steps": [
-        {
-          "type": "message",
-          "messages": [
-            [
-              "This is conversation 1"
-            ]
+      "clear-context": true,
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "This is conversation 1"
           ]
-        }
-      ]
+        ]
+      }]
     },
     "conversationTwo": {
-      "steps": [
-        {
-          "type": "message",
-          "messages": [
-            [
-              "This is conversation 2"
-            ]
+      "clear-context": true,
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "This is conversation 2"
           ]
-        }
-      ]
+        ]
+      }]
     }
   }
- }
+}
