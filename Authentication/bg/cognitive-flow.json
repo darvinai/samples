@@ -42,8 +42,19 @@
           ]
         },
         {
-          "type": "conversation",
-          "conversation": "help"
+          "type": "question",
+          "entity": "conversation",
+          "entity-type": "Conversation",
+          "messages": [
+            "С какво мога да ви асистирам?"
+          ],
+          "display": {
+            "type": "quick-reply",
+            "data": [
+              "Запазване на час",
+              "Връзка с оператор"
+            ]
+          }
         }
       ]
     },
@@ -82,6 +93,7 @@
       ]
     },
     "contactOperator": {
+      "clear-context": true,
       "steps": [{
           "type": "confirmation",
           "entity": "confirmation",
@@ -121,6 +133,7 @@
       ]
     },
     "bookDoctor": {
+      "clear-context": true,
       "steps": [{
           "type": "question",
           "entity": "doctor",

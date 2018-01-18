@@ -22,16 +22,27 @@
           ]
         },
         {
-          "type": "conversation",
-          "conversation": "help"
+          "type": "question",
+          "entity": "conversation",
+          "entity-type": "Conversation",
+          "messages": [
+            [
+              "С какво мога да ви асистирам?"
+            ]
+          ],
+          "display": {
+            "type": "quick-reply",
+            "data": [
+              "Разговор 1",
+              "Разговор 2"
+            ]
+          }
         }
       ]
     },
     "help": {
       "steps": [{
-        "type": "question",
-        "entity": "conversation",
-        "entity-type": "Conversation",
+        "type": "message",
         "messages": [
           [
             "Ако искате да започнеш разговора отначало, може да напишете ключовата дума \"рестарт\" по всяко време.",
@@ -61,6 +72,7 @@
       ]
     },
     "conversationOne": {
+      "clear-context": true,
       "steps": [{
         "type": "message",
         "messages": [
@@ -71,6 +83,7 @@
       }]
     },
     "conversationTwo": {
+      "clear-context": true,
       "steps": [{
         "type": "message",
         "messages": [
