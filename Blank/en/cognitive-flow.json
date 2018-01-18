@@ -15,52 +15,49 @@
   },
   "conversations": {
     "welcome": {
-      "steps": [
-        {
-          "type": "message",
-          "messages": [
-            "Hello there, I am the virtual assistant of ACME Hospital powered by Artificial Intelligence."
+      "steps": [{
+        "type": "message",
+        "messages": [
+          "This is a welcome conversation for your chatbot."
+        ]
+      }, {
+        "type": "question",
+        "entity": "conversation",
+        "entity-type": "Conversation",
+        "messages": [
+          [
+            "Here is what I can do for you:"
           ]
-        },
-        {
-          "type": "question",
-          "entity": "conversation",
-          "entity-type": "Conversation",
-          "messages": [
-            "This is a getting started conversation for your chatbot."
-          ],
-          "display": {
-            "type": "quick-reply",
-            "data": [
-              "Conversation 1",
-              "Conversation 2",
-              "Help"
-            ]
-          }
+        ],
+        "display": {
+          "type": "quick-reply",
+          "data": [
+            "Conversation 1",
+            "Conversation 2"
+          ]
         }
-      ]
+      }]
     },
     "help": {
-      "steps": [
-        {
-          "type": "message",
-          "messages": [
-            "If you get stuck,you can always restart our conversation by typing 'restart'",
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "If you get stuck, you can always restart our conversation by typing 'restart'",
             "Here is what I can do for you:"
-          ],
-          "display": {
-            "type": "quick-reply",
-            "data": [
-              "Book a doctor",
-              "Contact operator"
-            ]
-          }
+          ]
+        ],
+        "display": {
+          "type": "quick-reply",
+          "data": [
+            "Conversation 1",
+            "Conversation 2"
+          ]
         }
-      ]
+      }]
     },
     "restart": {
-      "steps": [
-        {
+      "steps": [{
           "type": "message",
           "messages": [
             "Your conversation is restarted."
@@ -73,28 +70,26 @@
       ]
     },
     "conversationOne": {
-      "steps": [
-        {
-          "type": "message",
-          "messages": [
-            [
-              "This is conversation 1"
-            ]
+      "clear-context": true,
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "This is conversation 1"
           ]
-        }
-      ]
+        ]
+      }]
     },
     "conversationTwo": {
-      "steps": [
-        {
-          "type": "message",
-          "messages": [
-            [
-              "This is conversation 2"
-            ]
+      "clear-context": true,
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "This is conversation 2"
           ]
-        }
-      ]
+        ]
+      }]
     }
   }
 }

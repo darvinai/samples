@@ -35,8 +35,7 @@
   },
   "conversations": {
     "welcome": {
-      "steps": [
-        {
+      "steps": [{
           "type": "message",
           "messages": [
             "Hello there, I am the virtual assistant of ACME Hospital powered by Artificial Intelligence."
@@ -53,34 +52,32 @@
             "type": "quick-reply",
             "data": [
               "Book a doctor",
-              "Contact operator",
-              "Help"
-            ]
-          }
-        }
-      ]
-    },
-    "help": {
-      "steps": [
-        {
-          "type": "message",
-          "messages": [
-            "If you get stuck,you can always restart our conversation by typing 'restart'",
-            "Here is what I can do for you:"
-          ],
-          "display": {
-            "type": "quick-reply",
-            "data": [
-              "Book a doctor",
               "Contact operator"
             ]
           }
         }
       ]
     },
+    "help": {
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "If you get stuck, you can always restart our conversation by typing 'restart'",
+            "Here is what I can do for you:"
+          ]
+        ],
+        "display": {
+          "type": "quick-reply",
+          "data": [
+            "Book a doctor",
+            "Contact operator"
+          ]
+        }
+      }]
+    },
     "restart": {
-      "steps": [
-        {
+      "steps": [{
           "type": "message",
           "messages": [
             "Your conversation is restarted."
@@ -93,6 +90,7 @@
       ]
     },
     "contactOperator": {
+      "clear-context": true,
       "steps": [{
           "type": "confirmation",
           "entity": "confirmation",
@@ -132,6 +130,7 @@
       ]
     },
     "bookDoctor": {
+      "clear-context": true,
       "steps": [{
           "type": "question",
           "entity": "doctor",

@@ -16,28 +16,38 @@
   "conversations": {
     "welcome": {
       "steps": [{
-        "type": "question",
-        "entity": "conversation",
-        "entity-type": "Conversation",
-        "messages": [
-          [
+          "type": "message",
+          "messages": [
             "Това е началният разговор на твоя бот."
           ]
-        ],
-        "display": {
-          "type": "quick-reply",
-          "data": [
-            "Разговор 1",
-            "Разговор 2"
-          ]
+        },
+        {
+          "type": "question",
+          "entity": "conversation",
+          "entity-type": "Conversation",
+          "messages": [
+            [
+              "С какво мога да ви асистирам?"
+            ]
+          ],
+          "display": {
+            "type": "quick-reply",
+            "data": [
+              "Разговор 1",
+              "Разговор 2"
+            ]
+          }
         }
-      }]
+      ]
     },
     "help": {
       "steps": [{
         "type": "message",
         "messages": [
-          "Ако искате да започнеш разговора отначало, може да напишете ключовата дума \"рестарт\" по всяко време. С какво мога да ви асистирам?"
+          [
+            "Ако искате да започнете разговора отначало, напишете \"рестарт\".",
+            "С какво мога да ви асистирам?"
+          ]
         ],
         "display": {
           "type": "quick-reply",
@@ -62,21 +72,23 @@
       ]
     },
     "conversationOne": {
+      "clear-context": true,
       "steps": [{
         "type": "message",
         "messages": [
           [
-            "Това е разговор 1"
+            "This is conversation 1"
           ]
         ]
       }]
     },
     "conversationTwo": {
+      "clear-context": true,
       "steps": [{
         "type": "message",
         "messages": [
           [
-            "Това е разговор 2"
+            "This is conversation 2"
           ]
         ]
       }]

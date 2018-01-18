@@ -8,7 +8,7 @@
                     "bot": [   
                         [
                             { 
-                                "text": "This is a getting started conversation for your chatbot.",
+                                "text": "This is a welcome conversation for your chatbot.",
                                 "quickReplies": ["Conversation 1", "Conversation 2"]
                             }
                         ]
