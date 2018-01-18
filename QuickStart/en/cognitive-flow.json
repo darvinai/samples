@@ -74,6 +74,7 @@
       ]
     },
     "contactOperator": {
+      "clear-context": true,
       "steps": [{
           "type": "confirmation",
           "entity": "confirmation",
@@ -113,6 +114,7 @@
       ]
     },
     "bookDoctor": {
+      "clear-context": true,
       "steps": [{
           "type": "question",
           "entity": "doctor",
