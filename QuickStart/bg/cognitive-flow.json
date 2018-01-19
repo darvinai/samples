@@ -115,6 +115,7 @@
       ]
     },
     "bookDoctor": {
+      "clear-context": true,
       "steps": [{
           "type": "question",
           "entity": "doctor",
