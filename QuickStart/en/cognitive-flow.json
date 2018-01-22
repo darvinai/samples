@@ -106,7 +106,7 @@
           "type": "message",
           "stay-silent": true,
           "messages": [
-            "I am transfering you to an operator, and I will stay silent for the next 60 minutes. If you want to get back to me, please type 'restart'."
+            "I am transferring you to an operator, and I will stay silent for the next 60 minutes. If you want to get back to me, please type 'restart'."
           ]
         }
       ]
