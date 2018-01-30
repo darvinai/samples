@@ -15,6 +15,7 @@
   },
   "conversations": {
     "welcome": {
+      "type": "support",
       "steps": [{
         "type": "message",
         "messages": [
@@ -39,6 +40,7 @@
       }]
     },
     "help": {
+      "type": "support",
       "steps": [{
         "type": "message",
         "messages": [
@@ -57,6 +59,7 @@
       }]
     },
     "restart": {
+      "type": "support",
       "steps": [{
           "type": "message",
           "messages": [
@@ -70,7 +73,7 @@
       ]
     },
     "conversationOne": {
-      "clear-context": true,
+      "type": "goal",
       "steps": [{
         "type": "message",
         "messages": [
@@ -81,7 +84,7 @@
       }]
     },
     "conversationTwo": {
-      "clear-context": true,
+      "type": "goal",
       "steps": [{
         "type": "message",
         "messages": [
