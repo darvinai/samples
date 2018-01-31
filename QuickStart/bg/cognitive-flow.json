@@ -15,6 +15,7 @@
   },
   "conversations": {
     "welcome": {
+      "type": "support",
       "steps": [{
           "type": "message",
           "messages": [
@@ -42,26 +43,26 @@
       ]
     },
     "help": {
-      "steps": [
-        {
-          "type": "message",
-          "messages": [
-            [
-              "Ако искате да започнете разговора отначало, напишете \"рестарт\".",
-              "С какво мога да ви асистирам?"
-            ]
-          ],
-          "display": {
-            "type": "quick-reply",
-            "data": [
-              "Запазване на час",
-              "Връзка с оператор"
-            ]
-          }
+      "type": "support",
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "Ако искате да започнете разговора отначало, напишете \"рестарт\".",
+            "С какво мога да ви асистирам?"
+          ]
+        ],
+        "display": {
+          "type": "quick-reply",
+          "data": [
+            "Запазване на час",
+            "Връзка с оператор"
+          ]
         }
-      ]
+      }]
     },
     "restart": {
+      "type": "support",
       "steps": [{
           "type": "message",
           "messages": [
@@ -75,7 +76,7 @@
       ]
     },
     "contactOperator": {
-      "clear-context": true,
+      "type": "goal",
       "steps": [{
           "type": "confirmation",
           "entity": "confirmation",
@@ -115,7 +116,7 @@
       ]
     },
     "bookDoctor": {
-      "clear-context": true,
+      "type": "goal",
       "steps": [{
           "type": "question",
           "entity": "doctor",
