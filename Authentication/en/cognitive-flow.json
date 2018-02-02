@@ -93,37 +93,29 @@
       ]
     },
     "contactOperator": {
-      "type": "goal",
-      "steps": [{
+      "type": "support",
+      "steps": [
+        {
           "type": "confirmation",
-          "entity": "confirmation",
-          "entity-type": "Text",
-          "messages": [
-            "Do you want to continue the conversation with an operator?"
+          "entity": "redirect",
+          "messages": [ "Do you want to continue the conversation with an operator?" ]
+        },
+        {
+          "conditions": [ "{{$eq redirect false}}" ],
+          "type": "message",
+          "messages": [ 
+            "OK, I won't contact an operator yet. Let me know what you want to do next."
           ],
-          "reactions": {
-            "validations": [{
-              "type": "match",
-              "parameters": {
-                "values": [
-                  "Yes",
-                  "yes"
-                ]
-              },
-              "error-message": [
-                "OK, I won't contact an operator yet. Let me know what you want to do next."
-              ]
-            }]
-          },
           "display": {
             "type": "quick-reply",
             "data": [
-              "Yes",
-              "No"
+              "book a doctor",
+              "book NST"
             ]
           }
         },
         {
+          "conditions": [ "{{$eq redirect true}}" ],
           "type": "message",
           "stay-silent": true,
           "messages": [
@@ -249,42 +241,26 @@
         },
         {
           "type": "confirmation",
-          "entity": "confirmation",
-          "entity-type": "Text",
+          "entity": "confirmBookDoctor",
           "messages": [
             "I am booking you an appointment for {{doctor}} on {{date}} at {{time}}. Can you please confirm that the information is correct?"
-          ],
-          "reactions": {
-            "validations": [{
-              "type": "match",
-              "parameters": {
-                "values": [
-                  "Yes",
-                  "yes"
-                ]
-              },
-              "error-message": [
-                "Let me know what you want to change before I can book you an appointment."
-              ]
-            }]
-          },
-          "display": {
-            "type": "quick-reply",
-            "data": [
-              "Yes",
-              "No"
-            ]
-          }
+          ]
         },
         {
+          "conditions": [ "{{$eq confirmBookDoctor false}}" ],
+          "type": "message",
+          "messages": [ 
+            "Let me know what you want to change before I can book you an appointment."
+          ]
+        },
+        {
+          "conditions": [ "{{$eq confirmBookDoctor true}}" ],
           "type": "webhook",
-          "protected": true,
           "data-source": {
             "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Appointments",
             "method": "POST",
             "headers": {
-              "Content-Type": "application/json",
-              "Authorization": "Bearer {{auth.accessToken}}"
+              "Content-Type": "application/json"
             },
             "payload": {
               "DoctorID": "{{_raw.doctor.ExternalId}}",
