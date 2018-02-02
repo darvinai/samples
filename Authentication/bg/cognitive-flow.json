@@ -138,12 +138,13 @@
           "type": "question",
           "entity": "doctor",
           "entity-type": "Doctor",
+          "entity-display": "{{Title}} {{FirstName}} {{LastName}}",
           "messages": [
             "За кой лекар искате да си запишете час?"
           ],
           "reactions": {
             "acknowledgements": [
-              "Разбирам, че искате да си запазите час за {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}}."
+              "Разбирам, че искате да си запазите час за {{doctor}}."
             ],
             "ambiguities": [
               "Не съм сигурен, че разбрах за кой доктор точно искате да си запишете час. Моля изберете доктор:"
@@ -155,10 +156,10 @@
                   "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
                   "selector": "$[:].ExternalId"
                 },
-                "condition": "{{$in doctor.ExternalId _response}}"
+                "condition": "{{$in _raw.doctor.ExternalId _response}}"
               },
               "error-message": [
-                "За съжаление, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} няма свободни часове за момента."
+                "За съжаление, {{doctor}} няма свободни часове за момента."
               ]
             }]
           },
@@ -172,27 +173,27 @@
           "entity": "date",
           "entity-type": "Date",
           "messages": [
-            "За кой ден искате да ви запиша час за {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}}?"
+            "За кой ден искате да ви запиша час за {{doctor}}?"
           ],
           "reactions": {
             "validations": [{
               "type": "custom",
               "parameters": {
                 "data-source": {
-                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
+                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI _raw.doctor.ExternalId}}",
                   "method": "GET"
                 },
                 "condition": "{{$in ($date date 'YYYY-MM-DD') _response}}"
               },
               "error-message": [
-                "За съжаление, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} няма свободни часове за {{date}}."
+                "За съжаление, {{doctor}} няма свободни часове за {{date}}."
               ]
             }]
           },
           "display": {
             "type": "quick-reply",
             "data-source": {
-              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
+              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI _raw.doctor.ExternalId}}",
               "method": "GET"
             }
           }
@@ -202,27 +203,27 @@
           "entity": "time",
           "entity-type": "Time",
           "messages": [
-            "За кой час искате да се видите с {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} на {{date}}?"
+            "За кой час искате да се видите с {{doctor}} на {{date}}?"
           ],
           "reactions": {
             "validations": [{
               "type": "custom",
               "parameters": {
                 "data-source": {
-                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
+                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI _raw.doctor.ExternalId}}&date={{$encodeURI date}}",
                   "method": "GET"
                 },
                 "condition": "{{$in time _response}}"
               },
               "error-message": [
-                "За съжаление, {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} не е свободна на {{date}} от {{time}}."
+                "За съжаление, {{doctor}} не е свободна на {{date}} от {{time}}."
               ]
             }]
           },
           "display": {
             "type": "quick-reply",
             "data-source": {
-              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
+              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI _raw.doctor.ExternalId}}&date={{$encodeURI date}}",
               "method": "GET"
             }
           }
@@ -251,7 +252,7 @@
           "entity": "confirmation",
           "entity-type": "Text",
           "messages": [
-            "Запазвам ви час за {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} на {{date}} от {{time}}. Информацията правилна ли е?"
+            "Запазвам ви час за {{doctor}} на {{date}} от {{time}}. Информацията правилна ли е?"
           ],
           "reactions": {
             "validations": [{
@@ -286,7 +287,7 @@
               "Authorization": "Bearer {{auth.accessToken}}"
             },
             "payload": {
-              "DoctorID": "{{doctor.ExternalId}}",
+              "DoctorID": "{{_raw.doctor.ExternalId}}",
               "PatientName": "{{contactName}}",
               "Date": "{{date}}",
               "Time": "{{time}}"
@@ -296,7 +297,7 @@
         {
           "type": "message",
           "messages": [
-            "Поздравления. Имате записан час за {{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}} на {{date}} от {{time}}. Очакваме ви!"
+            "Поздравления. Имате записан час за {{doctor}} на {{date}} от {{time}}. Очакваме ви!"
           ]
         }
       ]
