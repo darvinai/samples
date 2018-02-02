@@ -255,12 +255,14 @@
         },
         {
           "conditions": [ "{{$eq confirmBookDoctor true}}" ],
+          "protected": true,
           "type": "webhook",
           "data-source": {
             "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Appointments",
             "method": "POST",
             "headers": {
-              "Content-Type": "application/json"
+              "Content-Type": "application/json",
+              "Authorization": "Bearer {{auth.accessToken}}"
             },
             "payload": {
               "DoctorID": "{{_raw.doctor.ExternalId}}",
