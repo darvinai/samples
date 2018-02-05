@@ -11,7 +11,6 @@
     "general-failure": [
       "We are experiencing technical difficulties at this moment."
     ],
-    "silence-timeout": 60,
     "authentication": {
       "entity": "auth",
       "messages": [
@@ -94,16 +93,15 @@
     },
     "contactOperator": {
       "type": "support",
-      "steps": [
-        {
+      "steps": [{
           "type": "confirmation",
           "entity": "redirect",
-          "messages": [ "Do you want to continue the conversation with an operator?" ]
+          "messages": ["Do you want to continue the conversation with an operator?"]
         },
         {
-          "conditions": [ "{{$eq redirect false}}" ],
+          "conditions": ["{{$eq redirect false}}"],
           "type": "message",
-          "messages": [ 
+          "messages": [
             "OK, I won't contact an operator yet. Let me know what you want to do next."
           ],
           "display": {
@@ -115,12 +113,16 @@
           }
         },
         {
-          "conditions": [ "{{$eq redirect true}}" ],
+          "conditions": ["{{$eq redirect true}}"],
           "type": "message",
-          "stay-silent": true,
           "messages": [
             "I am transferring you to an operator, and I will stay silent for the next 60 minutes. If you want to get back to me, please type 'restart'."
           ]
+        },
+        {
+          "conditions": ["{{$eq redirect true}}"],
+          "type": "command",
+          "command": "stay-silent 60"
         }
       ]
     },
@@ -247,14 +249,14 @@
           ]
         },
         {
-          "conditions": [ "{{$eq confirmBookDoctor false}}" ],
+          "conditions": ["{{$eq confirmBookDoctor false}}"],
           "type": "message",
-          "messages": [ 
+          "messages": [
             "Let me know what you want to change before I can book you an appointment."
           ]
         },
         {
-          "conditions": [ "{{$eq confirmBookDoctor true}}" ],
+          "conditions": ["{{$eq confirmBookDoctor true}}"],
           "protected": true,
           "type": "webhook",
           "data-source": {

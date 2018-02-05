@@ -10,8 +10,7 @@
     ],
     "general-failure": [
       "В момента имаме технически проблем, моля да ни извините."
-    ],
-    "silence-timeout": 60
+    ]
   },
   "conversations": {
     "welcome": {
@@ -99,10 +98,14 @@
         {
           "conditions": ["{{$eq redirect true}}"],
           "type": "message",
-          "stay-silent": true,
           "messages": [
             "Прехвърлям разговора ни към човек и ще си мълча в следващите 60 минути. Ако искаш отново да си говорим с мен, напиши 'рестарт'."
           ]
+        },
+        {
+          "conditions": ["{{$eq redirect true}}"],
+          "type": "command",
+          "command": "stay-silent 60"
         }
       ]
     },
@@ -229,14 +232,14 @@
           ]
         },
         {
-          "conditions": [ "{{$eq confirmBookDoctor false}}" ],
+          "conditions": ["{{$eq confirmBookDoctor false}}"],
           "type": "message",
-          "messages": [ 
+          "messages": [
             "Добре, разбирам. Няма да запазвам този час все още. Каква е промяната, която искате да направите?"
           ]
         },
         {
-          "conditions": [ "{{$eq confirmBookDoctor true}}" ],
+          "conditions": ["{{$eq confirmBookDoctor true}}"],
           "type": "webhook",
           "data-source": {
             "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Appointments",

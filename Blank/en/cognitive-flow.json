@@ -10,8 +10,7 @@
     ],
     "general-failure": [
       "We are experiencing technical difficulties at this moment."
-    ],
-    "silence-timeout": 60
+    ]
   },
   "conversations": {
     "welcome": {
