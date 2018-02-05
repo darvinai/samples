@@ -10,8 +10,7 @@
     ],
     "general-failure": [
       "В момента имаме технически проблем, моля да ни извините."
-    ],
-    "silence-timeout": 60
+    ]
   },
   "conversations": {
     "welcome": {
