@@ -75,7 +75,7 @@
       ]
     },
     "contactOperator": {
-      "type": "support",
+      "type": "goal",
       "steps": [{
           "type": "confirmation",
           "entity": "redirect",
@@ -241,6 +241,9 @@
         {
           "conditions": ["{{$eq confirmBookDoctor true}}"],
           "type": "webhook",
+          "messages": [
+            "Поздравления. Имате записан час за {{doctor}} на {{date}} от {{time}}. Очакваме ви!"
+          ],
           "data-source": {
             "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Appointments",
             "method": "POST",
@@ -254,12 +257,6 @@
               "Time": "{{time}}"
             }
           }
-        },
-        {
-          "type": "message",
-          "messages": [
-            "Поздравления. Имате записан час за {{doctor}} на {{date}} от {{time}}. Очакваме ви!"
-          ]
         }
       ]
     }

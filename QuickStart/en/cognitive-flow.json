@@ -74,7 +74,7 @@
       ]
     },
     "contactOperator": {
-      "type": "support",
+      "type": "goal",
       "steps": [{
           "type": "confirmation",
           "entity": "redirect",
@@ -240,6 +240,9 @@
         {
           "conditions": ["{{$eq confirmBookDoctor true}}"],
           "type": "webhook",
+          "messages": [
+            "Congratulations. You have an appointment with {{doctor}} for {{date}} at {{time}}. See you soon!"
+          ],
           "data-source": {
             "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Appointments",
             "method": "POST",
@@ -253,12 +256,6 @@
               "Time": "{{time}}"
             }
           }
-        },
-        {
-          "type": "message",
-          "messages": [
-            "Congratulations. You have an appointment with {{doctor}} for {{date}} at {{time}}. See you soon!"
-          ]
         }
       ]
     }
