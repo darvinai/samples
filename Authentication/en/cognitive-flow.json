@@ -11,7 +11,7 @@
     "general-failure": [
       "We are experiencing technical difficulties at this moment."
     ],
-    "previous-conversation-acknowledgements": [
+    "back-to-previous-conversation-messages": [
       "I am going back to the previous conversation now."
     ],
     "authentication": {
