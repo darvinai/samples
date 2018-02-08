@@ -18,6 +18,7 @@
   "conversations": {
     "welcome": {
       "type": "support",
+      "display-name": "начало",
       "steps": [{
           "type": "message",
           "messages": [
@@ -25,9 +26,6 @@
           ]
         },
         {
-          "type": "question",
-          "entity": "conversation",
-          "entity-type": "Conversation",
           "messages": [
             [
               "С какво мога да ви асистирам?"
@@ -45,6 +43,7 @@
     },
     "help": {
       "type": "support",
+      "display-name": "помощ",
       "steps": [{
         "type": "message",
         "messages": [
@@ -64,6 +63,7 @@
     },
     "restart": {
       "type": "support",
+      "display-name": "започни отначало",
       "steps": [{
           "type": "message",
           "messages": [
@@ -78,6 +78,7 @@
     },
     "conversationOne": {
       "type": "goal",
+      "display-name": "разговор 1",
       "steps": [{
         "type": "message",
         "messages": [
@@ -89,6 +90,7 @@
     },
     "conversationTwo": {
       "type": "goal",
+      "display-name": "разговор 2",
       "steps": [{
         "type": "message",
         "messages": [

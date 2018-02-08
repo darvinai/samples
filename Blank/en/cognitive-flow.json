@@ -18,15 +18,13 @@
   "conversations": {
     "welcome": {
       "type": "support",
+      "display-name": "welcome",
       "steps": [{
         "type": "message",
         "messages": [
           "This is a welcome conversation for your chatbot."
         ]
       }, {
-        "type": "question",
-        "entity": "conversation",
-        "entity-type": "Conversation",
         "messages": [
           [
             "Here is what I can do for you:"
@@ -43,6 +41,7 @@
     },
     "help": {
       "type": "support",
+      "display-name": "help",
       "steps": [{
         "type": "message",
         "messages": [
@@ -62,6 +61,7 @@
     },
     "restart": {
       "type": "support",
+      "display-name": "restart",
       "steps": [{
           "type": "message",
           "messages": [
@@ -76,6 +76,7 @@
     },
     "conversationOne": {
       "type": "goal",
+      "display-name": "conversation 1",
       "steps": [{
         "type": "message",
         "messages": [
@@ -87,6 +88,7 @@
     },
     "conversationTwo": {
       "type": "goal",
+      "display-name": "conversation 2",
       "steps": [{
         "type": "message",
         "messages": [

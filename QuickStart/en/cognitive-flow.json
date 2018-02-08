@@ -18,6 +18,7 @@
   "conversations": {
     "welcome": {
       "type": "support",
+      "display-name": "welcome",
       "steps": [{
           "type": "message",
           "messages": [
@@ -25,9 +26,6 @@
           ]
         },
         {
-          "type": "question",
-          "entity": "conversation",
-          "entity-type": "Conversation",
           "messages": [
             [
               "Here is what I can do for you:"
@@ -45,6 +43,7 @@
     },
     "help": {
       "type": "support",
+      "display-name": "help",
       "steps": [{
         "type": "message",
         "messages": [
@@ -64,6 +63,7 @@
     },
     "restart": {
       "type": "support",
+      "display-name": "restart",
       "steps": [{
           "type": "message",
           "messages": [
@@ -78,6 +78,7 @@
     },
     "contactOperator": {
       "type": "goal",
+      "display-name": "contact an operator",
       "steps": [{
           "type": "confirmation",
           "entity": "redirect",
@@ -113,6 +114,7 @@
     },
     "bookDoctor": {
       "type": "goal",
+      "display-name": "book a doctor",
       "steps": [{
           "type": "question",
           "entity": "doctor",
