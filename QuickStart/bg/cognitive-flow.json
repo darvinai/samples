@@ -12,7 +12,7 @@
       "В момента имаме технически проблем, моля да ни извините."
     ],
     "previous-conversation-messages": [
-      "Връщам се към предишния ни {{ conversationDisplayName }}."
+      "Връщам се към предишния ни {{ conversation }}."
     ]
   },
   "conversations": {
