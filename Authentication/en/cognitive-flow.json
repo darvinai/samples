@@ -46,16 +46,8 @@
           ]
         },
         {
-          "messages": [
-            "Here is what I can do for you:"
-          ],
-          "display": {
-            "type": "quick-reply",
-            "data": [
-              "Book a doctor",
-              "Contact operator"
-            ]
-          }
+          "type": "conversation",
+          "conversation": "help"
         }
       ]
     },
