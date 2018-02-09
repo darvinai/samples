@@ -26,18 +26,8 @@
           ]
         },
         {
-          "messages": [
-            [
-              "С какво мога да ви асистирам?"
-            ]
-          ],
-          "display": {
-            "type": "quick-reply",
-            "data": [
-              "Разговор 1",
-              "Разговор 2"
-            ]
-          }
+          "type": "conversation",
+          "conversation": "help"
         }
       ]
     },
