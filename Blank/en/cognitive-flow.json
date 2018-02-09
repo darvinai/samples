@@ -20,16 +20,24 @@
       "type": "support",
       "display-name": "welcome",
       "steps": [{
-          "type": "message",
-          "messages": [
-            "This is a welcome conversation for your chatbot."
+        "type": "message",
+        "messages": [
+          "This is a welcome conversation for your chatbot."
+        ]
+      }, {
+        "messages": [
+          [
+            "Here is what I can do for you:"
           ]
-        },
-        {
-          "type": "conversation",
-          "conversation": "help"
+        ],
+        "display": {
+          "type": "quick-reply",
+          "data": [
+            "Conversation 1",
+            "Conversation 2"
+          ]
         }
-      ]
+      }]
     },
     "help": {
       "type": "support",

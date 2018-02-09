@@ -27,8 +27,18 @@
           ]
         },
         {
-          "type": "conversation",
-          "conversation": "help"
+          "messages": [
+            [
+              "С какво мога да ви асистирам?"
+            ]
+          ],
+          "display": {
+            "type": "quick-reply",
+            "data": [
+              "Запазване на час",
+              "Връзка с оператор"
+            ]
+          }
         }
       ]
     },
