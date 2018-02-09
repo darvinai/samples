@@ -12,7 +12,7 @@
       "We are experiencing technical difficulties at this moment."
     ],
     "previous-conversation-messages": [
-      "I am going back to the {{ conversationDisplayName }} now."
+      "I am going back to the previous {{ conversationDisplayName }} now."
     ],
     "authentication": {
       "entity": "auth",
