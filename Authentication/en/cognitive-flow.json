@@ -39,7 +39,8 @@
     "welcome": {
       "type": "support",
       "display-name": "welcome",
-      "steps": [{
+      "steps": [
+        {
           "type": "message",
           "messages": [
             "Hello there, I am the virtual assistant of ACME Hospital powered by Artificial Intelligence."
@@ -54,27 +55,30 @@
     "help": {
       "type": "support",
       "display-name": "help",
-      "steps": [{
-        "type": "message",
-        "messages": [
-          [
-            "If you get stuck, you can always restart our conversation by typing 'restart'",
-            "Here is what I can do for you:"
-          ]
-        ],
-        "display": {
-          "type": "quick-reply",
-          "data": [
-            "Book a doctor",
-            "Contact operator"
-          ]
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "If you get stuck, you can always restart our conversation by typing 'restart'",
+              "Here is what I can do for you:"
+            ]
+          ],
+          "display": {
+            "type": "quick-reply",
+            "data": [
+              "Book a doctor",
+              "Contact operator"
+            ]
+          }
         }
-      }]
+      ]
     },
     "restart": {
       "type": "support",
       "display-name": "restart",
-      "steps": [{
+      "steps": [
+        {
           "type": "message",
           "messages": [
             "Your conversation is restarted."
@@ -89,13 +93,18 @@
     "contactOperator": {
       "type": "goal",
       "display-name": "contact an operator",
-      "steps": [{
+      "steps": [
+        {
           "type": "confirmation",
           "entity": "redirect",
-          "messages": ["Do you want to continue the conversation with an operator?"]
+          "messages": [
+            "Do you want to continue the conversation with an operator?"
+          ]
         },
         {
-          "conditions": ["{{$eq redirect false}}"],
+          "conditions": [
+            "{{$eq redirect false}}"
+          ],
           "type": "message",
           "messages": [
             "OK, I won't contact an operator yet. Let me know what you want to do next."
@@ -109,14 +118,18 @@
           }
         },
         {
-          "conditions": ["{{$eq redirect true}}"],
+          "conditions": [
+            "{{$eq redirect true}}"
+          ],
           "type": "message",
           "messages": [
             "I am transferring you to an operator, and I will stay silent for the next 60 minutes. If you want to get back to me, please type 'restart'."
           ]
         },
         {
-          "conditions": ["{{$eq redirect true}}"],
+          "conditions": [
+            "{{$eq redirect true}}"
+          ],
           "type": "command",
           "command": "stay-silent 60"
         }
@@ -125,7 +138,8 @@
     "bookDoctor": {
       "type": "goal",
       "display-name": "book a doctor",
-      "steps": [{
+      "steps": [
+        {
           "type": "question",
           "entity": "doctor",
           "entity-type": "Doctor",
@@ -140,19 +154,21 @@
             "ambiguities": [
               "I am not sure I understand the doctor you want to meet. Can you select one of the following?"
             ],
-            "validations": [{
-              "type": "custom",
-              "parameters": {
-                "data-source": {
-                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
-                  "selector": "$[:].ExternalId"
+            "validations": [
+              {
+                "type": "custom",
+                "parameters": {
+                  "data-source": {
+                    "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
+                    "selector": "$[:].ExternalId"
+                  },
+                  "condition": "{{$in _raw.doctor.ExternalId _response}}"
                 },
-                "condition": "{{$in _raw.doctor.ExternalId _response}}"
-              },
-              "error-message": [
-                "Unfortunately, {{doctor}} is not available."
-              ]
-            }]
+                "error-message": [
+                  "Unfortunately, {{doctor}} is not available."
+                ]
+              }
+            ]
           },
           "protected": true,
           "display": {
@@ -167,19 +183,21 @@
             "What date do you want to meet with {{doctor}}?"
           ],
           "reactions": {
-            "validations": [{
-              "type": "custom",
-              "parameters": {
-                "data-source": {
-                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI _raw.doctor.ExternalId}}",
-                  "method": "GET"
+            "validations": [
+              {
+                "type": "custom",
+                "parameters": {
+                  "data-source": {
+                    "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI _raw.doctor.ExternalId}}",
+                    "method": "GET"
+                  },
+                  "condition": "{{$in ($date date 'YYYY-MM-DD') _response}}"
                 },
-                "condition": "{{$in ($date date 'YYYY-MM-DD') _response}}"
-              },
-              "error-message": [
-                "Unfortunately, {{doctor}} is not available on {{date}}."
-              ]
-            }]
+                "error-message": [
+                  "Unfortunately, {{doctor}} is not available on {{date}}."
+                ]
+              }
+            ]
           },
           "display": {
             "type": "quick-reply",
@@ -197,19 +215,21 @@
             "What time do you want to meet {{doctor}} on {{date}}?"
           ],
           "reactions": {
-            "validations": [{
-              "type": "custom",
-              "parameters": {
-                "data-source": {
-                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI _raw.doctor.ExternalId}}&date={{$encodeURI date}}",
-                  "method": "GET"
+            "validations": [
+              {
+                "type": "custom",
+                "parameters": {
+                  "data-source": {
+                    "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI _raw.doctor.ExternalId}}&date={{$encodeURI date}}",
+                    "method": "GET"
+                  },
+                  "condition": "{{$in time _response}}"
                 },
-                "condition": "{{$in time _response}}"
-              },
-              "error-message": [
-                "Unfortunately, {{doctor}} is not available on {{date}} at {{time}}."
-              ]
-            }]
+                "error-message": [
+                  "Unfortunately, {{doctor}} is not available on {{date}} at {{time}}."
+                ]
+              }
+            ]
           },
           "display": {
             "type": "quick-reply",
@@ -227,33 +247,38 @@
             "What are your first and last names?"
           ],
           "reactions": {
-            "validations": [{
-              "type": "regex",
-              "parameters": {
-                "value": "(\\w.+\\s).+"
-              },
-              "error-message": [
-                "Please enter your first and last name."
-              ]
-            }]
+            "validations": [
+              {
+                "type": "regex",
+                "parameters": {
+                  "value": "(\\w.+\\s).+"
+                },
+                "error-message": [
+                  "Please enter your first and last name."
+                ]
+              }
+            ]
           }
         },
         {
-          "type": "confirmation",
+          "type": "entities-confirmation",
           "entity": "confirmBookDoctor",
+          "entities": [
+            "doctor",
+            "date",
+            "time"
+          ],
           "messages": [
-            "I am booking you an appointment for {{doctor}} on {{date}} at {{time}}. Can you please confirm that the information is correct?"
+            [
+              "I am booking you an appointment for {{doctor}} on {{date}} at {{time}}.",
+              "Please, confirm or select the value that you want to change."
+            ]
           ]
         },
         {
-          "conditions": ["{{$eq confirmBookDoctor false}}"],
-          "type": "message",
-          "messages": [
-            "Let me know what you want to change before I can book you an appointment."
-          ]
-        },
-        {
-          "conditions": ["{{$eq confirmBookDoctor true}}"],
+          "conditions": [
+            "{{$eq confirmBookDoctor true}}"
+          ],
           "protected": true,
           "type": "webhook",
           "messages": [
