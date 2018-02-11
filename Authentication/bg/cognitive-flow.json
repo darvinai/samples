@@ -22,7 +22,8 @@
       "acknowledgements": [
         "Влязохте успешно в системата."
       ],
-      "display": {"type": "login",
+      "display": {
+        "type": "login",
         "template": {
           "title": "Вход Болница АСМЕ София",
           "url": "https://bs-login.darvin.ai/login",
@@ -38,7 +39,8 @@
     "welcome": {
       "type": "support",
       "display-name": "начало",
-      "steps": [{
+      "steps": [
+        {
           "type": "message",
           "messages": [
             "Здравейте, аз съм асистента на Болница ACME София и мога да ви помогна с редица проблеми."
@@ -53,27 +55,30 @@
     "help": {
       "type": "support",
       "display-name": "помощ",
-      "steps": [{
-        "type": "message",
-        "messages": [
-          [
-            "Ако искате да започнете разговора отначало, напишете \"рестарт\".",
-            "С какво мога да ви асистирам?"
-          ]
-        ],
-        "display": {
-          "type": "quick-reply",
-          "data": [
-            "Запазване на час",
-            "Връзка с оператор"
-          ]
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "Ако искате да започнете разговора отначало, напишете \"рестарт\".",
+              "С какво мога да ви асистирам?"
+            ]
+          ],
+          "display": {
+            "type": "quick-reply",
+            "data": [
+              "Запазване на час",
+              "Връзка с оператор"
+            ]
+          }
         }
-      }]
+      ]
     },
     "restart": {
       "type": "support",
       "display-name": "започни отначало",
-      "steps": [{
+      "steps": [
+        {
           "type": "message",
           "messages": [
             "Вашият разговор е подновен."
@@ -88,13 +93,18 @@
     "contactOperator": {
       "type": "goal",
       "display-name": "връзка с оператор",
-      "steps": [{
+      "steps": [
+        {
           "type": "confirmation",
           "entity": "redirect",
-          "messages": ["Искаш ли да прехвърля разговора ни с човек от екипа на Болница ACME София?"]
+          "messages": [
+            "Искаш ли да прехвърля разговора ни с човек от екипа на Болница ACME София?"
+          ]
         },
         {
-          "conditions": ["{{$eq redirect false}}"],
+          "conditions": [
+            "{{$eq redirect false}}"
+          ],
           "type": "message",
           "messages": [
             "Добре, разбирам. Няма да те прехвърлям към оператор. Кажи ми отново с какво мога да ти помогна?"
@@ -108,14 +118,18 @@
           }
         },
         {
-          "conditions": ["{{$eq redirect true}}"],
+          "conditions": [
+            "{{$eq redirect true}}"
+          ],
           "type": "message",
           "messages": [
             "Прехвърлям разговора ни към човек и ще си мълча в следващите 60 минути. Ако искаш отново да си говорим с мен, напиши 'рестарт'."
           ]
         },
         {
-          "conditions": ["{{$eq redirect true}}"],
+          "conditions": [
+            "{{$eq redirect true}}"
+          ],
           "type": "command",
           "command": "stay-silent 60"
         }
@@ -124,7 +138,8 @@
     "bookDoctor": {
       "type": "goal",
       "display-name": "запазване на час",
-      "steps": [{
+      "steps": [
+        {
           "type": "question",
           "entity": "doctor",
           "entity-type": "Doctor",
@@ -139,19 +154,21 @@
             "ambiguities": [
               "Не съм сигурен, че разбрах за кой доктор точно искате да си запишете час. Моля изберете доктор:"
             ],
-            "validations": [{
-              "type": "custom",
-              "parameters": {
-                "data-source": {
-                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
-                  "selector": "$[:].ExternalId"
+            "validations": [
+              {
+                "type": "custom",
+                "parameters": {
+                  "data-source": {
+                    "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
+                    "selector": "$[:].ExternalId"
+                  },
+                  "condition": "{{$in _raw.doctor.ExternalId _response}}"
                 },
-                "condition": "{{$in _raw.doctor.ExternalId _response}}"
-              },
-              "error-message": [
-                "За съжаление, {{doctor}} няма свободни часове за момента."
-              ]
-            }]
+                "error-message": [
+                  "За съжаление, {{doctor}} няма свободни часове за момента."
+                ]
+              }
+            ]
           },
           "protected": true,
           "display": {
@@ -166,19 +183,21 @@
             "За кой ден искате да ви запиша час за {{doctor}}?"
           ],
           "reactions": {
-            "validations": [{
-              "type": "custom",
-              "parameters": {
-                "data-source": {
-                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI _raw.doctor.ExternalId}}",
-                  "method": "GET"
+            "validations": [
+              {
+                "type": "custom",
+                "parameters": {
+                  "data-source": {
+                    "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI _raw.doctor.ExternalId}}",
+                    "method": "GET"
+                  },
+                  "condition": "{{$in ($date date 'YYYY-MM-DD') _response}}"
                 },
-                "condition": "{{$in ($date date 'YYYY-MM-DD') _response}}"
-              },
-              "error-message": [
-                "За съжаление, {{doctor}} няма свободни часове за {{date}}."
-              ]
-            }]
+                "error-message": [
+                  "За съжаление, {{doctor}} няма свободни часове за {{date}}."
+                ]
+              }
+            ]
           },
           "display": {
             "type": "quick-reply",
@@ -196,19 +215,21 @@
             "За кой час искате да се видите с {{doctor}} на {{date}}?"
           ],
           "reactions": {
-            "validations": [{
-              "type": "custom",
-              "parameters": {
-                "data-source": {
-                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI _raw.doctor.ExternalId}}&date={{$encodeURI date}}",
-                  "method": "GET"
+            "validations": [
+              {
+                "type": "custom",
+                "parameters": {
+                  "data-source": {
+                    "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI _raw.doctor.ExternalId}}&date={{$encodeURI date}}",
+                    "method": "GET"
+                  },
+                  "condition": "{{$in time _response}}"
                 },
-                "condition": "{{$in time _response}}"
-              },
-              "error-message": [
-                "За съжаление, {{doctor}} не е свободна на {{date}} от {{time}}."
-              ]
-            }]
+                "error-message": [
+                  "За съжаление, {{doctor}} не е свободна на {{date}} от {{time}}."
+                ]
+              }
+            ]
           },
           "display": {
             "type": "quick-reply",
@@ -226,33 +247,38 @@
             "Какви са вашите три имена, изписани на кирилица?"
           ],
           "reactions": {
-            "validations": [{
-              "type": "regex",
-              "parameters": {
-                "value": "^([а-яА-Я\\-'`]*\\s){2}[а-яА-Я\\-'`]+$"
-              },
-              "error-message": [
-                "Опцията не е възможна. Моля, въведете вашите три имена изписани на кирилица."
-              ]
-            }]
+            "validations": [
+              {
+                "type": "regex",
+                "parameters": {
+                  "value": "^([а-яА-Я\\-'`]*\\s){2}[а-яА-Я\\-'`]+$"
+                },
+                "error-message": [
+                  "Опцията не е възможна. Моля, въведете вашите три имена изписани на кирилица."
+                ]
+              }
+            ]
           }
         },
         {
-          "type": "confirmation",
+          "type": "entities-confirmation",
           "entity": "confirmBookDoctor",
+          "entities": [
+            "doctor",
+            "date",
+            "time"
+          ],
           "messages": [
-            "Запазвам ви час за {{doctor}} на {{date}} от {{time}}. Информацията правилна ли е?"
+            [
+              "Запазвам ви час за {{doctor}} на {{date}} от {{time}}.",
+              "Моля потвърдете или изберете стойността, която искате да промените."
+            ]
           ]
         },
         {
-          "conditions": ["{{$eq confirmBookDoctor false}}"],
-          "type": "message",
-          "messages": [
-            "Добре, разбирам. Няма да запазвам този час все още. Каква е промяната, която искате да направите?"
-          ]
-        },
-        {
-          "conditions": ["{{$eq confirmBookDoctor true}}"],
+          "conditions": [
+            "{{$eq confirmBookDoctor true}}"
+          ],
           "protected": true,
           "type": "webhook",
           "messages": [
