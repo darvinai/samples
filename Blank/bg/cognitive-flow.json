@@ -11,10 +11,14 @@
     "general-failure": [
       "В момента имаме технически проблем, моля да ни извините."
     ],
-    "silence-timeout": 60
+    "previous-conversation-messages": [
+      "Връщам се към {{ conversationDisplayName }}."
+    ]
   },
   "conversations": {
     "welcome": {
+      "type": "support",
+      "display-name": "начало",
       "steps": [{
           "type": "message",
           "messages": [
@@ -22,25 +26,14 @@
           ]
         },
         {
-          "type": "question",
-          "entity": "conversation",
-          "entity-type": "Conversation",
-          "messages": [
-            [
-              "С какво мога да ви асистирам?"
-            ]
-          ],
-          "display": {
-            "type": "quick-reply",
-            "data": [
-              "Разговор 1",
-              "Разговор 2"
-            ]
-          }
+          "type": "conversation",
+          "conversation": "help"
         }
       ]
     },
     "help": {
+      "type": "support",
+      "display-name": "помощ",
       "steps": [{
         "type": "message",
         "messages": [
@@ -59,6 +52,8 @@
       }]
     },
     "restart": {
+      "type": "support",
+      "display-name": "започни отначало",
       "steps": [{
           "type": "message",
           "messages": [
@@ -72,7 +67,8 @@
       ]
     },
     "conversationOne": {
-      "clear-context": true,
+      "type": "goal",
+      "display-name": "разговор 1",
       "steps": [{
         "type": "message",
         "messages": [
@@ -83,7 +79,8 @@
       }]
     },
     "conversationTwo": {
-      "clear-context": true,
+      "type": "goal",
+      "display-name": "разговор 2",
       "steps": [{
         "type": "message",
         "messages": [
