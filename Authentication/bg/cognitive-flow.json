@@ -38,7 +38,6 @@
   "conversations": {
     "welcome": {
       "type": "support",
-      "display-name": "начало",
       "steps": [
         {
           "type": "message",
@@ -54,7 +53,6 @@
     },
     "help": {
       "type": "support",
-      "display-name": "помощ",
       "steps": [
         {
           "type": "message",
@@ -76,7 +74,6 @@
     },
     "restart": {
       "type": "support",
-      "display-name": "започни отначало",
       "steps": [
         {
           "type": "message",
