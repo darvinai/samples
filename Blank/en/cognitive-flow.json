@@ -18,7 +18,6 @@
   "conversations": {
     "welcome": {
       "type": "support",
-      "display-name": "welcome",
       "steps": [{
           "type": "message",
           "messages": [
@@ -33,7 +32,6 @@
     },
     "help": {
       "type": "support",
-      "display-name": "help",
       "steps": [{
         "type": "message",
         "messages": [
@@ -53,7 +51,6 @@
     },
     "restart": {
       "type": "support",
-      "display-name": "restart",
       "steps": [{
           "type": "message",
           "messages": [
