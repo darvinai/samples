@@ -26,7 +26,8 @@
         },
         {
           "type": "conversation",
-          "conversation": "help"
+          "conversation": "help",
+          "conditions": ["{{$not ($has conversation) }}"]
         }
       ]
     },
