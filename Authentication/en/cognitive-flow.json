@@ -165,6 +165,10 @@
                   "Unfortunately, {{doctor}} is not available."
                 ]
               }
+            ],
+            "suggestions": [
+              "Do you want to visit {{doctor}}?",
+              "Would you like to make an appointment for {{doctor}}?"
             ]
           },
           "protected": true,
@@ -254,6 +258,10 @@
                   "Please enter your first and last name."
                 ]
               }
+            ],
+            "suggestions": [
+              "Are you {{contactName}}?",
+              "Is your name {{contactName}}?"
             ]
           }
         },
