@@ -4,21 +4,34 @@
             "it": "introduces itself and enters into a conversation",
             "steps": [
                 {
-                    "user": { "text": "hi" },
-                    "bot": [   
+                    "user": {
+                        "text": "hi"
+                    },
+                    "bot": [
                         [
-                            { 
-                                "text": "This is a welcome conversation for your chatbot.",
-                                "quickReplies": ["Conversation 1", "Conversation 2"]
+                            {
+                                "text": "This is a welcome conversation for your chatbot."
+                            },
+                            {
+                                "text": "If you get stuck, you can always restart our conversation by typing 'restart'"
+                            },
+                            {
+                                "text": "Here is what I can do for you:",
+                                "quickReplies": [
+                                    "Conversation 1",
+                                    "Conversation 2"
+                                ]
                             }
                         ]
                     ]
                 },
                 {
-                    "user": { "text": "Conversation 1" },
+                    "user": {
+                        "text": "Conversation 1"
+                    },
                     "bot": [
                         [
-                            { 
+                            {
                                 "text": "This is conversation 1"
                             }
                         ]
