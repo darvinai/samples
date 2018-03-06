@@ -170,14 +170,14 @@
                     "bot": [
                         [
                             {
-                                "text": "I am booking you an appointment for Dr. John Burke on 2017.08.07 at 15:00."
+                                "text": "I am booking you an appointment for Dr. John Burke on 2017.08.08 at 15:00."
                             },
                             {
                                 "text": "Please, confirm or select the value that you want to change.",
                                 "quickReplies": [
                                     "Confirm",
                                     "Dr. John Burke",
-                                    "2017.08.07",
+                                    "2017.08.08",
                                     "15:00"
                                 ]
                             }
