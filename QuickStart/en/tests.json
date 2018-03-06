@@ -83,22 +83,6 @@
                     "bot": [
                         [
                             {
-                                "text": "I am booking you an appointment for Dr. John Burke on 2017.08.07 at 10:00. Can you please confirm that the information is correct?",
-                                "quickReplies": [
-                                    "Yes",
-                                    "No"
-                                ]
-                            }
-                        ]
-                    ]
-                },
-                {
-                    "user": {
-                        "text": "Yes"
-                    },
-                    "bot": [
-                        [
-                            {
                                 "text": "What are your first and last names?"
                             }
                         ]
@@ -107,6 +91,27 @@
                 {
                     "user": {
                         "text": "John Smith"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "I am booking you an appointment for Dr. John Burke on 2017.08.07 at 10:00."
+                            },
+                            {
+                                "text": "Please, confirm or select the value that you want to change.",
+                                "quickReplies": [
+                                    "Confirm",
+                                    "Dr. John Burke",
+                                    "2017.08.07",
+                                    "10:00"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "Confirm"
                     },
                     "bot": [
                         [
@@ -165,10 +170,15 @@
                     "bot": [
                         [
                             {
-                                "text": "I am booking you an appointment for Dr. John Burke on 2017.08.08 at 15:00. Can you please confirm that the information is correct?",
+                                "text": "I am booking you an appointment for Dr. John Burke on 2017.08.07 at 10:00."
+                            },
+                            {
+                                "text": "Please, confirm or select the value that you want to change.",
                                 "quickReplies": [
-                                    "Yes",
-                                    "No"
+                                    "Confirm",
+                                    "Dr. John Burke",
+                                    "2017.08.07",
+                                    "10:00"
                                 ]
                             }
                         ]
@@ -176,7 +186,7 @@
                 },
                 {
                     "user": {
-                        "text": "Yes"
+                        "text": "Confirm"
                     },
                     "bot": [
                         [
