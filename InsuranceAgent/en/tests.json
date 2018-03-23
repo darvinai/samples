@@ -1,4 +1,7 @@
 {
+    "parameters": {
+        "webviewsUrl": "https://webviews.darvin.ai/v1"
+    },
     "scenarios": [
         {
             "it": "make new insurance + ask about insurance coverage",
