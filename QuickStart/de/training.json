@@ -25,6 +25,26 @@
           ]
         },
         {
+          "name": "Doctor",
+          "lookup-strategy": "keywords",
+          "data": [],
+          "dynamic-data": {
+            "data-source": {
+              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
+              "method": "GET",
+              "headers": {
+                "Content-Type": "application/json"
+              }
+            },
+            "value-template": "{{Title}} {{FirstName}} {{LastName}}",
+            "synonym-templates": [
+              "{{Title}} {{LastName}}",
+              "{{LastName}}",
+              "{{FirstName}} {{LastName}}"
+            ]
+          }
+        },
+        {
           "value": "restart",
           "expressions": [
             "Neustart",
@@ -98,7 +118,7 @@
             "Was macht dich einzigartig?",
             "Befehle",
             "assistiere mir",
-            "Ich bin verloren","Any time :)",
+            "Ich bin verloren", "Any time :)",
             "Just doing my job!",
             "You're welcome :)",
             "Ich kann nicht finden, wie ich Hilfe brauche",
