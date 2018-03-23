@@ -1,0 +1,759 @@
+{
+    "scenarios": [
+        {
+            "it": "make new insurance + ask about insurance coverage",
+            "mocks": {
+                "https://api.everlive.com/v1/2mjhvesaxbgg0qiu/Functions/recommendInsurances?startDate=2015.03.11&endDate=2015.04.01": {
+                    "GET": [
+                        {
+                            "Name": "Travel Medical Insurance",
+                            "Features": [
+                                "Travel medical insurance for individuals, families and groups",
+                                "Renewable up to 24 months",
+                                "Deductible options from $0 to $2,200",
+                                "Maximum limits from $50,000 to $1,000,000",
+                                "Coverage for medical expenses, evacuation, and repatriation"
+                            ],
+                            "Id": "b066f480-130d-11e8-bcc2-a1d7ccca5ae1",
+                            "Price": 13.6,
+                            "Days": 3
+                        },
+                        {
+                            "Name": "Patriot WorldWide Plus",
+                            "Features": [
+                                "Renewable up to 24 months",
+                                "Deductible options from $0 to $2,500",
+                                "Maximum Limits from $50,000 to $500,000 ",
+                                "Coverage for acute onset of pre-existing conditions"
+                            ],
+                            "Id": "f252b7d0-130d-11e8-8b78-370e90d8b030",
+                            "Price": 25.3,
+                            "Days": 3
+                        },
+                        {
+                            "Name": "Global Medical Insurance",
+                            "Features": [
+                                "Long-term (1+ year) comprehensive worldwide medical insurance for individuals and families",
+                                "Annually renewable medical coverage",
+                                "Deductible options from $100 to $25,000",
+                                "Maximum limit options from $1,000,000 to $4,000,000"
+                            ],
+                            "Id": "d25e0600-130d-11e8-bcc2-a1d7ccca5ae1",
+                            "Price": 18.9,
+                            "Days": 3
+                        }
+                    ]
+                },
+                "https://api.everlive.com/v1/2mjhvesaxbgg0qiu/Functions/recommendInsurance?startDate=2015.03.11&endDate=2015.04.01&id=f252b7d0-130d-11e8-8b78-370e90d8b030": {
+                    "GET": {
+                        "Name": "Patriot WorldWide Plus",
+                        "Features": [
+                            "Renewable up to 24 months",
+                            "Deductible options from $0 to $2,500",
+                            "Maximum Limits from $50,000 to $500,000 ",
+                            "Coverage for acute onset of pre-existing conditions"
+                        ],
+                        "Id": "f252b7d0-130d-11e8-8b78-370e90d8b030",
+                        "Price": 25.3,
+                        "Days": 3
+                    }
+                }
+            },
+            "steps": [
+                {
+                    "user": {
+                        "text": "hi"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Hello there, I am your personal travel Insurance Agent."
+                            },
+                            {
+                                "text": "I can help you find the best insurance plans for you and your family."
+                            },
+                            {
+                                "text": "What can I do for you?",
+                                "quickReplies": [
+                                    "New insurance",
+                                    "Fill a claim",
+                                    "Contact operator"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "New insurance"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "What is your age?"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "30"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "What date do you want your insurance to start from?"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "march 11 2015"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "What date is the last day of your insurance coverage?"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "april 1 2015"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "What is the country that you plan to visit?",
+                                "template": {
+                                    "type": "button",
+                                    "buttons": [
+                                        {
+                                            "url": "{{webviewsUrl}}",
+                                            "title": "Choose a country"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "bulgaria"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "What is your country of residence?",
+                                "template": {
+                                    "type": "button",
+                                    "buttons": [
+                                        {
+                                            "url": "{{webviewsUrl}}",
+                                            "title": "Choose a country"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "Italy"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Ok, searching for an insurance plan for Bulgaria from 11 March 2015 to 1 April 2015."
+                            },
+                            {
+                                "text": "Please confirm or select the value that you want to change.",
+                                "quickReplies": [
+                                    "Confirm",
+                                    "30",
+                                    "11 March 2015",
+                                    "1 April 2015",
+                                    "Bulgaria",
+                                    "Italy"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "what sports are covered by the insurance?"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Do you have some particular sport in mind?",
+                                "quickReplies": [
+                                    "Yes",
+                                    "No"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "no"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "You can check the full list of the included sports at https://..."
+                            },
+                            {
+                                "text": "So..."
+                            },
+                            {
+                                "text": "Ok, searching for an insurance plan for Bulgaria from 11 March 2015 to 1 April 2015."
+                            },
+                            {
+                                "text": "Please confirm or select the value that you want to change.",
+                                "quickReplies": [
+                                    "Confirm",
+                                    "30",
+                                    "11 March 2015",
+                                    "1 April 2015",
+                                    "Bulgaria",
+                                    "Italy"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "are snowboard incidents covered by the insurance"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "All winter sports are included in our health insurance plans."
+                            },
+                            {
+                                "text": "You can check the full list of the included sports at https://..."
+                            },
+                            {
+                                "text": "So..."
+                            },
+                            {
+                                "text": "Ok, searching for an insurance plan for Bulgaria from 11 March 2015 to 1 April 2015."
+                            },
+                            {
+                                "text": "Please confirm or select the value that you want to change.",
+                                "quickReplies": [
+                                    "Confirm",
+                                    "30",
+                                    "11 March 2015",
+                                    "1 April 2015",
+                                    "Bulgaria",
+                                    "Italy"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "Confirm"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Here are the 3 insurance options we recommend.",
+                                "template": {
+                                    "type": "button",
+                                    "buttons": [
+                                        {
+                                            "url": "{{webviewsUrl}}",
+                                            "title": "Select an option"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "Patriot WorldWide Plus"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Here are the details for Patriot WorldWide Plus."
+                            },
+                            {
+                                "text": "The total cost for 21 days is $81.10 and you get:"
+                            },
+                            {
+                                "text": "• Renewable up to 24 months"
+                            },
+                            {
+                                "text": "• Deductible options from $0 to $2,500"
+                            },
+                            {
+                                "text": "• Maximum Limits from $50,000 to $500,000 "
+                            },
+                            {
+                                "text": "• Coverage for acute onset of pre-existing conditions"
+                            },
+                            {
+                                "text": "Do you want me to sign you up for this plan?",
+                                "quickReplies": [
+                                    "Yes",
+                                    "No"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "Yes"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "What is your email address?"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "user@some.mail"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "You should have an email confirmation with further instructions."
+                            },
+                            {
+                                "text": "Thank you for doing business with us!"
+                            }
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "it": "fill claim - emergency + small talk",
+            "steps": [
+                {
+                    "user": {
+                        "text": "I'd like to fill a claim"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Hello there, I am your personal travel Insurance Agent."
+                            },
+                            {
+                                "text": "I can help you find the best insurance plans for you and your family."
+                            },
+                            {
+                                "text": "Do you require an immediate medical assistance?",
+                                "quickReplies": [
+                                    "Yes",
+                                    "No"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "yes"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "What is your location right now?"
+                            },
+                            {
+                                "template": {
+                                    "type": "location-picker",
+                                    "buttons": [
+                                        {
+                                            "title": "Pick a location"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "location": {
+                            "latitude": 42.6977082,
+                            "longitude": 23.3218675
+                        }
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "What is your phone number?"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "123456"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "An emergency team will be in touch with you in 30 seconds."
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "thanks"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": [
+                                    "Any time :)",
+                                    "Just doing my job!",
+                                    "You're welcome :)"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "bye"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": [
+                                    "Bye!",
+                                    "See you!",
+                                    "Good bye!"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "hi"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "What can I do for you?",
+                                "quickReplies": [
+                                    "New insurance",
+                                    "Fill a claim",
+                                    "Contact operator"
+                                ]
+                            }
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "it": "fill claim - send documents",
+            "steps": [
+                {
+                    "user": {
+                        "text": "I'd like to fill a claim"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Hello there, I am your personal travel Insurance Agent."
+                            },
+                            {
+                                "text": "I can help you find the best insurance plans for you and your family."
+                            },
+                            {
+                                "text": "Do you require an immediate medical assistance?",
+                                "quickReplies": [
+                                    "Yes",
+                                    "No"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "no"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Have you obtained all necessary documents to help us determine the expense that can be covered by your insurance plan?",
+                                "quickReplies": [
+                                    "Yes",
+                                    "No"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "what are the required documents?"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "You need to obtain an itemized bill from your doctor or medical provider before you can make a claim request."
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "yes"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "What is your valid insurance number?",
+                                "quickReplies": [
+                                    "AN192181B",
+                                    "NB887712C",
+                                    "OA298717J"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "AN192181B"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "What's the total amount that you claim?"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "558.25"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Can you take a picture of your billed amount?"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "attachments": [
+                            {
+                                "payload": {
+                                    "url": "http://storage.googleapis.com/726f908084d742e7be16fca0374f9edf/62aaa0d8-3229-4ff3-b8af-e2d34326e49b/invoice.png"
+                                }
+                            }
+                        ]
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "We are about to fill a claim for 558.25."
+                            },
+                            {
+                                "text": "Please confirm this information or select the value that you want to change.",
+                                "quickReplies": [
+                                    "Confirm",
+                                    "AN192181B",
+                                    "558.25",
+                                    "Receipt picture"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "Confirm"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Your claim has been successfully filled."
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "thanks"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": [
+                                    "You're welcome :)",
+                                    "Just doing my job!",
+                                    "Any time :)"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "hi"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "What can I do for you?",
+                                "quickReplies": [
+                                    "New insurance",
+                                    "Fill a claim",
+                                    "Contact operator"
+                                ]
+                            }
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "it": "contact operator",
+            "steps": [
+                {
+                    "user": {
+                        "text": "contact operator"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Hello there, I am your personal travel Insurance Agent."
+                            },
+                            {
+                                "text": "I can help you find the best insurance plans for you and your family."
+                            },
+                            {
+                                "text": "Do you want to continue the conversation with an operator?",
+                                "quickReplies": [
+                                    "Yes",
+                                    "No"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "yes"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "I am transferring you to an operator, and I will stay silent for the next 60 minutes. If you want to get back to me, please type 'restart'."
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "helooo"
+                    },
+                    "bot": [
+                        []
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "restart"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Your conversation is restarted."
+                            },
+                            {
+                                "text": "Hello there, I am your personal travel Insurance Agent."
+                            },
+                            {
+                                "text": "I can help you find the best insurance plans for you and your family."
+                            },
+                            {
+                                "text": "What can I do for you?",
+                                "quickReplies": [
+                                    "New insurance",
+                                    "Fill a claim",
+                                    "Contact operator"
+                                ]
+                            }
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "it": "contact operator - refuse",
+            "steps": [
+                {
+                    "user": {
+                        "text": "contact operator"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Hello there, I am your personal travel Insurance Agent."
+                            },
+                            {
+                                "text": "I can help you find the best insurance plans for you and your family."
+                            },
+                            {
+                                "text": "Do you want to continue the conversation with an operator?",
+                                "quickReplies": [
+                                    "Yes",
+                                    "No"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "no"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "What can I do for you?",
+                                "quickReplies": [
+                                    "New insurance",
+                                    "Fill a claim",
+                                    "Contact operator"
+                                ]
+                            }
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}
