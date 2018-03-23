@@ -1,0 +1,92 @@
+{
+  "commands": {
+    "NEXT-PAGE": [
+      "Nächste 5"
+    ]
+  },
+  "settings": {
+    "invalid-replies": [
+      "Ich bin mir nicht sicher, ob ich verstanden habe, was du gesagt hast."
+    ],
+    "general-failure": [
+      "Wir haben technische Schwierigkeiten in diesem Moment."
+    ],
+    "previous-conversation-messages": [
+      "Ich gehe jetzt zurück zum {{ conversationDisplayName }}."
+    ]
+  },
+  "conversations": {
+    "welcome": {
+      "type": "support",
+      "steps": [{
+          "type": "message",
+          "messages": [
+            "Dies ist eine willkommene Konversation für Ihren Chatbot."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "help",
+          "conditions": ["{{$not ($has conversation) }}"]
+        }
+      ]
+    },
+    "help": {
+      "type": "support",
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "Wenn Sie nicht weiterkommen, können Sie unsere Konversation jederzeit mit 'Neustart' neu starten.",
+            "Hier ist was ich für dich tun kann:"
+          ]
+        ],
+        "display": {
+          "type": "quick-reply",
+          "data": [
+            "Konversation 1",
+            "Konversation 2"
+          ]
+        }
+      }]
+    },
+    "restart": {
+      "type": "support",
+      "steps": [{
+          "type": "message",
+          "messages": [
+            "Ihre Konversation wird neu gestartet."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
+        }
+      ]
+    },
+    "conversationOne": {
+      "type": "goal",
+      "display-name": "conversation 1",
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "Das ist Konversation 1"
+          ]
+        ]
+      }]
+    },
+    "conversationTwo": {
+      "type": "goal",
+      "display-name": "conversation 2",
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "This is conversation 2"
+          ]
+        ]
+      }]
+    }
+  }
+}

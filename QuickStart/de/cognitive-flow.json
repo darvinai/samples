@@ -1,0 +1,275 @@
+{
+  "commands": {
+    "NEXT-PAGE": [
+      "Nächste 5"
+    ]
+  },
+  "settings": {
+    "invalid-replies": [
+      "Ich bin mir nicht sicher, ob ich verstanden habe, was du gesagt hast."
+    ],
+    "general-failure": [
+      "Wir haben technische Schwierigkeiten in diesem Moment."
+    ],
+    "previous-conversation-messages": [
+      "Ich gehe jetzt zurück zum {{ conversationDisplayName }}."
+    ]
+  },
+  "conversations": {
+    "welcome": {
+      "type": "support",
+      "steps": [{
+          "type": "message",
+          "messages": [
+            "Hallo, ich bin der virtuelle Assistent des ACME-Krankenhauses mit künstlicher Intelligenz."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "help",
+          "conditions": ["{{$not ($has conversation) }}"]
+        }
+      ]
+    },
+    "help": {
+      "type": "support",
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "Wenn Sie nicht weiterkommen, können Sie unsere Konversation jederzeit mit 'Neustart' neu starten.",
+            "Hier ist was ich für dich tun kann:"
+          ]
+        ],
+        "display": {
+          "type": "quick-reply",
+          "data": [
+            "Buchen Sie einen Arzt",
+            "Kontakt Betreiber"
+          ]
+        }
+      }]
+    },
+    "restart": {
+      "type": "support",
+      "steps": [{
+          "type": "message",
+          "messages": [
+            "Ihre Konversation wird neu gestartet."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
+        }
+      ]
+    },
+    "contactOperator": {
+      "type": "goal",
+      "display-name": "contact an operator",
+      "steps": [{
+          "type": "confirmation",
+          "entity": "redirect",
+          "messages": [
+            "Möchten Sie die Konversation mit einem Operator fortsetzen?"
+          ]
+        },
+        {
+          "conditions": [
+            "{{$eq redirect false}}"
+          ],
+          "type": "message",
+          "messages": [
+            "OK, ich werde einen Operator noch nicht kontaktieren. Lass mich wissen, was du als nächstes tun willst."
+          ],
+          "display": {
+            "type": "quick-reply",
+            "data": [
+              "Buchen Sie einen Arzt",
+              "Kontakt Betreiber"
+            ]
+          }
+        },
+        {
+          "conditions": [
+            "{{$eq redirect true}}"
+          ],
+          "type": "message",
+          "messages": [
+            "Ich übergebe Sie an einen Operator, und ich werde die nächsten 60 Minuten still bleiben. Wenn Sie zu mir zurückkehren wollen, geben Sie bitte 'neustart' ein."
+          ]
+        },
+        {
+          "conditions": [
+            "{{$eq redirect true}}"
+          ],
+          "type": "command",
+          "command": "stay-silent 60"
+        }
+      ]
+    },
+    "bookDoctor": {
+      "type": "goal",
+      "display-name": "book a doctor",
+      "steps": [{
+          "type": "question",
+          "entity": "doctor",
+          "entity-type": "Doctor",
+          "entity-display": "{{Title}} {{FirstName}} {{LastName}}",
+          "messages": [
+            "Wie heißt der Arzt, den du sehen willst?"
+          ],
+          "reactions": {
+            "acknowledgements": [
+              "Ich verstehe, dass Sie sich mit einem Arzt {{doctor}} treffen wollen."
+            ],
+            "ambiguities": [
+              "Ich bin mir nicht sicher, ob ich den Arzt verstehe, den Sie treffen wollen. Können Sie eines der folgenden wählen?"
+            ],
+            "validations": [{
+              "type": "custom",
+              "parameters": {
+                "data-source": {
+                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
+                  "selector": "$[:].ExternalId"
+                },
+                "condition": "{{$in _raw.doctor.ExternalId _response}}"
+              },
+              "error-message": [
+                "{{doctor}} ist leider nicht verfügbar."
+              ]
+            }],
+            "suggestions": [
+              "Möchtest du {{doctor}} besuchen?",
+              "Möchten Sie einen Termin für {{doctor}} vereinbaren?"
+            ]
+          },
+          "display": {
+            "type": "quick-reply"
+          }
+        },
+        {
+          "type": "question",
+          "entity": "date",
+          "entity-type": "Date",
+          "messages": [
+            "Mit welchem ​​Datum möchten Sie sich mit {{doctor}} treffen?"
+          ],
+          "reactions": {
+            "validations": [{
+              "type": "custom",
+              "parameters": {
+                "data-source": {
+                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI _raw.doctor.ExternalId}}",
+                  "method": "GET"
+                },
+                "condition": "{{$in ($date date 'YYYY-MM-DD') _response}}"
+              },
+              "error-message": [
+                "Leider ist {{doctor}} am {{date}} nicht verfügbar."
+              ]
+            }]
+          },
+          "display": {
+            "type": "quick-reply",
+            "data-source": {
+              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI _raw.doctor.ExternalId}}",
+              "method": "GET"
+            }
+          }
+        },
+        {
+          "type": "question",
+          "entity": "time",
+          "entity-type": "Time",
+          "messages": [
+            "Wann möchten Sie {{doctor}} am {{date}} treffen?"
+          ],
+          "reactions": {
+            "validations": [{
+              "type": "custom",
+              "parameters": {
+                "data-source": {
+                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI _raw.doctor.ExternalId}}&date={{$encodeURI date}}",
+                  "method": "GET"
+                },
+                "condition": "{{$in time _response}}"
+              },
+              "error-message": [
+                "Leider ist {{doctor}} am {{date}} um {{time}} nicht verfügbar."
+              ]
+            }]
+          },
+          "display": {
+            "type": "quick-reply",
+            "data-source": {
+              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI _raw.doctor.ExternalId}}&date={{$encodeURI date}}",
+              "method": "GET"
+            }
+          }
+        },
+        {
+          "type": "question",
+          "is-explicit": true,
+          "entity": "contactName",
+          "entity-type": "Text",
+          "messages": [
+            "Was sind deine Vor- und Nachnamen?"
+          ],
+          "reactions": {
+            "validations": [{
+              "type": "regex",
+              "parameters": {
+                "value": "(\\w.+\\s).+"
+              },
+              "error-message": [
+                "Bitte geben Sie Ihren Vor- und Nachnamen ein."
+              ]
+            }],
+            "suggestions": [
+              "Sind Sie {{contactName}}?",
+              "Ist dein Name {{contactName}}?"
+            ]
+          }
+        },
+        {
+          "type": "entities-confirmation",
+          "entity": "confirmBookDoctor",
+          "entities": [
+            "doctor",
+            "date",
+            "time"
+          ],
+          "messages": [
+            [
+              "Ich buche Ihnen am {{date}} um {{time}} einen Termin für {{doctor}}.",
+              "Bitte bestätigen Sie oder wählen Sie den Wert, den Sie ändern möchten."
+            ]
+          ]
+        },
+        {
+          "conditions": [
+            "{{$eq confirmBookDoctor true}}"
+          ],
+          "type": "webhook",
+          "messages": [
+            "Herzlichen Glückwunsch. Sie haben einen Termin mit {{doctor}} für {{date}} um {{time}}. Bis bald!"
+          ],
+          "data-source": {
+            "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Appointments",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "payload": {
+              "DoctorID": "{{_raw.doctor.ExternalId}}",
+              "PatientName": "{{contactName}}",
+              "Date": "{{date}}",
+              "Time": "{{time}}"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
