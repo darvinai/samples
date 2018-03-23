@@ -1,0 +1,259 @@
+{
+    "scenarios": [{
+            "it": "completes a straightforward conversation",
+            "steps": [{
+                    "user": {
+                        "text": "Hallo"
+                    },
+                    "bot": [
+                        [{
+                                "text": "Hallo, ich bin der virtuelle Assistent des ACME-Krankenhauses mit künstlicher Intelligenz."
+                            },
+                            {
+                                "text": "Wenn Sie nicht weiterkommen, können Sie unsere Konversation jederzeit mit 'Neustart' neu starten."
+                            },
+                            {
+                                "text": "Hier ist was ich für dich tun kann:",
+                                "quickReplies": [
+                                    "Buchen Sie einen Arzt",
+                                    "Kontakt Betreiber"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "Buchen Sie einen Arzt"
+                    },
+                    "bot": [
+                        [{
+                            "text": "Wie heißt der Arzt, den du sehen willst?",
+                            "quickReplies": [
+                                "Dr. David Alcutt",
+                                "Dr. John Burke",
+                                "Dr. Mary CanNeinn"
+                            ]
+                        }]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "John Burke"
+                    },
+                    "bot": [
+                        [{
+                            "text": "Mit welchem ​​Datum möchten Sie sich mit Dr. John Burke treffen?",
+                            "quickReplies": [
+                                "2017-08-07",
+                                "2017-08-15",
+                                "2017-08-24"
+                            ]
+                        }]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "2017-08-07"
+                    },
+                    "bot": [
+                        [{
+                            "text": "Wann möchten Sie Dr. John Burke am 2017-08-07 treffen?",
+                            "quickReplies": [
+                                "9:30",
+                                "10:00",
+                                "10:30"
+                            ]
+                        }]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "10:00"
+                    },
+                    "bot": [
+                        [{
+                            "text": "Was sind deine Vor- und Nachnamen?"
+                        }]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "John Smith"
+                    },
+                    "bot": [
+                        [{
+                                "text": "Ich buche Ihnen am 2017.08.07 um 10:00 einen Termin für Dr. John Burke."
+                            },
+                            {
+                                "text": "Bitte bestätigen Sie oder wählen Sie den Wert, den Sie ändern möchten.",
+                                "quickReplies": [
+                                    "Bestätigen",
+                                    "Dr. John Burke",
+                                    "2017.08.07",
+                                    "10:00"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "Bestätigen"
+                    },
+                    "bot": [
+                        [{
+                            "text": "Herzlichen Glückwunsch. Sie haben einen Termin mit Dr. John Burke für 2017.08.07 um 10:00. Bis bald!"
+                        }]
+                    ]
+                }
+            ],
+            "mocks": {
+                "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId=24806": {
+                    "GET": [
+                        "2017-08-07",
+                        "2017-08-15",
+                        "2017-08-24"
+                    ]
+                },
+                "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId=24806&date=2017.08.07": {
+                    "GET": [
+                        "9:30",
+                        "10:00",
+                        "10:30"
+                    ]
+                },
+                "https://api.everlive.com/v1/niuqpjk7bubu0282/Appointments": {
+                    "POST": {}
+                }
+            }
+        },
+        {
+            "it": "completes a short conversation",
+            "steps": [{
+                    "user": {
+                        "text": "Hallo! Ich möchte am 8. August 2017 um 15:00 einen Termin für Dr. Burke buchen."
+                    },
+                    "bot": [
+                        [{
+                                "text": "Hallo, ich bin der virtuelle Assistent von ACME Hospital mit künstlicher Intelligenz."
+                            },
+                            {
+                                "text": "Ich verstehe, dass Sie sich mit Dr. John Burke treffen wollen."
+                            },
+                            {
+                                "text": "Was sind deine Vor- und Nachnamen?"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "John Smith"
+                    },
+                    "bot": [
+                        [{
+                                "text": "Ich buche Ihnen einen Termin für Dr. John Burke am 08.08.2017 um 15:00 Uhr."
+                            },
+                            {
+                                "text": "Bitte bestätigen oder wählen Sie den Wert, den Sie ändern möchten.",
+                                "quickReplies": [
+                                    "Bestätigen",
+                                    "Dr. John Burke",
+                                    "2017.08.08",
+                                    "15:00"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "Bestätigen"
+                    },
+                    "bot": [
+                        [{
+                            "text": "Herzliche Glückwünsche. Sie haben einen Termin mit Dr. John Burke für 2017.08.08 um 15:00 Uhr. Bis bald!"
+                        }]
+                    ]
+                }
+            ],
+            "mocks": {
+                "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId=24806": {
+                    "GET": [
+                        "2017-08-08",
+                        "2017-08-15",
+                        "2017-08-24"
+                    ]
+                },
+                "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId=24806&date=2017.08.08": {
+                    "GET": [
+                        "9:30",
+                        "10:00",
+                        "15:00"
+                    ]
+                },
+                "https://api.everlive.com/v1/niuqpjk7bubu0282/Appointments": {
+                    "POST": {}
+                }
+            }
+        },
+        {
+            "it": "transfers chat to operator",
+            "steps": [{
+                    "user": {
+                        "text": "Hallo"
+                    },
+                    "bot": [
+                        [{
+                                "text": "Hallo, ich bin der virtuelle Assistent von ACME Hospital mit künstlicher Intelligenz."
+                            },
+                            {
+                                "text": "Wenn Sie nicht weiterkommen, können Sie unsere Unterhaltung jederzeit mit 'Neustart' neu starten."
+                            },
+                            {
+                                "text": "Hier ist was ich für dich tun kann:",
+                                "quickReplies": [
+                                    "Buchen Sie einen Arzt",
+                                    "Kontakt Betreiber"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "Contact operator"
+                    },
+                    "bot": [
+                        [{
+                            "text": "Möchten Sie die Unterhaltung mit einem Operator fortsetzen?",
+                            "quickReplies": [
+                                "Ja",
+                                "Nein"
+                            ]
+                        }]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "Ja"
+                    },
+                    "bot": [
+                        [{
+                            "text": "Ich übergebe Sie an einen Operator, und ich werde die nächsten 60 Minuten still bleiben. Wenn Sie zu mir zurückkehren wollen, geben Sie bitte 'neustart' ein."
+                        }]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "Vielleicht möchte ich einen Arzt buchen"
+                    },
+                    "bot": [
+                        []
+                    ]
+                }
+            ]
+        }
+    ]
+}
