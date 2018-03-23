@@ -25,26 +25,6 @@
           ]
         },
         {
-          "name": "Doctor",
-          "lookup-strategy": "keywords",
-          "data": [],
-          "dynamic-data": {
-            "data-source": {
-              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
-              "method": "GET",
-              "headers": {
-                "Content-Type": "application/json"
-              }
-            },
-            "value-template": "{{Title}} {{FirstName}} {{LastName}}",
-            "synonym-templates": [
-              "{{Title}} {{LastName}}",
-              "{{LastName}}",
-              "{{FirstName}} {{LastName}}"
-            ]
-          }
-        },
-        {
           "value": "restart",
           "expressions": [
             "restart",
@@ -126,6 +106,26 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Doctor",
+      "lookup-strategy": "keywords",
+      "data": [],
+      "dynamic-data": {
+        "data-source": {
+          "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
+          "method": "GET",
+          "headers": {
+            "Content-Type": "application/json"
+          }
+        },
+        "value-template": "{{Title}} {{FirstName}} {{LastName}}",
+        "synonym-templates": [
+          "{{Title}} {{LastName}}",
+          "{{LastName}}",
+          "{{FirstName}} {{LastName}}"
+        ]
+      }
     },
     {
       "name": "SmallTalk",
