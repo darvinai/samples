@@ -206,33 +206,26 @@
                     },
                     "bot": [
                         [{
-                                "text": "Hallo, ich bin der virtuelle Assistent des ACME-Krankenhauses mit künstlicher Intelligenz."
-                            },
-                            {
-                                "text": "Wenn Sie nicht weiterkommen, können Sie unsere Unterhaltung jederzeit mit 'Neustart' neu starten."
-                            },
-                            {
-                                "text": "Hier ist was ich für dich tun kann:",
-                                "quickReplies": [
-                                    "Buchen Sie einen Arzt",
-                                    "Kontakt Betreiber"
-                                ]
-                            }
-                        ]
+                            "text": "Hallo, ich bin der virtuelle Assistent des ACME-Krankenhauses mit künstlicher Intelligenz."
+                        }, {
+                            "text": "Wenn Sie nicht weiterkommen, können Sie unsere Konversation jederzeit mit 'Neustart' neu starten."
+                        }, {
+                            "text": "Hier ist was ich für dich tun kann:",
+                            "quickReplies": ["Buchen Sie einen Arzt", "Kontakt Betreiber"]
+                        }]
+
                     ]
                 },
                 {
                     "user": {
-                        "text": "Kontakt Betreiber"
+                        "text": "Kontaktieren Sie Support"
                     },
                     "bot": [
                         [{
-                            "text": "Möchten Sie die Unterhaltung mit einem Operator fortsetzen?",
-                            "quickReplies": [
-                                "Ja",
-                                "Nein"
-                            ]
+                            "text": "Möchten Sie die Konversation mit einem Operator fortsetzen?",
+                            "quickReplies": ["Ja", "Nein"]
                         }]
+
                     ]
                 },
                 {
