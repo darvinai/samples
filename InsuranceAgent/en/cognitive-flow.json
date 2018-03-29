@@ -168,7 +168,7 @@
                 {
                   "type": "custom",
                   "parameters": {
-                    "condition": "{{$gt _raw.endDate _raw.startDate}}"
+                    "condition": "{{$gt endDate startDate}}"
                   },
                   "error-message": [
                     "The end date of your insurance cannot be before your start date."
@@ -245,7 +245,7 @@
             "display": {
               "type": "carousel",
               "data-source": {
-                "endpoint": "https://api.everlive.com/v1/2mjhvesaxbgg0qiu/Functions/recommendInsurances?startDate={{_raw.startDate}}&endDate={{_raw.endDate}}",
+                "endpoint": "https://api.everlive.com/v1/2mjhvesaxbgg0qiu/Functions/recommendInsurances?startDate={{startDate}}&endDate={{endDate}}",
                 "method": "GET"
               },
               "template": {
@@ -261,7 +261,7 @@
             "type": "webhook",
             "entity": "insurance",
             "data-source": {
-              "endpoint": "https://api.everlive.com/v1/2mjhvesaxbgg0qiu/Functions/recommendInsurance?startDate={{startDate}}&endDate={{endDate}}&id={{_raw.insurancePlan.Id}}",
+              "endpoint": "https://api.everlive.com/v1/2mjhvesaxbgg0qiu/Functions/recommendInsurance?startDate={{startDate}}&endDate={{endDate}}&id={{insurancePlan.Id}}",
               "method": "GET"
             }
           },
@@ -460,7 +460,7 @@
                 {
                   "type": "image",
                   "error-message": [
-                    "Even though I enjoy {{_raw.receiptPicture.labels.[0]}} pictures, we'll need a photo with the invoice of the billed ammount."
+                    "Even though I enjoy {{receiptPicture.labels.[0]}} pictures, we'll need a photo with the invoice of the billed ammount."
                   ],
                   "parameters": {
                     "contains": [

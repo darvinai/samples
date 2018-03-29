@@ -142,7 +142,7 @@
                     "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
                     "selector": "$[:].ExternalId"
                   },
-                  "condition": "{{$in _raw.doctor.ExternalId _response}}"
+                  "condition": "{{$in doctor.ExternalId _response}}"
                 },
                 "error-message": [
                   "За съжаление, {{doctor}} няма свободни часове за момента."
@@ -170,7 +170,7 @@
                 "type": "custom",
                 "parameters": {
                   "data-source": {
-                    "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI _raw.doctor.ExternalId}}",
+                    "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
                     "method": "GET"
                   },
                   "condition": "{{$in ($date date 'YYYY-MM-DD') _response}}"
@@ -184,7 +184,7 @@
           "display": {
             "type": "quick-reply",
             "data-source": {
-              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI _raw.doctor.ExternalId}}",
+              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
               "method": "GET"
             }
           }
@@ -202,7 +202,7 @@
                 "type": "custom",
                 "parameters": {
                   "data-source": {
-                    "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI _raw.doctor.ExternalId}}&date={{$encodeURI date}}",
+                    "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
                     "method": "GET"
                   },
                   "condition": "{{$in time _response}}"
@@ -216,7 +216,7 @@
           "display": {
             "type": "quick-reply",
             "data-source": {
-              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI _raw.doctor.ExternalId}}&date={{$encodeURI date}}",
+              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
               "method": "GET"
             }
           }
@@ -276,7 +276,7 @@
               "Content-Type": "application/json"
             },
             "payload": {
-              "DoctorID": "{{_raw.doctor.ExternalId}}",
+              "DoctorID": "{{doctor.ExternalId}}",
               "PatientName": "{{contactName}}",
               "Date": "{{date}}",
               "Time": "{{time}}"
