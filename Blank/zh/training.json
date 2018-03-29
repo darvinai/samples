@@ -1,0 +1,59 @@
+{
+    "entity-definitions": [{
+        "name": "Conversation",
+        "lookup-strategy": "trait",
+        "data": [{
+            "value": "conversationOne",
+            "expressions": [
+              "对话1"
+            ],
+            "metadata": ""
+          },
+          {
+            "value": "conversationTwo",
+            "expressions": [
+              "会话2"
+            ],
+            "metadata": ""
+          },
+          {
+            "value": "restart",
+            "expressions": [
+              "restart",
+              "重新开始"
+            ]
+          },
+          {
+            "value": "help",
+            "expressions": [
+              "Help",
+              "帮帮我"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "SmallTalk",
+        "lookup-strategy": "QnA",
+        "data": [{
+            "value": "goodbye",
+            "expressions": [
+              "再见"
+            ],
+            "answers": [
+              "再见"
+            ]
+          },
+          {
+            "value": "thanks",
+            "expressions": [
+              "谢谢"
+            ],
+            "answers": [
+              "别客气"
+            ]
+          }
+        ]
+      }
+    ]
+  }
