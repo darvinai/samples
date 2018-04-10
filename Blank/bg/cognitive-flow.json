@@ -2,6 +2,10 @@
   "commands": {
     "NEXT-PAGE": [
       "Следващи 5"
+    ],
+    "RESTART": [
+      "рестарт",
+      "restart"
     ]
   },
   "settings": {

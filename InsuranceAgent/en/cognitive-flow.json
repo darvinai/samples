@@ -2,6 +2,9 @@
     "commands": {
       "NEXT-PAGE": [
         "Next 5"
+      ],
+      "RESTART": [
+        "restart"
       ]
     },
     "settings": {

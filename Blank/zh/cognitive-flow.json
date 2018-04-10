@@ -2,6 +2,10 @@
     "commands": {
       "NEXT-PAGE": [
         "下一个5"
+      ],
+      "RESTART": [
+        "重新开始",
+        "restart"
       ]
     },
     "settings": {
