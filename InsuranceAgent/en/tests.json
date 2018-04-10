@@ -522,6 +522,13 @@
                         [
                             {
                                 "text": "You need to obtain an itemized bill from your doctor or medical provider before you can make a claim request."
+                            },
+                            {
+                                "text": "Have you obtained all necessary documents to help us determine the expense that can be covered by your insurance plan?",
+                                "quickReplies": [
+                                    "Yes",
+                                    "No"
+                                ]
                             }
                         ]
                     ]
