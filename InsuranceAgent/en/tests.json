@@ -6,8 +6,8 @@
         {
             "it": "make new insurance + ask about insurance coverage",
             "mocks": {
-                "https://api.everlive.com/v1/2mjhvesaxbgg0qiu/Functions/recommendInsurances?startDate=2015.03.11&endDate=2015.04.01": {
-                    "GET": [
+                "https://baas.kinvey.com/rpc/kid_HJRkt8g6G/custom/recommendInsurances?startDate=2015.03.11&endDate=2015.04.01": {
+                    "POST": [
                         {
                             "Name": "Travel Medical Insurance",
                             "Features": [
@@ -47,8 +47,8 @@
                         }
                     ]
                 },
-                "https://api.everlive.com/v1/2mjhvesaxbgg0qiu/Functions/recommendInsurance?startDate=2015.03.11&endDate=2015.04.01&id=f252b7d0-130d-11e8-8b78-370e90d8b030": {
-                    "GET": {
+                "https://baas.kinvey.com/rpc/kid_HJRkt8g6G/custom/recommendInsurance?startDate=2015.03.11&endDate=2015.04.01&id=f252b7d0-130d-11e8-8b78-370e90d8b030": {
+                    "POST": {
                         "Name": "Patriot WorldWide Plus",
                         "Features": [
                             "Renewable up to 24 months",

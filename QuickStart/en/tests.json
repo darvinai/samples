@@ -123,21 +123,21 @@
                 }
             ],
             "mocks": {
-                "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId=24806": {
-                    "GET": [
+                "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorDays?doctorId=24806": {
+                    "POST": [
                         "2017-08-07",
                         "2017-08-15",
                         "2017-08-24"
                     ]
                 },
-                "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId=24806&date=2017.08.07": {
-                    "GET": [
+                "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorHours?doctorId=24806&date=2017.08.07": {
+                    "POST": [
                         "9:30",
                         "10:00",
                         "10:30"
                     ]
                 },
-                "https://api.everlive.com/v1/niuqpjk7bubu0282/Appointments": {
+                "https://baas.kinvey.com/appdata/kid_ry5xgIy6f/Appointments": {
                     "POST": {}
                 }
             }
@@ -198,21 +198,21 @@
                 }
             ],
             "mocks": {
-                "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId=24806": {
-                    "GET": [
+                "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorDays?doctorId=24806": {
+                    "POST": [
                         "2017-08-08",
                         "2017-08-15",
                         "2017-08-24"
                     ]
                 },
-                "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId=24806&date=2017.08.08": {
-                    "GET": [
+                "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorHours?doctorId=24806&date=2017.08.08": {
+                    "POST": [
                         "9:30",
                         "10:00",
                         "15:00"
                     ]
                 },
-                "https://api.everlive.com/v1/niuqpjk7bubu0282/Appointments": {
+                "https://baas.kinvey.com/appdata/kid_ry5xgIy6f/Appointments": {
                     "POST": {}
                 }
             }

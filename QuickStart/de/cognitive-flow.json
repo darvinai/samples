@@ -134,10 +134,13 @@
               "type": "custom",
               "parameters": {
                 "data-source": {
-                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors",
-                  "selector": "$[:].ExternalId"
+                  "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
+                  "method": "POST",
+                  "headers": {
+                    "Authorization": "Basic a2lkX3J5NXhnSXk2Zjo0ZGU5MjQ2OWJmZmU0ZDU4YjIyY2JhNjg4ZmJhNTJlNg=="
+                  }
                 },
-                "condition": "{{$in doctor.ExternalId _response}}"
+                "condition": "{{$ne \"[]\" ($json _response)}}"
               },
               "error-message": [
                 "{{doctor}} ist leider nicht verfügbar."
@@ -164,8 +167,11 @@
               "type": "custom",
               "parameters": {
                 "data-source": {
-                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
-                  "method": "GET"
+                  "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
+                  "method": "POST",
+                  "headers": {
+                    "Authorization": "Basic a2lkX3J5NXhnSXk2Zjo0ZGU5MjQ2OWJmZmU0ZDU4YjIyY2JhNjg4ZmJhNTJlNg=="
+                  }
                 },
                 "condition": "{{$in ($date date 'YYYY-MM-DD') _response}}"
               },
@@ -177,8 +183,11 @@
           "display": {
             "type": "quick-reply",
             "data-source": {
-              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
-              "method": "GET"
+              "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
+              "method": "POST",
+              "headers": {
+                "Authorization": "Basic a2lkX3J5NXhnSXk2Zjo0ZGU5MjQ2OWJmZmU0ZDU4YjIyY2JhNjg4ZmJhNTJlNg=="
+              }
             }
           }
         },
@@ -194,8 +203,11 @@
               "type": "custom",
               "parameters": {
                 "data-source": {
-                  "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
-                  "method": "GET"
+                  "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
+                  "method": "POST",
+                  "headers": {
+                    "Authorization": "Basic a2lkX3J5NXhnSXk2Zjo0ZGU5MjQ2OWJmZmU0ZDU4YjIyY2JhNjg4ZmJhNTJlNg=="
+                  }
                 },
                 "condition": "{{$in time _response}}"
               },
@@ -207,8 +219,11 @@
           "display": {
             "type": "quick-reply",
             "data-source": {
-              "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
-              "method": "GET"
+              "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
+              "method": "POST",
+              "headers": {
+                "Authorization": "Basic a2lkX3J5NXhnSXk2Zjo0ZGU5MjQ2OWJmZmU0ZDU4YjIyY2JhNjg4ZmJhNTJlNg=="
+              }
             }
           }
         },
@@ -260,10 +275,10 @@
             "Herzlichen Glückwunsch. Sie haben einen Termin mit {{doctor}} für {{date}} um {{time}}. Bis bald!"
           ],
           "data-source": {
-            "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Appointments",
+            "endpoint": "https://baas.kinvey.com/appdata/kid_ry5xgIy6f/Appointments",
             "method": "POST",
             "headers": {
-              "Content-Type": "application/json"
+              "Authorization": "Basic a2lkX3J5NXhnSXk2Zjo0ZGU5MjQ2OWJmZmU0ZDU4YjIyY2JhNjg4ZmJhNTJlNg=="
             },
             "payload": {
               "DoctorID": "{{doctor.ExternalId}}",

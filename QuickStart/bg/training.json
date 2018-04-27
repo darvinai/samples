@@ -68,10 +68,10 @@
       "data": [],
       "dynamic-data": {
         "data-source": {
-          "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors?language=bg",
-          "method": "GET",
+          "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctors?language=bg",
+          "method": "POST",
           "headers": {
-            "Content-Type": "application/json"
+            "Authorization": "Basic a2lkX3J5NXhnSXk2Zjo0ZGU5MjQ2OWJmZmU0ZDU4YjIyY2JhNjg4ZmJhNTJlNg=="
           }
         },
         "value-template": "{{Title}} {{FirstName}} {{LastName}}",

@@ -248,8 +248,11 @@
             "display": {
               "type": "carousel",
               "data-source": {
-                "endpoint": "https://api.everlive.com/v1/2mjhvesaxbgg0qiu/Functions/recommendInsurances?startDate={{startDate}}&endDate={{endDate}}",
-                "method": "GET"
+                "endpoint": "https://baas.kinvey.com/rpc/kid_HJRkt8g6G/custom/recommendInsurances?startDate={{startDate}}&endDate={{endDate}}",
+                "method": "POST",
+                "headers": {
+                  "Authorization": "Basic a2lkX0hKUmt0OGc2RzpjZjIyZjdlNmM2NDY0MDRjYjEwYjg1ZjliZGJmZTA3Yg=="
+                }
               },
               "template": {
                 "title": "{{Name}}",
@@ -264,8 +267,11 @@
             "type": "webhook",
             "entity": "insurance",
             "data-source": {
-              "endpoint": "https://api.everlive.com/v1/2mjhvesaxbgg0qiu/Functions/recommendInsurance?startDate={{startDate}}&endDate={{endDate}}&id={{insurancePlan.Id}}",
-              "method": "GET"
+              "endpoint": "https://baas.kinvey.com/rpc/kid_HJRkt8g6G/custom/recommendInsurance?startDate={{startDate}}&endDate={{endDate}}&id={{insurancePlan.Id}}",
+              "method": "POST",
+              "headers": {
+                "Authorization": "Basic a2lkX0hKUmt0OGc2RzpjZjIyZjdlNmM2NDY0MDRjYjEwYjg1ZjliZGJmZTA3Yg=="
+              }
             }
           },
           {
