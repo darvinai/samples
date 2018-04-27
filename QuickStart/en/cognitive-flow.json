@@ -136,7 +136,7 @@
                   "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
                   "method": "POST",
                   "headers": {
-                    "Authorization": "Basic a2lkX3J5NXhnSXk2Zjo0ZGU5MjQ2OWJmZmU0ZDU4YjIyY2JhNjg4ZmJhNTJlNg=="
+                    "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
                   }
                 },
                 "condition": "{{$ne \"[]\" ($json _response)}}"
@@ -169,7 +169,7 @@
                   "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
                   "method": "POST",
                   "headers": {
-                    "Authorization": "Basic a2lkX3J5NXhnSXk2Zjo0ZGU5MjQ2OWJmZmU0ZDU4YjIyY2JhNjg4ZmJhNTJlNg=="
+                    "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
                   }
                 },
                 "condition": "{{$in ($date date 'YYYY-MM-DD') _response}}"
@@ -185,7 +185,7 @@
               "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
               "method": "POST",
               "headers": {
-                "Authorization": "Basic a2lkX3J5NXhnSXk2Zjo0ZGU5MjQ2OWJmZmU0ZDU4YjIyY2JhNjg4ZmJhNTJlNg=="
+                "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
               }
             }
           }
@@ -205,7 +205,7 @@
                   "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
                   "method": "POST",
                   "headers": {
-                    "Authorization": "Basic a2lkX3J5NXhnSXk2Zjo0ZGU5MjQ2OWJmZmU0ZDU4YjIyY2JhNjg4ZmJhNTJlNg=="
+                    "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
                   }
                 },
                 "condition": "{{$in time _response}}"
@@ -221,7 +221,7 @@
               "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
               "method": "POST",
               "headers": {
-                "Authorization": "Basic a2lkX3J5NXhnSXk2Zjo0ZGU5MjQ2OWJmZmU0ZDU4YjIyY2JhNjg4ZmJhNTJlNg=="
+                "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
               }
             }
           }
@@ -277,7 +277,7 @@
             "endpoint": "https://baas.kinvey.com/appdata/kid_ry5xgIy6f/Appointments",
             "method": "POST",
             "headers": {
-              "Authorization": "Basic a2lkX3J5NXhnSXk2Zjo0ZGU5MjQ2OWJmZmU0ZDU4YjIyY2JhNjg4ZmJhNTJlNg=="
+              "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
             },
             "payload": {
               "DoctorID": "{{doctor.ExternalId}}",

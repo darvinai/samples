@@ -118,7 +118,7 @@
           "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctors",
           "method": "POST",
           "headers": {
-            "Authorization": "Basic a2lkX3J5NXhnSXk2Zjo0ZGU5MjQ2OWJmZmU0ZDU4YjIyY2JhNjg4ZmJhNTJlNg=="
+            "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
           }
         },
         "value-template": "{{Title}} {{FirstName}} {{LastName}}",

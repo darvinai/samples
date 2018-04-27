@@ -251,7 +251,7 @@
                 "endpoint": "https://baas.kinvey.com/rpc/kid_HJRkt8g6G/custom/recommendInsurances?startDate={{startDate}}&endDate={{endDate}}",
                 "method": "POST",
                 "headers": {
-                  "Authorization": "Basic a2lkX0hKUmt0OGc2RzpjZjIyZjdlNmM2NDY0MDRjYjEwYjg1ZjliZGJmZTA3Yg=="
+                  "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
                 }
               },
               "template": {
@@ -270,7 +270,7 @@
               "endpoint": "https://baas.kinvey.com/rpc/kid_HJRkt8g6G/custom/recommendInsurance?startDate={{startDate}}&endDate={{endDate}}&id={{insurancePlan.Id}}",
               "method": "POST",
               "headers": {
-                "Authorization": "Basic a2lkX0hKUmt0OGc2RzpjZjIyZjdlNmM2NDY0MDRjYjEwYjg1ZjliZGJmZTA3Yg=="
+                "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
               }
             }
           },
