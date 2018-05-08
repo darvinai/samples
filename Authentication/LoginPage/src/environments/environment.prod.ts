@@ -1,7 +1,8 @@
 export const environment = {
   production: true,
-  backendServices: {
-    appId: ''
+  kinvey: {
+    appKey: '',
+    appSecret: ''
   },
   facebook: {
     appId: '',

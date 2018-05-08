@@ -1,28 +1,29 @@
-Everlive.CloudFunction.onRequest(function(request, response, done){
-    var state = request.queryString.state;
-    var darvinUrl = "https://api.darvin.ai/v1/account-linking";
+function onRequest(request, response, modules) {
+    var logger = modules.logger;
+    var state = request.params.state;
+    var darvinUrl = 'https://api.darvin.ai/v1/account-linking';
     var darvinOptions = {
-        contentType: "application/json",
+        uri: darvinUrl,
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+        },
         params: {
             "state": state
         },
-        // The whole body will be persisted into the entity, so you can add whatever you want/need
-        body: request.data
+        json: request.body
     };
 
-    Everlive.Http.request(
-        "POST",
-        darvinUrl,
+    modules.request.request(
         darvinOptions,
-        function(error, result) {
+        function (error, result) {
             if (error) {
-                console.log(error);
-                response.body = error;
-                done();
+                logger.error(error);
+                response.error(error);
             } else {
-                console.log('success');
-                response.body = JSON.parse(result.body);
-                done();
+                response.body = result.body;
+                response.complete();
             }
         });
-});
+}

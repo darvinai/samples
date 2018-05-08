@@ -9,11 +9,11 @@ import { environment } from 'environments/environment';
 
 @Injectable()
 export class UserService {
-    private headers = new Headers({ 'Content-Type': 'application/json' });
-    private loginUrl = `https://api.everlive.com/v1/${environment.backendServices.appId}/oauth/token`;
-    private usersUrl = `https://api.everlive.com/v1/${environment.backendServices.appId}/users`;
+    private headers = new Headers({ 'Content-Type': 'application/json', Authorization: `Basic ${btoa(environment.kinvey.appKey + ':' + environment.kinvey.appSecret)}` });
+    private loginUrl = `https://baas.kinvey.com/user/${environment.kinvey.appKey}/login`;
+    private usersUrl = `https://baas.kinvey.com/user/${environment.kinvey.appKey}`;
 
-    private linkAccountUrl = `https://api.everlive.com/v1/${environment.backendServices.appId}/Functions/LinkAccount`;
+    private linkAccountUrl = `https://baas.kinvey.com/rpc/${environment.kinvey.appKey}/custom/LinkAccount`;
 
     constructor(private http: Http) {
 
@@ -21,27 +21,28 @@ export class UserService {
 
     login(username: string, password: string): Promise<LoginInfo> {
         const body = {
-            'username': username,
-            'password': password,
-            'grant_type': 'password'
+            username,
+            password
         };
 
         return this.http.post(this.loginUrl, JSON.stringify(body), { headers: this.headers })
             .toPromise()
-            .then(data => data.json().Result as LoginInfo);
+            .then(data => data.json()._kmd as LoginInfo);
     }
 
     loginWithFacebook(token: string): Promise<LoginInfo> {
         const body = {
-            Identity: {
-                Provider: 'Facebook',
-                Token: token
+            _socialIdentity: {
+                facebook: {
+                    access_token: token,
+                    expires: '5105388'
+                }
             }
         };
 
         return this.http.post(this.usersUrl, JSON.stringify(body), { headers: this.headers })
             .toPromise()
-            .then(data => data.json().Result as LoginInfo);
+            .then(data => data.json()._kmd as LoginInfo);
     }
 
     linkAccount(state: string, authData: LoginInfo): Promise<LinkAccountResult> {
@@ -50,9 +51,10 @@ export class UserService {
         }
 
         state = encodeURIComponent(state);
+
         const url = `${this.linkAccountUrl}?state=${state}`;
         const body = {
-            accessToken: authData.access_token
+            accessToken: authData.authtoken
         };
 
         return this.http.post(url, JSON.stringify(body), { headers: this.headers })
@@ -62,9 +64,9 @@ export class UserService {
 }
 
 export interface LoginInfo {
-    access_token: string,
-    token_type: string,
-    principal_id: string
+    lmt: string,
+    ect: string,
+    authtoken: string
 };
 
 export interface LinkAccountResult {
