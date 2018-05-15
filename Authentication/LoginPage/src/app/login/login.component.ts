@@ -80,8 +80,12 @@ export class LoginComponent implements OnInit, OnDestroy {
     private linkAccount(loginInfo: LoginInfo) {
         return this.userService.linkAccount(this.params.get('state'), loginInfo)
             .then(data => {
-                const url = this.resolveUrl(data);
-                window.location.replace(url);
+                if (data.channel === 'darvin') {
+                    parent.postMessage({ type: 'authentication', token: data.verificationToken }, environment.webchatOrigin);
+                } else {
+                    const url = this.resolveUrl(data);
+                    window.location.replace(url);
+                }
             })
             .catch(err => this.error = err);
     }

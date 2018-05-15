@@ -11,5 +11,6 @@ export const environment = {
   channels: {
     facebook: '',
     viber: ''
-  }
+  },
+  webchatOrigin: 'https://webchat.darvin.ai'
 };
