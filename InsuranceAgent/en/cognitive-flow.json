@@ -1,554 +1,534 @@
 {
-    "commands": {
-      "NEXT-PAGE": [
-        "Next 5"
-      ],
-      "RESTART": [
-        "restart"
+  "conversations": {
+    "welcome": {
+      "type": "support",
+      "steps": [{
+          "type": "message",
+          "messages": [
+            [
+              "Hello there, I am your personal travel Insurance Agent.",
+              "I can help you find the best insurance plans for you and your family."
+            ]
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "help",
+          "conditions": [
+            "{{$not ($has conversation) }}"
+          ]
+        }
       ]
     },
-    "settings": {
-      "invalid-replies": [
-        "I am not sure I understood what you said."
-      ],
-      "general-failure": [
-        "We are experiencing technical difficulties at this moment."
-      ],
-      "previous-conversation-messages": [
-        "So..."
+    "help": {
+      "type": "support",
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "What can I do for you?"
+          ]
+        ],
+        "display": {
+          "type": "quick-reply",
+          "data": [
+            "New insurance",
+            "Fill a claim",
+            "Contact operator"
+          ]
+        }
+      }]
+    },
+    "restart": {
+      "type": "support",
+      "steps": [{
+          "type": "message",
+          "messages": [
+            "Your conversation is restarted."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
+        }
       ]
     },
-    "conversations": {
-      "welcome": {
-        "type": "support",
-        "steps": [
-          {
-            "type": "message",
-            "messages": [
-              [
-                "Hello there, I am your personal travel Insurance Agent.",
-                "I can help you find the best insurance plans for you and your family."
-              ]
-            ]
-          },
-          {
-            "type": "conversation",
-            "conversation": "help",
-            "conditions": [
-              "{{$not ($has conversation) }}"
-            ]
-          }
-        ]
-      },
-      "help": {
-        "type": "support",
-        "steps": [
-          {
-            "type": "message",
-            "messages": [
-              [
-                "What can I do for you?"
-              ]
+    "contactOperator": {
+      "type": "goal",
+      "display-name": "contacting an operator",
+      "steps": [{
+          "type": "confirmation",
+          "entity": "redirect",
+          "messages": [
+            "Do you want to continue the conversation with an operator?"
+          ]
+        },
+        {
+          "conditions": [
+            "{{$eq redirect false}}"
+          ],
+          "type": "conversation",
+          "conversation": "help"
+        },
+        {
+          "conditions": [
+            "{{$eq redirect true}}"
+          ],
+          "type": "message",
+          "messages": [
+            "I am transferring you to an operator, and I will stay silent for the next 60 minutes. If you want to get back to me, please type 'restart'."
+          ]
+        },
+        {
+          "conditions": [
+            "{{$eq redirect true}}"
+          ],
+          "type": "command",
+          "command": "stay-silent 60"
+        }
+      ]
+    },
+    "makeInsurance": {
+      "type": "goal",
+      "display-name": "signing up for a new insurance",
+      "steps": [{
+          "type": "question",
+          "entity": "age",
+          "entity-display": "{{this}}",
+          "entity-type": "Number",
+          "messages": [
+            "What is your age?"
+          ],
+          "reactions": {
+            "suggestions": [
+              "Are you still {{age}} years old?"
             ],
-            "display": {
-              "type": "quick-reply",
-              "data": [
-                "New insurance",
-                "Fill a claim",
-                "Contact operator"
-              ]
-            }
-          }
-        ]
-      },
-      "restart": {
-        "type": "support",
-        "steps": [
-          {
-            "type": "message",
-            "messages": [
-              "Your conversation is restarted."
-            ]
-          },
-          {
-            "type": "conversation",
-            "conversation": "welcome"
-          }
-        ]
-      },
-      "contactOperator": {
-        "type": "goal",
-        "display-name": "contacting an operator",
-        "steps": [
-          {
-            "type": "confirmation",
-            "entity": "redirect",
-            "messages": [
-              "Do you want to continue the conversation with an operator?"
-            ]
-          },
-          {
-            "conditions": [
-              "{{$eq redirect false}}"
-            ],
-            "type": "conversation",
-            "conversation": "help"
-          },
-          {
-            "conditions": [
-              "{{$eq redirect true}}"
-            ],
-            "type": "message",
-            "messages": [
-              "I am transferring you to an operator, and I will stay silent for the next 60 minutes. If you want to get back to me, please type 'restart'."
-            ]
-          },
-          {
-            "conditions": [
-              "{{$eq redirect true}}"
-            ],
-            "type": "command",
-            "command": "stay-silent 60"
-          }
-        ]
-      },
-      "makeInsurance": {
-        "type": "goal",
-        "display-name": "signing up for a new insurance",
-        "steps": [
-          {
-            "type": "question",
-            "entity": "age",
-            "entity-display": "{{this}}",
-            "entity-type": "Number",
-            "messages": [
-              "What is your age?"
-            ],
-            "reactions": {
-              "suggestions": [
-                "Are you still {{age}} years old?"
-              ],
-              "validations": [
-                {
-                  "type": "range",
-                  "parameters": {
-                    "min": "18"
-                  },
-                  "error-message": [
-                    "The minimum required age for an insurance is 18 years. We are sorry, but we cannot provide you with a valid insurance."
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "type": "question",
-            "entity": "startDate",
-            "entity-type": "Date",
-            "entity-display": "{{$date this 'D MMMM YYYY'}}",
-            "messages": [
-              "What date do you want your insurance to start from?"
-            ],
-            "reactions": {
-              "ambiguities": [
-                "I am not sure which date you have in mind, could you select one of the following?"
-              ]
-            }
-          },
-          {
-            "type": "question",
-            "entity": "endDate",
-            "entity-type": "Date",
-            "entity-display": "{{$date this 'D MMMM YYYY'}}",
-            "messages": [
-              "What date is the last day of your insurance coverage?"
-            ],
-            "reactions": {
-              "acknowledgements": [
-                "Let's find you an insurance from {{startDate}} to {{endDate}}."
-              ],
-              "validations": [
-                {
-                  "type": "custom",
-                  "parameters": {
-                    "condition": "{{$gt endDate startDate}}"
-                  },
-                  "error-message": [
-                    "The end date of your insurance cannot be before your start date."
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "type": "question",
-            "entity": "destination",
-            "entity-type": "Country",
-            "messages": [
-              "What is the country that you plan to visit?"
-            ],
-            "display": {
-              "type": "single-select",
-              "title": "Choose a country",
-              "button-text": "Submit"
-            },
-            "reactions": {
-              "acknowledgements": [
-                "A trip to {{destination}} is always a good idea."
-              ],
-              "suggestions": [
-                "Is your destination {{destination}} again?"
-              ]
-            }
-          },
-          {
-            "type": "question",
-            "entity": "citizenship",
-            "entity-type": "Country",
-            "messages": [
-              "What is your country of residence?"
-            ],
-            "display": {
-              "type": "single-select",
-              "title": "Choose a country",
-              "button-text": "Submit"
-            },
-            "reactions": {
-              "suggestions": [
-                "Are you still residing in {{citizenship}}?"
-              ]
-            }
-          },
-          {
-            "type": "entities-confirmation",
-            "entity": "confirmData",
-            "entities": [
-              "age",
-              "startDate",
-              "endDate",
-              "destination",
-              "citizenship"
-            ],
-            "messages": [
-              [
-                "Ok, searching for an insurance plan for {{destination}} from {{startDate}} to {{endDate}}.",
-                "Please confirm or select the value that you want to change."
-              ]
-            ]
-          },
-          {
-            "type": "question",
-            "entity": "insurancePlan",
-            "entity-type": "InsurancePlan",
-            "messages": [
-              [
-                "Here are the 3 insurance options we recommend."
-              ]
-            ],
-            "display": {
-              "type": "carousel",
-              "data-source": {
-                "endpoint": "https://baas.kinvey.com/rpc/kid_HJRkt8g6G/custom/recommendInsurances?startDate={{startDate}}&endDate={{endDate}}",
-                "method": "POST",
-                "headers": {
-                  "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
-                }
+            "validations": [{
+              "type": "range",
+              "parameters": {
+                "min": "18"
               },
-              "template": {
-                "title": "{{Name}}",
-                "subtitle": "{{$currency Price 'USD'}}",
-                "image": "{{Image}}"
+              "error-message": [
+                "The minimum required age for an insurance is 18 years. We are sorry, but we cannot provide you with a valid insurance."
+              ]
+            }]
+          }
+        },
+        {
+          "type": "question",
+          "entity": "startDate",
+          "entity-type": "Date",
+          "entity-display": "{{$date this 'D MMMM YYYY'}}",
+          "messages": [
+            "What date do you want your insurance to start from?"
+          ],
+          "reactions": {
+            "ambiguities": [
+              "I am not sure which date you have in mind, could you select one of the following?"
+            ]
+          }
+        },
+        {
+          "type": "question",
+          "entity": "endDate",
+          "entity-type": "Date",
+          "entity-display": "{{$date this 'D MMMM YYYY'}}",
+          "messages": [
+            "What date is the last day of your insurance coverage?"
+          ],
+          "reactions": {
+            "acknowledgements": [
+              "Let's find you an insurance from {{startDate}} to {{endDate}}."
+            ],
+            "validations": [{
+              "type": "custom",
+              "parameters": {
+                "condition": "{{$gt endDate startDate}}"
               },
-              "title": "Select an option",
-              "button-text": "Select"
-            }
+              "error-message": [
+                "The end date of your insurance cannot be before your start date."
+              ]
+            }]
+          }
+        },
+        {
+          "type": "question",
+          "entity": "destination",
+          "entity-type": "Country",
+          "messages": [
+            "What is the country that you plan to visit?"
+          ],
+          "display": {
+            "type": "single-select",
+            "title": "Choose a country",
+            "button-text": "Submit"
           },
-          {
-            "type": "webhook",
-            "entity": "insurance",
+          "reactions": {
+            "acknowledgements": [
+              "A trip to {{destination}} is always a good idea."
+            ],
+            "suggestions": [
+              "Is your destination {{destination}} again?"
+            ]
+          }
+        },
+        {
+          "type": "question",
+          "entity": "citizenship",
+          "entity-type": "Country",
+          "messages": [
+            "What is your country of residence?"
+          ],
+          "display": {
+            "type": "single-select",
+            "title": "Choose a country",
+            "button-text": "Submit"
+          },
+          "reactions": {
+            "suggestions": [
+              "Are you still residing in {{citizenship}}?"
+            ]
+          }
+        },
+        {
+          "type": "entities-confirmation",
+          "entity": "confirmData",
+          "entities": [
+            "age",
+            "startDate",
+            "endDate",
+            "destination",
+            "citizenship"
+          ],
+          "messages": [
+            [
+              "Ok, searching for an insurance plan for {{destination}} from {{startDate}} to {{endDate}}.",
+              "Please confirm or select the value that you want to change."
+            ]
+          ]
+        },
+        {
+          "type": "question",
+          "entity": "insurancePlan",
+          "entity-type": "InsurancePlan",
+          "messages": [
+            [
+              "Here are the 3 insurance options we recommend."
+            ]
+          ],
+          "display": {
+            "type": "carousel",
             "data-source": {
-              "endpoint": "https://baas.kinvey.com/rpc/kid_HJRkt8g6G/custom/recommendInsurance?startDate={{startDate}}&endDate={{endDate}}&id={{insurancePlan.Id}}",
+              "endpoint": "https://baas.kinvey.com/rpc/kid_HJRkt8g6G/custom/recommendInsurances?startDate={{startDate}}&endDate={{endDate}}",
               "method": "POST",
               "headers": {
                 "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
               }
+            },
+            "template": {
+              "title": "{{Name}}",
+              "subtitle": "{{$currency Price 'USD'}}",
+              "image": "{{Image}}"
+            },
+            "title": "Select an option",
+            "button-text": "Select"
+          }
+        },
+        {
+          "type": "webhook",
+          "entity": "insurance",
+          "data-source": {
+            "endpoint": "https://baas.kinvey.com/rpc/kid_HJRkt8g6G/custom/recommendInsurance?startDate={{startDate}}&endDate={{endDate}}&id={{insurancePlan.Id}}",
+            "method": "POST",
+            "headers": {
+              "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
             }
-          },
-          {
-            "type": "confirmation",
-            "entity": "wantsToBuy",
-            "messages": [
-              [
-                "Here are the details for {{insurance.Name}}.",
-                "The total cost for {{insurance.Days}} days is {{$currency insurance.Price 'USD'}} and you get:",
-                "{{#forEach insurance.Features}}• {{item}}</newline>{{/forEach}}",
-                "Do you want me to sign you up for this plan?"
+          }
+        },
+        {
+          "type": "confirmation",
+          "entity": "wantsToBuy",
+          "messages": [
+            [
+              "Here are the details for {{insurance.Name}}.",
+              "The total cost for {{insurance.Days}} days is {{$currency insurance.Price 'USD'}} and you get:",
+              "{{#forEach insurance.Features}}• {{item}}</newline>{{/forEach}}",
+              "Do you want me to sign you up for this plan?"
+            ]
+          ]
+        },
+        {
+          "type": "message",
+          "conditions": [
+            "{{$eq wantsToBuy false}}"
+          ],
+          "messages": [
+            "We hope to see you back soon!"
+          ]
+        },
+        {
+          "conditions": [
+            "{{$eq wantsToBuy true}}"
+          ],
+          "type": "question",
+          "entity": "userEmail",
+          "entity-type": "Text",
+          "messages": [
+            "What is your email address?"
+          ],
+          "reactions": {
+            "acknowledgements": [
+              "OK. I understand that your email is {{userEmail}}."
+            ],
+            "validations": [{
+              "type": "email",
+              "error-message": [
+                "I am not sure this is a valid email. Can you please type it again?"
               ]
+            }],
+            "suggestions": [
+              "Your email is {{userEmail}}?"
             ]
-          },
-          {
-            "type": "message",
-            "conditions": [
-              "{{$eq wantsToBuy false}}"
-            ],
-            "messages": [
-              "We hope to see you back soon!"
+          }
+        },
+        {
+          "type": "message",
+          "conditions": [
+            "{{$eq wantsToBuy true}}"
+          ],
+          "messages": [
+            [
+              "You should have an email confirmation with further instructions.",
+              "Thank you for doing business with us!"
             ]
-          },
-          {
-            "conditions": [
-              "{{$eq wantsToBuy true}}"
+          ]
+        }
+      ]
+    },
+    "emergency": {
+      "type": "goal",
+      "display-name": "emergency",
+      "steps": [{
+          "type": "question",
+          "entity": "currentLocation",
+          "entity-type": "Location",
+          "messages": [
+            "What is your location right now?"
+          ],
+          "display": {
+            "type": "location-picker",
+            "title": "Pick a location"
+          }
+        },
+        {
+          "type": "question",
+          "entity": "phone",
+          "entity-type": "Text",
+          "messages": [
+            "What is your phone number?"
+          ],
+          "reactions": {
+            "suggestions": [
+              "Is {{phone}} your phone number?"
             ],
-            "type": "question",
-            "entity": "userEmail",
-            "entity-type": "Text",
-            "messages": [
-              "What is your email address?"
-            ],
-            "reactions": {
-              "acknowledgements": [
-                "OK. I understand that your email is {{userEmail}}."
+            "validations": [{
+              "type": "phone",
+              "error-message": [
+                "I am not sure it's a valid phone number. Can you type it again?"
+              ]
+            }]
+          }
+        },
+        {
+          "type": "message",
+          "messages": [
+            "An emergency team will be in touch with you in 30 seconds."
+          ]
+        }
+      ]
+    },
+    "fillClaim": {
+      "type": "goal",
+      "display-name": "filling a claim",
+      "steps": [{
+          "type": "confirmation",
+          "entity": "isEmergency",
+          "messages": [
+            "Do you require an immediate medical assistance?"
+          ]
+        },
+        {
+          "type": "command",
+          "conditions": [
+            "{{$eq isEmergency true}}"
+          ],
+          "command": "go-to emergency"
+        },
+        {
+          "type": "confirmation",
+          "entity": "isReadyToClaim",
+          "messages": [
+            [
+              "Have you obtained all necessary documents to help us determine the expense that can be covered by your insurance plan?"
+            ]
+          ]
+        },
+        {
+          "type": "message",
+          "conditions": [
+            "{{$eq isReadyToClaim false}}"
+          ],
+          "messages": [
+            "You need to obtain an itemized bill from your doctor or medical provider before you can make a claim request."
+          ]
+        },
+        {
+          "conditions": [
+            "{{$eq isReadyToClaim true}}"
+          ],
+          "type": "command",
+          "command": "go-to collectDocuments"
+        }
+      ]
+    },
+    "collectDocuments": {
+      "type": "goal",
+      "display-name": "collecting claim documents",
+      "steps": [{
+          "type": "question",
+          "entity": "insuranceNumber",
+          "entity-type": "InsuranceNumber",
+          "messages": [
+            "What is your valid insurance number?"
+          ],
+          "display": {
+            "type": "quick-reply",
+            "data": [
+              "AN192181B",
+              "NB887712C",
+              "OA298717J"
+            ]
+          }
+        },
+        {
+          "type": "question",
+          "entity": "amount",
+          "entity-type": "Text",
+          "messages": [
+            [
+              "What's the total amount that you claim?"
+            ]
+          ]
+        },
+        {
+          "type": "question",
+          "entity": "receiptPicture",
+          "entity-type": "File",
+          "entity-display": "Receipt picture",
+          "messages": [
+            "Can you take a picture of your billed amount?"
+          ],
+          "reactions": {
+            "validations": [{
+              "type": "image",
+              "error-message": [
+                "Even though I enjoy {{receiptPicture.labels.[0]}} pictures, we'll need a photo with the invoice of the billed ammount."
               ],
-              "validations": [
-                {
-                  "type": "email",
-                  "error-message": [
-                    "I am not sure this is a valid email. Can you please type it again?"
-                  ]
-                }
-              ],
-              "suggestions": [
-                "Your email is {{userEmail}}?"
-              ]
-            }
-          },
-          {
-            "type": "message",
-            "conditions": [
-              "{{$eq wantsToBuy true}}"
-            ],
-            "messages": [
-              [
-                "You should have an email confirmation with further instructions.",
-                "Thank you for doing business with us!"
-              ]
-            ]
+              "parameters": {
+                "contains": [
+                  "receipt",
+                  "document"
+                ]
+              }
+            }]
           }
-        ]
-      },
-      "emergency": {
-        "type": "goal",
-        "display-name": "emergency",
-        "steps": [
-          {
-            "type": "question",
-            "entity": "currentLocation",
-            "entity-type": "Location",
-            "messages": [
-              "What is your location right now?"
-            ],
-            "display": {
-              "type": "location-picker",
-              "title": "Pick a location"
-            }
-          },
-          {
-            "type": "question",
-            "entity": "phone",
-            "entity-type": "Text",
-            "messages": [
-              "What is your phone number?"
-            ],
-            "reactions": {
-              "suggestions": [
-                "Is {{phone}} your phone number?"
-              ],
-              "validations": [
-                {
-                  "type": "phone",
-                  "error-message": [
-                    "I am not sure it's a valid phone number. Can you type it again?"
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "type": "message",
-            "messages": [
-              "An emergency team will be in touch with you in 30 seconds."
+        },
+        {
+          "type": "entities-confirmation",
+          "entity": "confirmClaim",
+          "entities": [
+            "insuranceNumber",
+            "amount",
+            "receiptPicture"
+          ],
+          "messages": [
+            [
+              "We are about to fill a claim for {{amount}}.",
+              "Please confirm this information or select the value that you want to change."
             ]
-          }
-        ]
-      },
-      "fillClaim": {
-        "type": "goal",
-        "display-name": "filling a claim",
-        "steps": [
-          {
-            "type": "confirmation",
-            "entity": "isEmergency",
-            "messages": [
-              "Do you require an immediate medical assistance?"
+          ]
+        },
+        {
+          "type": "message",
+          "conditions": [
+            "{{$eq confirmClaim true}}"
+          ],
+          "messages": [
+            "Your claim has been successfully filled."
+          ]
+        }
+      ]
+    },
+    "insuranceCoverage": {
+      "type": "support",
+      "steps": [{
+          "type": "confirmation",
+          "entity": "coverageConfirmation",
+          "conditions": [
+            "{{$not ($has coverage)}}"
+          ],
+          "messages": [
+            [
+              "Do you have some particular sport in mind?"
             ]
-          },
-          {
-            "type": "command",
-            "conditions": [
-              "{{$eq isEmergency true}}"
-            ],
-            "command": "go-to emergency"
-          },
-          {
-            "type": "confirmation",
-            "entity": "isReadyToClaim",
-            "messages": [
-              [
-                "Have you obtained all necessary documents to help us determine the expense that can be covered by your insurance plan?"
-              ]
-            ]
-          },
-          {
-            "type": "message",
-            "conditions": [
-              "{{$eq isReadyToClaim false}}"
-            ],
-            "messages": [
-              "You need to obtain an itemized bill from your doctor or medical provider before you can make a claim request."
-            ]
-          },
-          {
-            "conditions": [
-              "{{$eq isReadyToClaim true}}"
-            ],
-            "type": "command",
-            "command": "go-to collectDocuments"
-          }
-        ]
-      },
-      "collectDocuments": {
-        "type": "goal",
-        "display-name": "collecting claim documents",
-        "steps": [
-          {
-            "type": "question",
-            "entity": "insuranceNumber",
-            "entity-type": "InsuranceNumber",
-            "messages": [
-              "What is your valid insurance number?"
-            ],
-            "display": {
-              "type": "quick-reply",
-              "data": [
-                "AN192181B",
-                "NB887712C",
-                "OA298717J"
-              ]
-            }
-          },
-          {
-            "type": "question",
-            "entity": "amount",
-            "entity-type": "Text",
-            "messages": [
-              [
-                "What's the total amount that you claim?"
-              ]
-            ]
-          },
-          {
-            "type": "question",
-            "entity": "receiptPicture",
-            "entity-type": "File",
-            "entity-display": "Receipt picture",
-            "messages": [
-              "Can you take a picture of your billed amount?"
-            ],
-            "reactions": {
-              "validations": [
-                {
-                  "type": "image",
-                  "error-message": [
-                    "Even though I enjoy {{receiptPicture.labels.[0]}} pictures, we'll need a photo with the invoice of the billed ammount."
-                  ],
-                  "parameters": {
-                    "contains": [
-                      "receipt",
-                      "document"
-                    ]
-                  }
-                }
-              ]
-            }
-          },
-          {
-            "type": "entities-confirmation",
-            "entity": "confirmClaim",
-            "entities": [
-              "insuranceNumber",
-              "amount",
-              "receiptPicture"
-            ],
-            "messages": [
-              [
-                "We are about to fill a claim for {{amount}}.",
-                "Please confirm this information or select the value that you want to change."
-              ]
-            ]
-          },
-          {
-            "type": "message",
-            "conditions": [
-              "{{$eq confirmClaim true}}"
-            ],
-            "messages": [
-              "Your claim has been successfully filled."
-            ]
-          }
-        ]
-      },
-      "insuranceCoverage": {
-        "type": "support",
-        "steps": [
-          {
-            "type": "confirmation",
-            "entity": "coverageConfirmation",
-            "conditions": [
-              "{{$not ($has coverage)}}"
-            ],
-            "messages": [
-              [
-                "Do you have some particular sport in mind?"
-              ]
-            ]
-          },
-          {
-            "type": "question",
-            "entity": "coverage",
-            "entity-type": "Coverage",
-            "conditions": [
-              "{{$eq coverageConfirmation true}}"
-            ],
-            "messages": [
-              "What sport are you interested in?"
-            ]
-          },
-          {
-            "type": "message",
-            "conditions": [
-              "{{$has coverage}}"
-            ],
-            "messages": [
-              "All {{coverage}} are included in our health insurance plans."
-            ]
-          },
-          {
-            "type": "message",
-            "messages": [
-              "You can check the full list of the included sports at https://..."
-            ]
-          }
-        ]
-      }
+          ]
+        },
+        {
+          "type": "question",
+          "entity": "coverage",
+          "entity-type": "Coverage",
+          "conditions": [
+            "{{$eq coverageConfirmation true}}"
+          ],
+          "messages": [
+            "What sport are you interested in?"
+          ]
+        },
+        {
+          "type": "message",
+          "conditions": [
+            "{{$has coverage}}"
+          ],
+          "messages": [
+            "All {{coverage}} are included in our health insurance plans."
+          ]
+        },
+        {
+          "type": "message",
+          "messages": [
+            "You can check the full list of the included sports at https://..."
+          ]
+        }
+      ]
     }
+  },
+  "settings": {
+    "invalid-replies": [
+      "I am not sure I understood what you said."
+    ],
+    "general-failure": [
+      "We are experiencing technical difficulties at this moment."
+    ],
+    "previous-conversation-messages": [
+      "So..."
+    ]
+  },
+  "commands": {
+    "NEXT-PAGE": [
+      "Next 5"
+    ],
+    "RESTART": [
+      "restart"
+    ]
   }
+}
