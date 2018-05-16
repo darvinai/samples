@@ -1,44 +1,4 @@
 {
-  "commands": {
-    "NEXT-PAGE": [
-      "Следващи 5"
-    ],
-    "RESTART": [
-      "рестарт",
-      "restart"
-    ]
-  },
-  "settings": {
-    "invalid-replies": [
-      "Не съм сигурен, че ви разбирам. Може ли да повторите?"
-    ],
-    "general-failure": [
-      "В момента имаме технически проблем, моля да ни извините."
-    ],
-    "previous-conversation-messages": [
-      "Връщам се към {{ conversationDisplayName }}."
-    ],
-    "authentication": {
-      "entity": "auth",
-      "messages": [
-        "Моля влезте в системата, за да продължите."
-      ],
-      "acknowledgements": [
-        "Влязохте успешно в системата."
-      ],
-      "display": {
-        "type": "login",
-        "template": {
-          "title": "Вход Болница АСМЕ София",
-          "url": "https://bs-login.darvin.ai/login",
-          "image": "https://darvin.ai/img/logo.png"
-        }
-      }
-    },
-    "persist-entities": [
-      "auth"
-    ]
-  },
   "conversations": {
     "welcome": {
       "type": "support",
@@ -325,5 +285,45 @@
         }
       ]
     }
+  },
+  "settings": {
+    "invalid-replies": [
+      "Не съм сигурен, че ви разбирам. Може ли да повторите?"
+    ],
+    "general-failure": [
+      "В момента имаме технически проблем, моля да ни извините."
+    ],
+    "previous-conversation-messages": [
+      "Връщам се към {{ conversationDisplayName }}."
+    ],
+    "authentication": {
+      "entity": "auth",
+      "messages": [
+        "Моля влезте в системата, за да продължите."
+      ],
+      "acknowledgements": [
+        "Влязохте успешно в системата."
+      ],
+      "display": {
+        "type": "login",
+        "template": {
+          "title": "Вход Болница АСМЕ София",
+          "url": "https://bs-login.darvin.ai/login",
+          "image": "https://darvin.ai/img/logo.png"
+        }
+      }
+    },
+    "persist-entities": [
+      "auth"
+    ]
+  },
+  "commands": {
+    "NEXT-PAGE": [
+      "Следващи 5"
+    ],
+    "RESTART": [
+      "рестарт",
+      "restart"
+    ]
   }
 }

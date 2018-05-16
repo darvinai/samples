@@ -1,24 +1,4 @@
 {
-  "commands": {
-    "NEXT-PAGE": [
-      "Nächste 5"
-    ],
-    "RESTART": [
-      "neustart",
-      "restart"
-    ]
-  },
-  "settings": {
-    "invalid-replies": [
-      "Ich bin mir nicht sicher, ob ich verstanden habe, was du gesagt hast."
-    ],
-    "general-failure": [
-      "Wir haben technische Schwierigkeiten in diesem Moment."
-    ],
-    "previous-conversation-messages": [
-      "Ich gehe jetzt zurück zum {{ conversationDisplayName }}."
-    ]
-  },
   "conversations": {
     "welcome": {
       "type": "support",
@@ -290,5 +270,25 @@
         }
       ]
     }
+  },
+  "settings": {
+    "invalid-replies": [
+      "Ich bin mir nicht sicher, ob ich verstanden habe, was du gesagt hast."
+    ],
+    "general-failure": [
+      "Wir haben technische Schwierigkeiten in diesem Moment."
+    ],
+    "previous-conversation-messages": [
+      "Ich gehe jetzt zurück zum {{ conversationDisplayName }}."
+    ]
+  },
+  "commands": {
+    "NEXT-PAGE": [
+      "Nächste 5"
+    ],
+    "RESTART": [
+      "neustart",
+      "restart"
+    ]
   }
 }

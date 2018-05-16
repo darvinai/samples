@@ -1,43 +1,4 @@
 {
-  "commands": {
-    "NEXT-PAGE": [
-      "Next 5"
-    ],
-    "RESTART": [
-      "restart"
-    ]
-  },
-  "settings": {
-    "invalid-replies": [
-      "I am not sure I understood what you said."
-    ],
-    "general-failure": [
-      "We are experiencing technical difficulties at this moment."
-    ],
-    "previous-conversation-messages": [
-      "I am going back to the {{ conversationDisplayName }} now."
-    ],
-    "authentication": {
-      "entity": "auth",
-      "messages": [
-        "Please login with your account."
-      ],
-      "acknowledgements": [
-        "You are now logged in."
-      ],
-      "display": {
-        "type": "login",
-        "template": {
-          "title": "ACME Hospital - Login",
-          "url": "https://bs-login.darvin.ai/login",
-          "image": "https://darvin.ai/img/logo.png"
-        }
-      }
-    },
-    "persist-entities": [
-      "auth"
-    ]
-  },
   "conversations": {
     "welcome": {
       "type": "support",
@@ -325,5 +286,44 @@
         }
       ]
     }
+  },
+  "settings": {
+    "invalid-replies": [
+      "I am not sure I understood what you said."
+    ],
+    "general-failure": [
+      "We are experiencing technical difficulties at this moment."
+    ],
+    "previous-conversation-messages": [
+      "I am going back to the {{ conversationDisplayName }} now."
+    ],
+    "authentication": {
+      "entity": "auth",
+      "messages": [
+        "Please login with your account."
+      ],
+      "acknowledgements": [
+        "You are now logged in."
+      ],
+      "display": {
+        "type": "login",
+        "template": {
+          "title": "ACME Hospital - Login",
+          "url": "https://bs-login.darvin.ai/login",
+          "image": "https://darvin.ai/img/logo.png"
+        }
+      }
+    },
+    "persist-entities": [
+      "auth"
+    ]
+  },
+  "commands": {
+    "NEXT-PAGE": [
+      "Next 5"
+    ],
+    "RESTART": [
+      "restart"
+    ]
   }
 }

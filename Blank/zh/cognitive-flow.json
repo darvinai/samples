@@ -1,96 +1,96 @@
 {
-    "commands": {
-      "NEXT-PAGE": [
-        "下一个5"
-      ],
-      "RESTART": [
-        "重新开始",
-        "restart"
+  "conversations": {
+    "welcome": {
+      "type": "support",
+      "steps": [{
+          "type": "message",
+          "messages": [
+            "这是您的聊天机器人欢迎的对话。"
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "help",
+          "conditions": ["{{$not ($has conversation) }}"]
+        }
       ]
     },
-    "settings": {
-      "invalid-replies": [
-        "我不确定我是否理解你所说的。"
-      ],
-      "general-failure": [
-        "目前我们遇到技术困难。"
-      ],
-      "previous-conversation-messages": [
-        "我现在要回到{{ conversationDisplayName }}。"
+    "help": {
+      "type": "support",
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "如果您遇到问题，可以通过键入'restart'重新启动对话，",
+            "这是我能为你做的事情："
+          ]
+        ],
+        "display": {
+          "type": "quick-reply",
+          "data": [
+            "对话1",
+            "会话2"
+          ]
+        }
+      }]
+    },
+    "restart": {
+      "type": "support",
+      "steps": [{
+          "type": "message",
+          "messages": [
+            "你的谈话重新开始。"
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
+        }
       ]
     },
-    "conversations": {
-      "welcome": {
-        "type": "support",
-        "steps": [{
-            "type": "message",
-            "messages": [
-              "这是您的聊天机器人欢迎的对话。"
-            ]
-          },
-          {
-            "type": "conversation",
-            "conversation": "help",
-            "conditions": ["{{$not ($has conversation) }}"]
-          }
-        ]
-      },
-      "help": {
-        "type": "support",
-        "steps": [{
-          "type": "message",
-          "messages": [
-            [
-              "如果您遇到问题，可以通过键入'restart'重新启动对话，",
-              "这是我能为你做的事情："
-            ]
-          ],
-          "display": {
-            "type": "quick-reply",
-            "data": [
-              "对话1",
-              "会话2"
-            ]
-          }
-        }]
-      },
-      "restart": {
-        "type": "support",
-        "steps": [{
-            "type": "message",
-            "messages": [
-              "你的谈话重新开始。"
-            ]
-          },
-          {
-            "type": "conversation",
-            "conversation": "welcome"
-          }
-        ]
-      },
-      "conversationOne": {
-        "type": "goal",
-        "display-name": "对话1",
-        "steps": [{
-          "type": "message",
-          "messages": [
-            [
-              "这是对话1"
-            ]
+    "conversationOne": {
+      "type": "goal",
+      "display-name": "对话1",
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "这是对话1"
           ]
-        }]
-      },
-      "conversationTwo": {
-        "type": "goal",
-        "display-name": "会话2",
-        "steps": [{
-          "type": "message",
-          "messages": [
-            [
-              "这是对话2"
-            ]
+        ]
+      }]
+    },
+    "conversationTwo": {
+      "type": "goal",
+      "display-name": "会话2",
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "这是对话2"
           ]
-        }]
-      }
+        ]
+      }]
     }
+  },
+  "settings": {
+    "invalid-replies": [
+      "我不确定我是否理解你所说的。"
+    ],
+    "general-failure": [
+      "目前我们遇到技术困难。"
+    ],
+    "previous-conversation-messages": [
+      "我现在要回到{{ conversationDisplayName }}。"
+    ]
+  },
+  "commands": {
+    "NEXT-PAGE": [
+      "下一个5"
+    ],
+    "RESTART": [
+      "重新开始",
+      "restart"
+    ]
   }
+}

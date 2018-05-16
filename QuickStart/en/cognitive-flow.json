@@ -1,23 +1,4 @@
 {
-  "commands": {
-    "NEXT-PAGE": [
-      "Next 5"
-    ],
-    "RESTART": [
-      "restart"
-    ]
-  },
-  "settings": {
-    "invalid-replies": [
-      "I am not sure I understood what you said."
-    ],
-    "general-failure": [
-      "We are experiencing technical difficulties at this moment."
-    ],
-    "previous-conversation-messages": [
-      "I am going back to the {{ conversationDisplayName }} now."
-    ]
-  },
   "conversations": {
     "welcome": {
       "type": "support",
@@ -289,5 +270,24 @@
         }
       ]
     }
+  },
+  "settings": {
+    "invalid-replies": [
+      "I am not sure I understood what you said."
+    ],
+    "general-failure": [
+      "We are experiencing technical difficulties at this moment."
+    ],
+    "previous-conversation-messages": [
+      "I am going back to the {{ conversationDisplayName }} now."
+    ]
+  },
+  "commands": {
+    "NEXT-PAGE": [
+      "Next 5"
+    ],
+    "RESTART": [
+      "restart"
+    ]
   }
 }

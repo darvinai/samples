@@ -1,24 +1,4 @@
 {
-  "commands": {
-    "NEXT-PAGE": [
-      "Следващи 5"
-    ],
-    "RESTART": [
-      "рестарт",
-      "restart"
-    ]
-  },
-  "settings": {
-    "invalid-replies": [
-      "Не съм сигурен, че ви разбирам. Може ли да повторите?"
-    ],
-    "general-failure": [
-      "В момента имаме технически проблем, моля да ни извините."
-    ],
-    "previous-conversation-messages": [
-      "Връщам се към {{ conversationDisplayName }}."
-    ]
-  },
   "conversations": {
     "welcome": {
       "type": "support",
@@ -92,5 +72,25 @@
         ]
       }]
     }
+  },
+  "settings": {
+    "invalid-replies": [
+      "Не съм сигурен, че ви разбирам. Може ли да повторите?"
+    ],
+    "general-failure": [
+      "В момента имаме технически проблем, моля да ни извините."
+    ],
+    "previous-conversation-messages": [
+      "Връщам се към {{ conversationDisplayName }}."
+    ]
+  },
+  "commands": {
+    "NEXT-PAGE": [
+      "Следващи 5"
+    ],
+    "RESTART": [
+      "рестарт",
+      "restart"
+    ]
   }
 }
