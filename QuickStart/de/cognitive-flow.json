@@ -99,7 +99,7 @@
           "type": "question",
           "entity": "doctor",
           "entity-type": "Doctor",
-          "entity-display": "{{Title}} {{FirstName}} {{LastName}}",
+          "entity-display": "{{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}}",
           "messages": [
             "Wie heißt der Arzt, den du sehen willst?"
           ],
