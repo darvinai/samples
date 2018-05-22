@@ -94,7 +94,6 @@
       "steps": [{
           "type": "question",
           "entity": "age",
-          "entity-display": "{{this}}",
           "entity-type": "Number",
           "messages": [
             "What is your age?"
@@ -118,7 +117,7 @@
           "type": "question",
           "entity": "startDate",
           "entity-type": "Date",
-          "entity-display": "{{$date this 'D MMMM YYYY'}}",
+          "entity-display": "{{$date startDate 'D MMMM YYYY'}}",
           "messages": [
             "What date do you want your insurance to start from?"
           ],
@@ -132,7 +131,7 @@
           "type": "question",
           "entity": "endDate",
           "entity-type": "Date",
-          "entity-display": "{{$date this 'D MMMM YYYY'}}",
+          "entity-display": "{{$date endDate 'D MMMM YYYY'}}",
           "messages": [
             "What date is the last day of your insurance coverage?"
           ],

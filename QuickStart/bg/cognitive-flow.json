@@ -101,7 +101,7 @@
           "type": "question",
           "entity": "doctor",
           "entity-type": "Doctor",
-          "entity-display": "{{Title}} {{FirstName}} {{LastName}}",
+          "entity-display": "{{doctor.Title}} {{doctor.FirstName}} {{doctor.LastName}}",
           "messages": [
             "За кой лекар искате да си запишете час?"
           ],
