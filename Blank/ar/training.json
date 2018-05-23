@@ -1,0 +1,59 @@
+{
+  "entity-definitions": [{
+      "name": "Conversation",
+      "lookup-strategy": "trait",
+      "data": [{
+          "value": "conversationOne",
+          "expressions": [
+            "المحادثة 1"
+          ],
+          "metadata": ""
+        },
+        {
+          "value": "conversationTwo",
+          "expressions": [
+            "المحادثة 2"
+          ],
+          "metadata": ""
+        },
+        {
+          "value": "restart",
+          "expressions": [
+            "restart",
+            "إعادة بدء"
+          ]
+        },
+        {
+          "value": "help",
+          "expressions": [
+            "Help",
+            "مساعدة"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SmallTalk",
+      "lookup-strategy": "QnA",
+      "data": [{
+          "value": "goodbye",
+          "expressions": [
+            "وداعا"
+          ],
+          "answers": [
+            "وداعا"
+          ]
+        },
+        {
+          "value": "thanks",
+          "expressions": [
+            "شكر"
+          ],
+          "answers": [
+            "على الرحب و السعة"
+          ]
+        }
+      ]
+    }
+  ]
+}
