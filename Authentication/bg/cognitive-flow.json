@@ -308,8 +308,8 @@
         "type": "login",
         "template": {
           "title": "Вход Болница АСМЕ София",
-          "url": "https://bs-login.darvin.ai/login",
-          "image": "https://darvin.ai/img/logo.png"
+          "url": "https://bs-login.nativechat.com/login",
+          "image": "https://nativechat.com/img/logo.png"
         }
       }
     },

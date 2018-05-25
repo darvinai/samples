@@ -17,5 +17,5 @@ export const environment = {
     facebook: '',
     viber: ''
   },
-  webchatOrigin: 'https://webchat.darvin.ai'
+  webchatOrigin: 'https://webchat.nativechat.com'
 };
