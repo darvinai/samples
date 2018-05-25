@@ -1,5 +1,5 @@
 # samples
-A set of sample projects for Darvin.ai
+A set of sample projects for NativeChat
 
 
 

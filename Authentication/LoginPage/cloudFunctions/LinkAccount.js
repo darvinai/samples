@@ -1,7 +1,7 @@
 function onRequest(request, response, modules) {
     var logger = modules.logger;
     var state = request.params.state;
-    var darvinUrl = 'https://api.darvin.ai/v1/account-linking';
+    var darvinUrl = 'https://api.nativechat.com/v1/account-linking';
     var darvinOptions = {
         uri: darvinUrl,
         method: 'POST',

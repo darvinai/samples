@@ -1,6 +1,6 @@
 {
     "parameters": {
-        "webviewsUrl": "https://webviews.darvin.ai/v1"
+        "webviewsUrl": "https://webviews.nativechat.com/v1"
     },
     "scenarios": [
         {
