@@ -8,8 +8,8 @@ This is a sample login page using Kinvey as a backend service.
 - kinvey.appKey - (required) your Kinvey app key
 - kinvey.appSecret - (required) your Kinvey app secret
 - facebook.appId - (optional) your Facebook app id. Only needed if you want to login with Facebook
-- channels.facebook - (required if using Facebook Messenger) your Facebook page uri (use 'nativechatdotcom' when using our proxy channel)
-- channels.viber - (required if using Viber) your Viber page uri (use 'nativechatdotcom' when using our proxy channel)
+- channels.facebook - (required if using Facebook Messenger) your Facebook page uri (use 'testdarvinditai' when using our proxy channel)
+- channels.viber - (required if using Viber) your Viber page uri (use 'nativechat.com' when using our proxy channel)
 
 ### Setup your Kinvey app
 - Create a custom endpoint called LinkAccount using the code from `/cloudFunctions/LinkAccount.js`
