@@ -1,9 +1,9 @@
 function onRequest(request, response, modules) {
     var logger = modules.logger;
     var state = request.params.state;
-    var darvinUrl = 'https://api.nativechat.com/v1/account-linking';
-    var darvinOptions = {
-        uri: darvinUrl,
+    var nativechatUrl = 'https://api.nativechat.com/v1/account-linking';
+    var nativechatOptions = {
+        uri: nativechatUrl,
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -16,7 +16,7 @@ function onRequest(request, response, modules) {
     };
 
     modules.request.request(
-        darvinOptions,
+        nativechatOptions,
         function (error, result) {
             if (error) {
                 logger.error(error);
