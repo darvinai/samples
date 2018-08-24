@@ -1,0 +1,96 @@
+{
+  "conversations": {
+    "welcome": {
+      "type": "support",
+      "steps": [{
+          "type": "message",
+          "messages": [
+            "Tervetuloa chatbot keskusteluun."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "help",
+          "conditions": ["{{$not ($has conversation) }}"]
+        }
+      ]
+    },
+    "help": {
+      "type": "support",
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "Jos olet jumissa, voit aina aloittaa keskustelun uudelleen kirjoittamalla 'restart'.",
+            "Tässä asioita, mitä voin tehdä sinulle:"
+          ]
+        ],
+        "display": {
+          "type": "quick-reply",
+          "data": [
+            "Keskustelu 1",
+            "Keskustelu 2"
+          ]
+        }
+      }]
+    },
+    "restart": {
+      "type": "support",
+      "steps": [{
+          "type": "message",
+          "messages": [
+            "Keskustelusi käynnistetään uudelleen."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
+        }
+      ]
+    },
+    "conversationOne": {
+      "type": "goal",
+      "display-name": "conversation 1",
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "Tämä on Keskustelu 1"
+          ]
+        ]
+      }]
+    },
+    "conversationTwo": {
+      "type": "goal",
+      "display-name": "conversation 2",
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "Tämä on Keskustelu 2"
+          ]
+        ]
+      }]
+    }
+  },
+  "settings": {
+    "invalid-replies": [
+      "En ole varma, että ymmärsin, mitä sanoit."
+    ],
+    "general-failure": [
+      "Meillä on tällä hetkellä teknisiä vaikeuksia."
+    ],
+    "previous-conversation-messages": [
+      "Palaan takaisin {{ conversationDisplayName }} nyt."
+    ]
+  },
+  "commands": {
+    "NEXT-PAGE": [
+      "Seuraava 5"
+    ],
+    "RESTART": [
+      "restart",
+      "restart"
+    ]
+  }
+}

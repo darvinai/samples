@@ -1,0 +1,43 @@
+{
+    "scenarios": [
+        {
+            "it": "introduces itself and enters into a conversation",
+            "steps": [
+                {
+                    "user": {
+                        "text": "Moi"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Tämä on tervetuloa keskustelu Chatbottiin."
+                            },
+                            {
+                                "text": "Jos olet jumissa, voit aina aloittaa keskustelun uudelleen kirjoittamalla 'restart'."
+                            },
+                            {
+                                "text": "Tässä asioita, mitä voin tehdä sinulle:",
+                                "quickReplies": [
+                                    "Keskustelu 1",
+                                    "Keskustelu 2"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "Keskustelu 1"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Tämä on keskustelu 1"
+                            }
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}
