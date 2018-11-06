@@ -73,7 +73,7 @@
             "mais ajuda",
             "mostre ajuda",
             "qual é o seu uso",
-            "Você é inútil."
+            "Você é inútil.",
             "O que você está fazendo?",
             "O que posso dizer?",
             "Eu preciso de alguma ajuda",
@@ -114,15 +114,15 @@
             "byeeeee",
             "OK, tchau",
             "adeus excelente",
-            "adeus"
-            "Eu vou tchau"
+            "adeus",
+            "Eu vou tchau",
             "Eu disse tchau",
             "Tchau",
             "tenha um bom dia",
             "tenha um bom dia",
             "Tenha um ótimo fim de semana",
             "Falo com você em breve",
-            "Eu estou fora daqui"
+            "Eu estou fora daqui",
             "Fui",
             "estou saindo",
             "mais tarde",
@@ -134,7 +134,7 @@
             "te vejo em breve",
             "Até logo",
             "Até logo",
-            "Até mais",
+            "Até mais"
           ],
           "answers": [
             "Tchau!",
@@ -168,7 +168,7 @@
             "bom, obrigado",
             "ok, obrigado",
             "Eu sei obrigado",
-            "obrigado por me mostrar isso",
+            "obrigado por me mostrar isso"
           ],
           "answers": [
             "Conte comigo sempre :)",
