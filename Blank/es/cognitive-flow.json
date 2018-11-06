@@ -1,0 +1,82 @@
+{
+  "conversations": {
+    "welcome": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": ["Esta es una conversación de bienvenida para tu chatbot"]
+        },
+        {
+          "type": "conversation",
+          "conversation": "help",
+          "conditions": ["{{$not ($has conversation) }}"]
+        }
+      ]
+    },
+    "help": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "Si quieres reiniciar la conversación puedes, en cualquier momento, escribir 'reiniciar'",
+              "Esto es lo que puedo hacer por ti:"
+            ]
+          ],
+          "display": {
+            "type": "quick-reply",
+            "data": ["Conversación 1", "Conversación 2"]
+          }
+        }
+      ]
+    },
+    "restart": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": ["Tu conversación ha sido reiniciada"]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
+        }
+      ]
+    },
+    "conversationOne": {
+      "type": "goal",
+      "display-name": "conversation 1",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [["Esta es la conversación 1"]]
+        }
+      ]
+    },
+    "conversationTwo": {
+      "type": "goal",
+      "display-name": "conversation 2",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [["Esta es la conversación 2"]]
+        }
+      ]
+    }
+  },
+  "settings": {
+    "invalid-replies": ["No entendí lo que dijiste."],
+    "general-failure": [
+      "Estamos teniendo dificultades técnicas en este momento."
+    ],
+    "previous-conversation-messages": [
+      "Voy a regresar a la coversación {{ conversationDisplayName }} ahora."
+    ]
+  },
+  "commands": {
+    "NEXT-PAGE": ["Siguientes 5"],
+    "RESTART": ["reiniciar"]
+  }
+}
