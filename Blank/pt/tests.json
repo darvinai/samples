@@ -1,0 +1,43 @@
+{
+    "scenarios": [
+        {
+            "it": "introduces itself and enters into a conversation",
+            "steps": [
+                {
+                    "user": {
+                        "text": "Olá"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Esta é uma conversa de boas vindas para o seu chatbot."
+                            },
+                            {
+                                "text": "Se você ficar preso, você pode sempre reiniciar nossa conversa digitando 'reiniciar'"
+                            },
+                            {
+                                "text": "Aqui está o que posso fazer por você:",
+                                "quickReplies": [
+                                    "Conversa 1",
+                                    "Conversa 2"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "Conversa 1"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Esta é a conversa 1"
+                            }
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}
