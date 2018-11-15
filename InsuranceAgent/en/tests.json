@@ -280,6 +280,31 @@
                                             "title": "Select an option"
                                         }
                                     ]
+                                },
+                                "v2template": {
+                                    "type": "carousel",
+                                    "items": [
+                                        {
+                                            "title": "Patriot WorldWide Plus",
+                                            "subtitle": "$81.10",
+                                            "imageUrl": "https://annolucis.net/wp-content/uploads/2017/06/shutterstock_insurance_Ahmetov_Ruslan.jpg"
+                                        },
+                                        {
+                                            "title": "Travel Medical Insurance",
+                                            "subtitle": "$35.20",
+                                            "imageUrl": "https://eicrtesting.com/wp-content/uploads/2017/02/insurance-arrow.jpg"
+                                        },
+                                        {
+                                            "title": "Global Medical Insurance",
+                                            "subtitle": "$60.30",
+                                            "imageUrl": "https://moneycompass.com.my/en/wp-content/uploads/sites/2/insurance_solution_large.jpg"
+                                        }
+                                    ],
+                                    "buttons": [
+                                        {
+                                            "title": "Select"
+                                        }
+                                    ]
                                 }
                             }
                         ]
