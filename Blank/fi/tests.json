@@ -5,12 +5,12 @@
             "steps": [
                 {
                     "user": {
-                        "text": "Moi"
+                        "text": "Hyvää iltapäivää"
                     },
                     "bot": [
                         [
                             {
-                                "text": "Tämä on tervetuloa keskustelu Chatbottiin."
+                                "text": "Tervetuloa chatbot keskusteluun."
                             },
                             {
                                 "text": "Jos olet jumissa, voit aina aloittaa keskustelun uudelleen kirjoittamalla 'restart'."
