@@ -28,8 +28,8 @@
         "display": {
           "type": "quick-reply",
           "data": [
-            "Inizia chat su argomento 1",
-            "Inizia chat su argomento 2"
+            "Conversazione 1",
+            "Conversazione 2"
           ]
         }
       }]
@@ -50,24 +50,24 @@
     },
     "conversationOne": {
       "type": "goal",
-      "display-name": "conversation 1",
+      "display-name": "conversazione 1",
       "steps": [{
         "type": "message",
         "messages": [
           [
-            "Benvenuto nella chat, ti trovi a conversare sull'argomento 1."
+            "Questa è conversazione 1."
           ]
         ]
       }]
     },
     "conversationTwo": {
       "type": "goal",
-      "display-name": "conversation 2",
+      "display-name": "conversazione 2",
       "steps": [{
         "type": "message",
         "messages": [
           [
-            "Benvenuto nella chat, qui ti trovi a conversare sull'argomento 2."
+            "Questa è conversazione 2."
           ]
         ]
       }]
@@ -81,7 +81,7 @@
       "Mi scuso per l'inconveniente ma stiamo sperimentando delle difficoltà tecniche al momento."
     ],
     "previous-conversation-messages": [
-      "Adesso ritorno alla conversazione sull'argomento {{ conversationDisplayName }}."
+      "Adesso ritorno alla conversazione {{ conversationDisplayName }}."
     ]
   },
   "commands": {
