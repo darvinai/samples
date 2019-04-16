@@ -55,7 +55,7 @@
         "type": "message",
         "messages": [
           [
-            "Tämä on Keskustelu 1"
+            "Tämä on keskustelu 1"
           ]
         ]
       }]
@@ -67,7 +67,7 @@
         "type": "message",
         "messages": [
           [
-            "Tämä on Keskustelu 2"
+            "Tämä on keskustelu 2"
           ]
         ]
       }]
