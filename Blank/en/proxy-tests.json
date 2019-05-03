@@ -1,0 +1,55 @@
+{
+    "scenarios": [
+        {
+            "it": "introduces itself and enters into a conversation",
+            "steps": [
+                {
+                    "user": {
+                        "text": "proxy {{ spec.botId }}"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Chatbot {{ spec.name }} is successfully mapped. Its language is English. Now you can talk to it."
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "hi"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "This is a welcome conversation for your chatbot."
+                            },
+                            {
+                                "text": "If you get stuck, you can always restart our conversation by typing 'restart'"
+                            },
+                            {
+                                "text": "Here is what I can do for you:",
+                                "quickReplies": [
+                                    "Conversation 1",
+                                    "Conversation 2"
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "user": {
+                        "text": "Conversation 1"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "This is conversation 1"
+                            }
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}
