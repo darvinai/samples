@@ -1,5 +1,5 @@
 # samples
-A set of sample projects for NativeChat
+A set of sample projects for Kinvey Chat
 
 
 

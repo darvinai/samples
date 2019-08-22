@@ -1,0 +1,95 @@
+{
+  "conversations": {
+    "welcome": {
+      "type": "support",
+      "steps": [{
+          "type": "message",
+          "messages": [
+            "Dit is een welkomstgesprek voor je chatbot."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "help",
+          "conditions": ["{{$not ($has conversation) }}"]
+        }
+      ]
+    },
+    "help": {
+      "type": "support",
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "Als je vastloopt, kun je ons gesprek altijd opnieuw beginnen door 'restart' te typen",
+            "Dit is wat ik voor je kan doen:"
+          ]
+        ],
+        "display": {
+          "type": "quick-reply",
+          "data": [
+            "Gesprek 1",
+            "Gesprek 2"
+          ]
+        }
+      }]
+    },
+    "restart": {
+      "type": "support",
+      "steps": [{
+          "type": "message",
+          "messages": [
+            "Je gesprek wordt opnieuw gestart."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
+        }
+      ]
+    },
+    "conversationOne": {
+      "type": "goal",
+      "display-name": "Gesprek 1",
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "Dit is gesprek 1"
+          ]
+        ]
+      }]
+    },
+    "conversationTwo": {
+      "type": "goal",
+      "display-name": "Gesprek 2",
+      "steps": [{
+        "type": "message",
+        "messages": [
+          [
+            "Dit is gesprek 2"
+          ]
+        ]
+      }]
+    }
+  },
+  "settings": {
+    "invalid-replies": [
+      "Ik weet niet zeker of ik begreep wat je zei."
+    ],
+    "general-failure": [
+      "We ondervinden momenteel technische problemen."
+    ],
+    "previous-conversation-messages": [
+      "Ik ga terug naar de {{ conversationDisplayName }}."
+    ]
+  },
+  "commands": {
+    "NEXT-PAGE": [
+      "Next 5"
+    ],
+    "RESTART": [
+      "restart"
+    ]
+  }
+}
