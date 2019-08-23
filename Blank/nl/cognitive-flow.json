@@ -5,7 +5,7 @@
       "steps": [{
           "type": "message",
           "messages": [
-            "Dit is een welkomstgesprek voor je chatbot."
+            "Dit is een welkoms gesprek voor je chatbot."
           ]
         },
         {
