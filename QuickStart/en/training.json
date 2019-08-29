@@ -1,8 +1,10 @@
 {
-  "entity-definitions": [{
+  "entity-definitions": [
+    {
       "name": "Conversation",
       "lookup-strategy": "trait",
-      "data": [{
+      "data": [
+        {
           "value": "bookDoctor",
           "expressions": [
             "Book a doctor",
@@ -113,7 +115,7 @@
       "data": [],
       "dynamic-data": {
         "data-source": {
-          "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctors",
+          "endpoint": "https://baas.kinvey.com/rpc/kid_Byoc04rBB/custom/GetDoctors",
           "method": "POST",
           "headers": {
             "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
@@ -130,7 +132,8 @@
     {
       "name": "SmallTalk",
       "lookup-strategy": "QnA",
-      "data": [{
+      "data": [
+        {
           "value": "goodbye",
           "expressions": [
             "bye",

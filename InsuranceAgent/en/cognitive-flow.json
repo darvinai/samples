@@ -2,7 +2,8 @@
   "conversations": {
     "welcome": {
       "type": "support",
-      "steps": [{
+      "steps": [
+        {
           "type": "message",
           "messages": [
             [
@@ -22,26 +23,29 @@
     },
     "help": {
       "type": "support",
-      "steps": [{
-        "type": "message",
-        "messages": [
-          [
-            "What can I do for you?"
-          ]
-        ],
-        "display": {
-          "type": "quick-reply",
-          "data": [
-            "New insurance",
-            "Fill a claim",
-            "Contact operator"
-          ]
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "What can I do for you?"
+            ]
+          ],
+          "display": {
+            "type": "quick-reply",
+            "data": [
+              "New insurance",
+              "Fill a claim",
+              "Contact operator"
+            ]
+          }
         }
-      }]
+      ]
     },
     "restart": {
       "type": "support",
-      "steps": [{
+      "steps": [
+        {
           "type": "message",
           "messages": [
             "Your conversation is restarted."
@@ -56,7 +60,8 @@
     "contactOperator": {
       "type": "goal",
       "display-name": "contacting an operator",
-      "steps": [{
+      "steps": [
+        {
           "type": "confirmation",
           "entity": "redirect",
           "messages": [
@@ -91,7 +96,8 @@
     "makeInsurance": {
       "type": "goal",
       "display-name": "signing up for a new insurance",
-      "steps": [{
+      "steps": [
+        {
           "type": "question",
           "entity": "age",
           "entity-type": "Number",
@@ -102,15 +108,17 @@
             "suggestions": [
               "Are you still {{age}} years old?"
             ],
-            "validations": [{
-              "type": "range",
-              "parameters": {
-                "min": "18"
-              },
-              "error-message": [
-                "The minimum required age for an insurance is 18 years. We are sorry, but we cannot provide you with a valid insurance."
-              ]
-            }]
+            "validations": [
+              {
+                "type": "range",
+                "parameters": {
+                  "min": "18"
+                },
+                "error-message": [
+                  "The minimum required age for an insurance is 18 years. We are sorry, but we cannot provide you with a valid insurance."
+                ]
+              }
+            ]
           }
         },
         {
@@ -139,15 +147,17 @@
             "acknowledgements": [
               "Let's find you an insurance from {{startDate}} to {{endDate}}."
             ],
-            "validations": [{
-              "type": "custom",
-              "parameters": {
-                "condition": "{{$gt endDate startDate}}"
-              },
-              "error-message": [
-                "The end date of your insurance cannot be before your start date."
-              ]
-            }]
+            "validations": [
+              {
+                "type": "custom",
+                "parameters": {
+                  "condition": "{{$gt endDate startDate}}"
+                },
+                "error-message": [
+                  "The end date of your insurance cannot be before your start date."
+                ]
+              }
+            ]
           }
         },
         {
@@ -218,7 +228,7 @@
           "display": {
             "type": "carousel",
             "data-source": {
-              "endpoint": "https://baas.kinvey.com/rpc/kid_HJRkt8g6G/custom/recommendInsurances?startDate={{startDate}}&endDate={{endDate}}",
+              "endpoint": "https://baas.kinvey.com/rpc/kid_HJ05erHSB/custom/recommendInsurances?startDate={{startDate}}&endDate={{endDate}}",
               "method": "POST",
               "headers": {
                 "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
@@ -237,7 +247,7 @@
           "type": "webhook",
           "entity": "insurance",
           "data-source": {
-            "endpoint": "https://baas.kinvey.com/rpc/kid_HJRkt8g6G/custom/recommendInsurance?startDate={{startDate}}&endDate={{endDate}}&id={{insurancePlan.Id}}",
+            "endpoint": "https://baas.kinvey.com/rpc/kid_HJ05erHSB/custom/recommendInsurance?startDate={{startDate}}&endDate={{endDate}}&id={{insurancePlan.Id}}",
             "method": "POST",
             "headers": {
               "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
@@ -279,12 +289,14 @@
             "acknowledgements": [
               "OK. I understand that your email is {{userEmail}}."
             ],
-            "validations": [{
-              "type": "email",
-              "error-message": [
-                "I am not sure this is a valid email. Can you please type it again?"
-              ]
-            }],
+            "validations": [
+              {
+                "type": "email",
+                "error-message": [
+                  "I am not sure this is a valid email. Can you please type it again?"
+                ]
+              }
+            ],
             "suggestions": [
               "Your email is {{userEmail}}?"
             ]
@@ -307,7 +319,8 @@
     "emergency": {
       "type": "goal",
       "display-name": "emergency",
-      "steps": [{
+      "steps": [
+        {
           "type": "question",
           "entity": "currentLocation",
           "entity-type": "Location",
@@ -330,12 +343,14 @@
             "suggestions": [
               "Is {{phone}} your phone number?"
             ],
-            "validations": [{
-              "type": "phone",
-              "error-message": [
-                "I am not sure it's a valid phone number. Can you type it again?"
-              ]
-            }]
+            "validations": [
+              {
+                "type": "phone",
+                "error-message": [
+                  "I am not sure it's a valid phone number. Can you type it again?"
+                ]
+              }
+            ]
           }
         },
         {
@@ -349,7 +364,8 @@
     "fillClaim": {
       "type": "goal",
       "display-name": "filling a claim",
-      "steps": [{
+      "steps": [
+        {
           "type": "confirmation",
           "entity": "isEmergency",
           "messages": [
@@ -393,7 +409,8 @@
     "collectDocuments": {
       "type": "goal",
       "display-name": "collecting claim documents",
-      "steps": [{
+      "steps": [
+        {
           "type": "question",
           "entity": "insuranceNumber",
           "entity-type": "InsuranceNumber",
@@ -428,18 +445,20 @@
             "Can you take a picture of your billed amount?"
           ],
           "reactions": {
-            "validations": [{
-              "type": "image",
-              "error-message": [
-                "Even though I enjoy {{receiptPicture.labels.[0]}} pictures, we'll need a photo with the invoice of the billed ammount."
-              ],
-              "parameters": {
-                "contains": [
-                  "receipt",
-                  "document"
-                ]
+            "validations": [
+              {
+                "type": "image",
+                "error-message": [
+                  "Even though I enjoy {{receiptPicture.labels.[0]}} pictures, we'll need a photo with the invoice of the billed ammount."
+                ],
+                "parameters": {
+                  "contains": [
+                    "receipt",
+                    "document"
+                  ]
+                }
               }
-            }]
+            ]
           }
         },
         {
@@ -470,7 +489,8 @@
     },
     "insuranceCoverage": {
       "type": "support",
-      "steps": [{
+      "steps": [
+        {
           "type": "confirmation",
           "entity": "coverageConfirmation",
           "conditions": [

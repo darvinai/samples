@@ -1095,7 +1095,7 @@
             "data": [],
             "dynamic-data": {
                 "data-source": {
-                    "endpoint": "https://baas.kinvey.com/appdata/kid_HJRkt8g6G/Plans",
+                    "endpoint": "https://baas.kinvey.com/appdata/kid_HJ05erHSB/Plans",
                     "method": "GET",
                     "headers": {
                         "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="

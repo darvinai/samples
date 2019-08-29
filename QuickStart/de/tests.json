@@ -1,12 +1,15 @@
 {
-    "scenarios": [{
+    "scenarios": [
+        {
             "it": "completes a straightforward conversation",
-            "steps": [{
+            "steps": [
+                {
                     "user": {
                         "text": "Hallo"
                     },
                     "bot": [
-                        [{
+                        [
+                            {
                                 "text": "Hallo, ich bin der virtuelle Assistent des ACME-Krankenhauses mit künstlicher Intelligenz."
                             },
                             {
@@ -27,14 +30,16 @@
                         "text": "Buchen Sie einen Arzt"
                     },
                     "bot": [
-                        [{
-                            "text": "Wie heißt der Arzt, den du sehen willst?",
-                            "quickReplies": [
-                                "Dr. David Alcutt",
-                                "Dr. John Burke",
-                                "Dr. Mary Cannon"
-                            ]
-                        }]
+                        [
+                            {
+                                "text": "Wie heißt der Arzt, den du sehen willst?",
+                                "quickReplies": [
+                                    "Dr. David Alcutt",
+                                    "Dr. John Burke",
+                                    "Dr. Mary Cannon"
+                                ]
+                            }
+                        ]
                     ]
                 },
                 {
@@ -42,14 +47,16 @@
                         "text": "John Burke"
                     },
                     "bot": [
-                        [{
-                            "text": "Mit welchem ​​Datum möchten Sie sich mit Dr. John Burke treffen?",
-                            "quickReplies": [
-                                "2017-08-07",
-                                "2017-08-15",
-                                "2017-08-24"
-                            ]
-                        }]
+                        [
+                            {
+                                "text": "Mit welchem ​​Datum möchten Sie sich mit Dr. John Burke treffen?",
+                                "quickReplies": [
+                                    "2017-08-07",
+                                    "2017-08-15",
+                                    "2017-08-24"
+                                ]
+                            }
+                        ]
                     ]
                 },
                 {
@@ -57,14 +64,16 @@
                         "text": "2017-08-07"
                     },
                     "bot": [
-                        [{
-                            "text": "Wann möchten Sie Dr. John Burke am 2017.08.07 treffen?",
-                            "quickReplies": [
-                                "9:30",
-                                "10:00",
-                                "10:30"
-                            ]
-                        }]
+                        [
+                            {
+                                "text": "Wann möchten Sie Dr. John Burke am 2017.08.07 treffen?",
+                                "quickReplies": [
+                                    "9:30",
+                                    "10:00",
+                                    "10:30"
+                                ]
+                            }
+                        ]
                     ]
                 },
                 {
@@ -72,9 +81,11 @@
                         "text": "10:00"
                     },
                     "bot": [
-                        [{
-                            "text": "Was sind deine Vor- und Nachnamen?"
-                        }]
+                        [
+                            {
+                                "text": "Was sind deine Vor- und Nachnamen?"
+                            }
+                        ]
                     ]
                 },
                 {
@@ -82,7 +93,8 @@
                         "text": "John Smith"
                     },
                     "bot": [
-                        [{
+                        [
+                            {
                                 "text": "Ich buche Ihnen am 2017.08.07 um 10:00 einen Termin für Dr. John Burke."
                             },
                             {
@@ -102,40 +114,44 @@
                         "text": "Bestätigen"
                     },
                     "bot": [
-                        [{
-                            "text": "Herzlichen Glückwunsch. Sie haben einen Termin mit Dr. John Burke für 2017.08.07 um 10:00. Bis bald!"
-                        }]
+                        [
+                            {
+                                "text": "Herzlichen Glückwunsch. Sie haben einen Termin mit Dr. John Burke für 2017.08.07 um 10:00. Bis bald!"
+                            }
+                        ]
                     ]
                 }
             ],
             "mocks": {
-                "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorDays?doctorId=24806": {
+                "https://baas.kinvey.com/rpc/kid_Byoc04rBB/custom/GetDoctorDays?doctorId=24806": {
                     "POST": [
                         "2017-08-07",
                         "2017-08-15",
                         "2017-08-24"
                     ]
                 },
-                "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorHours?doctorId=24806&date=2017.08.07": {
+                "https://baas.kinvey.com/rpc/kid_Byoc04rBB/custom/GetDoctorHours?doctorId=24806&date=2017.08.07": {
                     "POST": [
                         "9:30",
                         "10:00",
                         "10:30"
                     ]
                 },
-                "https://baas.kinvey.com/appdata/kid_ry5xgIy6f/Appointments": {
+                "https://baas.kinvey.com/appdata/kid_Byoc04rBB/Appointments": {
                     "POST": {}
                 }
             }
         },
         {
             "it": "completes a short conversation",
-            "steps": [{
+            "steps": [
+                {
                     "user": {
                         "text": "Hallo! Ich möchte 8 am August 2017 um 15:00 einen Termin für Dr. Burke buchen."
                     },
                     "bot": [
-                        [{
+                        [
+                            {
                                 "text": "Hallo, ich bin der virtuelle Assistent des ACME-Krankenhauses mit künstlicher Intelligenz."
                             },
                             {
@@ -152,7 +168,8 @@
                         "text": "John Smith"
                     },
                     "bot": [
-                        [{
+                        [
+                            {
                                 "text": "Ich buche Ihnen am 2017.08.08 um 15:00 einen Termin für Dr. John Burke."
                             },
                             {
@@ -172,48 +189,57 @@
                         "text": "Bestätigen"
                     },
                     "bot": [
-                        [{
-                            "text": "Herzlichen Glückwunsch. Sie haben einen Termin mit Dr. John Burke für 2017.08.08 um 15:00. Bis bald!"
-                        }]
+                        [
+                            {
+                                "text": "Herzlichen Glückwunsch. Sie haben einen Termin mit Dr. John Burke für 2017.08.08 um 15:00. Bis bald!"
+                            }
+                        ]
                     ]
                 }
             ],
             "mocks": {
-                "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorDays?doctorId=24806": {
+                "https://baas.kinvey.com/rpc/kid_Byoc04rBB/custom/GetDoctorDays?doctorId=24806": {
                     "POST": [
                         "2017-08-08",
                         "2017-08-15",
                         "2017-08-24"
                     ]
                 },
-                "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorHours?doctorId=24806&date=2017.08.08": {
+                "https://baas.kinvey.com/rpc/kid_Byoc04rBB/custom/GetDoctorHours?doctorId=24806&date=2017.08.08": {
                     "POST": [
                         "9:30",
                         "10:00",
                         "15:00"
                     ]
                 },
-                "https://baas.kinvey.com/appdata/kid_ry5xgIy6f/Appointments": {
+                "https://baas.kinvey.com/appdata/kid_Byoc04rBB/Appointments": {
                     "POST": {}
                 }
             }
         },
         {
             "it": "transfers chat to operator",
-            "steps": [{
+            "steps": [
+                {
                     "user": {
                         "text": "Hallo"
                     },
                     "bot": [
-                        [{
-                            "text": "Hallo, ich bin der virtuelle Assistent des ACME-Krankenhauses mit künstlicher Intelligenz."
-                        }, {
-                            "text": "Wenn Sie nicht weiterkommen, können Sie unsere Konversation jederzeit mit 'Neustart' neu starten."
-                        }, {
-                            "text": "Hier ist was ich für dich tun kann:",
-                            "quickReplies": ["Buchen Sie einen Arzt", "Kontakt Betreiber"]
-                        }]
-
+                        [
+                            {
+                                "text": "Hallo, ich bin der virtuelle Assistent des ACME-Krankenhauses mit künstlicher Intelligenz."
+                            },
+                            {
+                                "text": "Wenn Sie nicht weiterkommen, können Sie unsere Konversation jederzeit mit 'Neustart' neu starten."
+                            },
+                            {
+                                "text": "Hier ist was ich für dich tun kann:",
+                                "quickReplies": [
+                                    "Buchen Sie einen Arzt",
+                                    "Kontakt Betreiber"
+                                ]
+                            }
+                        ]
                     ]
                 },
                 {
@@ -221,11 +247,15 @@
                         "text": "Kontaktieren Sie Support"
                     },
                     "bot": [
-                        [{
-                            "text": "Möchten Sie die Konversation mit einem Operator fortsetzen?",
-                            "quickReplies": ["Ja", "Nein"]
-                        }]
-
+                        [
+                            {
+                                "text": "Möchten Sie die Konversation mit einem Operator fortsetzen?",
+                                "quickReplies": [
+                                    "Ja",
+                                    "Nein"
+                                ]
+                            }
+                        ]
                     ]
                 },
                 {
@@ -233,9 +263,11 @@
                         "text": "Ja"
                     },
                     "bot": [
-                        [{
-                            "text": "Ich übergebe Sie an einen Operator, und ich werde die nächsten 60 Minuten still bleiben. Wenn Sie zu mir zurückkehren wollen, geben Sie bitte 'neustart' ein."
-                        }]
+                        [
+                            {
+                                "text": "Ich übergebe Sie an einen Operator, und ich werde die nächsten 60 Minuten still bleiben. Wenn Sie zu mir zurückkehren wollen, geben Sie bitte 'neustart' ein."
+                            }
+                        ]
                     ]
                 },
                 {

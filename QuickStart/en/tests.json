@@ -123,21 +123,21 @@
                 }
             ],
             "mocks": {
-                "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorDays?doctorId=24806": {
+                "https://baas.kinvey.com/rpc/kid_Byoc04rBB/custom/GetDoctorDays?doctorId=24806": {
                     "POST": [
                         "2017-08-07",
                         "2017-08-15",
                         "2017-08-24"
                     ]
                 },
-                "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorHours?doctorId=24806&date=2017.08.07": {
+                "https://baas.kinvey.com/rpc/kid_Byoc04rBB/custom/GetDoctorHours?doctorId=24806&date=2017.08.07": {
                     "POST": [
                         "9:30",
                         "10:00",
                         "10:30"
                     ]
                 },
-                "https://baas.kinvey.com/appdata/kid_ry5xgIy6f/Appointments": {
+                "https://baas.kinvey.com/appdata/kid_Byoc04rBB/Appointments": {
                     "POST": {}
                 }
             }
@@ -198,21 +198,21 @@
                 }
             ],
             "mocks": {
-                "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorDays?doctorId=24806": {
+                "https://baas.kinvey.com/rpc/kid_Byoc04rBB/custom/GetDoctorDays?doctorId=24806": {
                     "POST": [
                         "2017-08-08",
                         "2017-08-15",
                         "2017-08-24"
                     ]
                 },
-                "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorHours?doctorId=24806&date=2017.08.08": {
+                "https://baas.kinvey.com/rpc/kid_Byoc04rBB/custom/GetDoctorHours?doctorId=24806&date=2017.08.08": {
                     "POST": [
                         "9:30",
                         "10:00",
                         "15:00"
                     ]
                 },
-                "https://baas.kinvey.com/appdata/kid_ry5xgIy6f/Appointments": {
+                "https://baas.kinvey.com/appdata/kid_Byoc04rBB/Appointments": {
                     "POST": {}
                 }
             }

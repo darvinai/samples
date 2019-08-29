@@ -2,7 +2,8 @@
   "conversations": {
     "welcome": {
       "type": "support",
-      "steps": [{
+      "steps": [
+        {
           "type": "message",
           "messages": [
             "Hallo, ich bin der virtuelle Assistent des ACME-Krankenhauses mit künstlicher Intelligenz."
@@ -11,32 +12,37 @@
         {
           "type": "conversation",
           "conversation": "help",
-          "conditions": ["{{$not ($has conversation) }}"]
+          "conditions": [
+            "{{$not ($has conversation) }}"
+          ]
         }
       ]
     },
     "help": {
       "type": "support",
-      "steps": [{
-        "type": "message",
-        "messages": [
-          [
-            "Wenn Sie nicht weiterkommen, können Sie unsere Konversation jederzeit mit 'Neustart' neu starten.",
-            "Hier ist was ich für dich tun kann:"
-          ]
-        ],
-        "display": {
-          "type": "quick-reply",
-          "data": [
-            "Buchen Sie einen Arzt",
-            "Kontakt Betreiber"
-          ]
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "Wenn Sie nicht weiterkommen, können Sie unsere Konversation jederzeit mit 'Neustart' neu starten.",
+              "Hier ist was ich für dich tun kann:"
+            ]
+          ],
+          "display": {
+            "type": "quick-reply",
+            "data": [
+              "Buchen Sie einen Arzt",
+              "Kontakt Betreiber"
+            ]
+          }
         }
-      }]
+      ]
     },
     "restart": {
       "type": "support",
-      "steps": [{
+      "steps": [
+        {
           "type": "message",
           "messages": [
             "Ihre Konversation wird neu gestartet."
@@ -51,7 +57,8 @@
     "contactOperator": {
       "type": "goal",
       "display-name": "contact an operator",
-      "steps": [{
+      "steps": [
+        {
           "type": "confirmation",
           "entity": "redirect",
           "messages": [
@@ -95,7 +102,8 @@
     "bookDoctor": {
       "type": "goal",
       "display-name": "book a doctor",
-      "steps": [{
+      "steps": [
+        {
           "type": "question",
           "entity": "doctor",
           "entity-type": "Doctor",
@@ -110,22 +118,24 @@
             "ambiguities": [
               "Ich bin mir nicht sicher, ob ich den Arzt verstehe, den Sie treffen wollen. Können Sie eines der folgenden wählen?"
             ],
-            "validations": [{
-              "type": "custom",
-              "parameters": {
-                "data-source": {
-                  "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
-                  "method": "POST",
-                  "headers": {
-                    "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
-                  }
+            "validations": [
+              {
+                "type": "custom",
+                "parameters": {
+                  "data-source": {
+                    "endpoint": "https://baas.kinvey.com/rpc/kid_Byoc04rBB/custom/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
+                    "method": "POST",
+                    "headers": {
+                      "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
+                    }
+                  },
+                  "condition": "{{$ne \"[]\" ($json _response)}}"
                 },
-                "condition": "{{$ne \"[]\" ($json _response)}}"
-              },
-              "error-message": [
-                "{{doctor}} ist leider nicht verfügbar."
-              ]
-            }],
+                "error-message": [
+                  "{{doctor}} ist leider nicht verfügbar."
+                ]
+              }
+            ],
             "suggestions": [
               "Möchtest du {{doctor}} besuchen?",
               "Möchten Sie einen Termin für {{doctor}} vereinbaren?"
@@ -143,27 +153,29 @@
             "Mit welchem ​​Datum möchten Sie sich mit {{doctor}} treffen?"
           ],
           "reactions": {
-            "validations": [{
-              "type": "custom",
-              "parameters": {
-                "data-source": {
-                  "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
-                  "method": "POST",
-                  "headers": {
-                    "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
-                  }
+            "validations": [
+              {
+                "type": "custom",
+                "parameters": {
+                  "data-source": {
+                    "endpoint": "https://baas.kinvey.com/rpc/kid_Byoc04rBB/custom/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
+                    "method": "POST",
+                    "headers": {
+                      "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
+                    }
+                  },
+                  "condition": "{{$in ($date date 'YYYY-MM-DD') _response}}"
                 },
-                "condition": "{{$in ($date date 'YYYY-MM-DD') _response}}"
-              },
-              "error-message": [
-                "Leider ist {{doctor}} am {{date}} nicht verfügbar."
-              ]
-            }]
+                "error-message": [
+                  "Leider ist {{doctor}} am {{date}} nicht verfügbar."
+                ]
+              }
+            ]
           },
           "display": {
             "type": "quick-reply",
             "data-source": {
-              "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
+              "endpoint": "https://baas.kinvey.com/rpc/kid_Byoc04rBB/custom/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
               "method": "POST",
               "headers": {
                 "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
@@ -179,27 +191,29 @@
             "Wann möchten Sie {{doctor}} am {{date}} treffen?"
           ],
           "reactions": {
-            "validations": [{
-              "type": "custom",
-              "parameters": {
-                "data-source": {
-                  "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
-                  "method": "POST",
-                  "headers": {
-                    "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
-                  }
+            "validations": [
+              {
+                "type": "custom",
+                "parameters": {
+                  "data-source": {
+                    "endpoint": "https://baas.kinvey.com/rpc/kid_Byoc04rBB/custom/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
+                    "method": "POST",
+                    "headers": {
+                      "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
+                    }
+                  },
+                  "condition": "{{$in time _response}}"
                 },
-                "condition": "{{$in time _response}}"
-              },
-              "error-message": [
-                "Leider ist {{doctor}} am {{date}} um {{time}} nicht verfügbar."
-              ]
-            }]
+                "error-message": [
+                  "Leider ist {{doctor}} am {{date}} um {{time}} nicht verfügbar."
+                ]
+              }
+            ]
           },
           "display": {
             "type": "quick-reply",
             "data-source": {
-              "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
+              "endpoint": "https://baas.kinvey.com/rpc/kid_Byoc04rBB/custom/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
               "method": "POST",
               "headers": {
                 "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
@@ -216,15 +230,17 @@
             "Was sind deine Vor- und Nachnamen?"
           ],
           "reactions": {
-            "validations": [{
-              "type": "regex",
-              "parameters": {
-                "value": "(\\w.+\\s).+"
-              },
-              "error-message": [
-                "Bitte geben Sie Ihren Vor- und Nachnamen ein."
-              ]
-            }],
+            "validations": [
+              {
+                "type": "regex",
+                "parameters": {
+                  "value": "(\\w.+\\s).+"
+                },
+                "error-message": [
+                  "Bitte geben Sie Ihren Vor- und Nachnamen ein."
+                ]
+              }
+            ],
             "suggestions": [
               "Sind Sie {{contactName}}?",
               "Ist dein Name {{contactName}}?"
@@ -255,7 +271,7 @@
             "Herzlichen Glückwunsch. Sie haben einen Termin mit {{doctor}} für {{date}} um {{time}}. Bis bald!"
           ],
           "data-source": {
-            "endpoint": "https://baas.kinvey.com/appdata/kid_ry5xgIy6f/Appointments",
+            "endpoint": "https://baas.kinvey.com/appdata/kid_Byoc04rBB/Appointments",
             "method": "POST",
             "headers": {
               "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="

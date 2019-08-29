@@ -6,7 +6,7 @@
         {
             "it": "make new insurance + ask about insurance coverage",
             "mocks": {
-                "https://baas.kinvey.com/rpc/kid_HJRkt8g6G/custom/recommendInsurances?startDate=2015.03.11&endDate=2015.04.01": {
+                "https://baas.kinvey.com/rpc/kid_HJ05erHSB/custom/recommendInsurances?startDate=2015.03.11&endDate=2015.04.01": {
                     "POST": [
                         {
                             "Name": "Travel Medical Insurance",
@@ -47,7 +47,7 @@
                         }
                     ]
                 },
-                "https://baas.kinvey.com/rpc/kid_HJRkt8g6G/custom/recommendInsurance?startDate=2015.03.11&endDate=2015.04.01&id=f252b7d0-130d-11e8-8b78-370e90d8b030": {
+                "https://baas.kinvey.com/rpc/kid_HJ05erHSB/custom/recommendInsurance?startDate=2015.03.11&endDate=2015.04.01&id=f252b7d0-130d-11e8-8b78-370e90d8b030": {
                     "POST": {
                         "Name": "Patriot WorldWide Plus",
                         "Features": [

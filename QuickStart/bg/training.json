@@ -1,8 +1,10 @@
 {
-  "entity-definitions": [{
+  "entity-definitions": [
+    {
       "name": "Conversation",
       "lookup-strategy": "trait",
-      "data": [{
+      "data": [
+        {
           "value": "bookDoctor",
           "expressions": [
             "Запазване на час",
@@ -68,7 +70,7 @@
       "data": [],
       "dynamic-data": {
         "data-source": {
-          "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctors?language=bg",
+          "endpoint": "https://baas.kinvey.com/rpc/kid_Byoc04rBB/custom/GetDoctors?language=bg",
           "method": "POST",
           "headers": {
             "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
@@ -85,7 +87,8 @@
     {
       "name": "SmallTalk",
       "lookup-strategy": "QnA",
-      "data": [{
+      "data": [
+        {
           "value": "goodbye",
           "expressions": [
             "Довиждане",
@@ -110,7 +113,8 @@
             "до по късно",
             "ще се видим по-късно",
             "Трябва да тръгвам",
-            "ОК трябва да тръгвам, благодаря", "ОК трябва да бягам, благодаря",
+            "ОК трябва да тръгвам, благодаря",
+            "ОК трябва да бягам, благодаря",
             "трябва да тръгвам",
             "ще се видим скоро",
             "До скоро",
