@@ -1095,8 +1095,8 @@
             "data": [],
             "dynamic-data": {
                 "data-source": {
-                    "endpoint": "https://baas.kinvey.com/appdata/kid_HJRkt8g6G/Plans",
-                    "method": "GET",
+                    "endpoint": "https://sample-webhooks.nativechat.com/v1/insurance/recommendInsurances",
+                    "method": "POST",
                     "headers": {
                         "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
                     },
