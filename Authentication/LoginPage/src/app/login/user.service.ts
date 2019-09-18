@@ -13,7 +13,7 @@ export class UserService {
     private loginUrl = `https://baas.kinvey.com/user/${environment.kinvey.appKey}/login`;
     private usersUrl = `https://baas.kinvey.com/user/${environment.kinvey.appKey}`;
 
-    private linkAccountUrl = `https://baas.kinvey.com/rpc/${environment.kinvey.appKey}/custom/LinkAccount`;
+    private linkAccountUrl = `https://sample-webhooks.nativechat.com/v1/doctor/LinkAccount`;
 
     constructor(private http: Http) {
 

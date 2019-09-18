@@ -68,10 +68,10 @@
       "data": [],
       "dynamic-data": {
         "data-source": {
-          "endpoint": "https://api.everlive.com/v1/niuqpjk7bubu0282/Functions/GetDoctors?language=bg",
-          "method": "GET",
+          "endpoint": "https://sample-webhooks.nativechat.com/v1/doctor/GetDoctors?language=bg",
+          "method": "POST",
           "headers": {
-            "Content-Type": "application/json"
+            "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
           }
         },
         "value-template": "{{Title}} {{FirstName}} {{LastName}}",

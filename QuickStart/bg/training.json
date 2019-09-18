@@ -68,7 +68,7 @@
       "data": [],
       "dynamic-data": {
         "data-source": {
-          "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctors?language=bg",
+          "endpoint": "https://sample-webhooks.nativechat.com/v1/doctor/GetDoctors?language=bg",
           "method": "POST",
           "headers": {
             "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="

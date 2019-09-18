@@ -114,7 +114,7 @@
               "type": "custom",
               "parameters": {
                 "data-source": {
-                  "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
+                  "endpoint": "https://sample-webhooks.nativechat.com/v1/doctor/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
                   "method": "POST",
                   "headers": {
                     "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
@@ -147,7 +147,7 @@
               "type": "custom",
               "parameters": {
                 "data-source": {
-                  "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
+                  "endpoint": "https://sample-webhooks.nativechat.com/v1/doctor/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
                   "method": "POST",
                   "headers": {
                     "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
@@ -163,7 +163,7 @@
           "display": {
             "type": "quick-reply",
             "data-source": {
-              "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
+              "endpoint": "https://sample-webhooks.nativechat.com/v1/doctor/GetDoctorDays?doctorId={{$encodeURI doctor.ExternalId}}",
               "method": "POST",
               "headers": {
                 "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
@@ -183,7 +183,7 @@
               "type": "custom",
               "parameters": {
                 "data-source": {
-                  "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
+                  "endpoint": "https://sample-webhooks.nativechat.com/v1/doctor/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
                   "method": "POST",
                   "headers": {
                     "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
@@ -199,7 +199,7 @@
           "display": {
             "type": "quick-reply",
             "data-source": {
-              "endpoint": "https://baas.kinvey.com/rpc/kid_ry5xgIy6f/custom/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
+              "endpoint": "https://sample-webhooks.nativechat.com/v1/doctor/GetDoctorHours?doctorId={{$encodeURI doctor.ExternalId}}&date={{$encodeURI date}}",
               "method": "POST",
               "headers": {
                 "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
@@ -255,11 +255,8 @@
             "Herzlichen Glückwunsch. Sie haben einen Termin mit {{doctor}} für {{date}} um {{time}}. Bis bald!"
           ],
           "data-source": {
-            "endpoint": "https://baas.kinvey.com/appdata/kid_ry5xgIy6f/Appointments",
+            "endpoint": "https://sample-webhooks.nativechat.com/v1/persistence/saveAppointments",
             "method": "POST",
-            "headers": {
-              "Authorization": "Basic aG9va3VzZXI6YWRtaW5AMg=="
-            },
             "payload": {
               "DoctorID": "{{doctor.ExternalId}}",
               "PatientName": "{{contactName}}",
