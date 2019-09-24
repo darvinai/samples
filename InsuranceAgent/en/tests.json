@@ -138,6 +138,839 @@
                                             "title": "Choose a country"
                                         }
                                     ]
+                                },
+                                "v2template": {
+                                    "type": "single-select",
+                                    "items": [
+                                        {
+                                            "title": "Afghanistan",
+                                            "value": "Afghanistan"
+                                        },
+                                        {
+                                            "title": "Albania",
+                                            "value": "Albania"
+                                        },
+                                        {
+                                            "title": "Algeria",
+                                            "value": "Algeria"
+                                        },
+                                        {
+                                            "title": "America",
+                                            "value": "America"
+                                        },
+                                        {
+                                            "title": "Andorra",
+                                            "value": "Andorra"
+                                        },
+                                        {
+                                            "title": "Angola",
+                                            "value": "Angola"
+                                        },
+                                        {
+                                            "title": "Antigua",
+                                            "value": "Antigua"
+                                        },
+                                        {
+                                            "title": "Argentina",
+                                            "value": "Argentina"
+                                        },
+                                        {
+                                            "title": "Armenia",
+                                            "value": "Armenia"
+                                        },
+                                        {
+                                            "title": "Australia",
+                                            "value": "Australia"
+                                        },
+                                        {
+                                            "title": "Austria",
+                                            "value": "Austria"
+                                        },
+                                        {
+                                            "title": "Azerbaijan",
+                                            "value": "Azerbaijan"
+                                        },
+                                        {
+                                            "title": "Bahamas",
+                                            "value": "Bahamas"
+                                        },
+                                        {
+                                            "title": "Bahrain",
+                                            "value": "Bahrain"
+                                        },
+                                        {
+                                            "title": "Bangladesh",
+                                            "value": "Bangladesh"
+                                        },
+                                        {
+                                            "title": "Barbados",
+                                            "value": "Barbados"
+                                        },
+                                        {
+                                            "title": "Belarus",
+                                            "value": "Belarus"
+                                        },
+                                        {
+                                            "title": "Belgium",
+                                            "value": "Belgium"
+                                        },
+                                        {
+                                            "title": "Belize",
+                                            "value": "Belize"
+                                        },
+                                        {
+                                            "title": "Benin",
+                                            "value": "Benin"
+                                        },
+                                        {
+                                            "title": "Bhutan",
+                                            "value": "Bhutan"
+                                        },
+                                        {
+                                            "title": "Bissau",
+                                            "value": "Bissau"
+                                        },
+                                        {
+                                            "title": "Bolivia",
+                                            "value": "Bolivia"
+                                        },
+                                        {
+                                            "title": "Bosnia",
+                                            "value": "Bosnia"
+                                        },
+                                        {
+                                            "title": "Botswana",
+                                            "value": "Botswana"
+                                        },
+                                        {
+                                            "title": "Brazil",
+                                            "value": "Brazil"
+                                        },
+                                        {
+                                            "title": "British",
+                                            "value": "British"
+                                        },
+                                        {
+                                            "title": "Brunei",
+                                            "value": "Brunei"
+                                        },
+                                        {
+                                            "title": "Bulgaria",
+                                            "value": "Bulgaria"
+                                        },
+                                        {
+                                            "title": "Burkina",
+                                            "value": "Burkina"
+                                        },
+                                        {
+                                            "title": "Burma",
+                                            "value": "Burma"
+                                        },
+                                        {
+                                            "title": "Burundi",
+                                            "value": "Burundi"
+                                        },
+                                        {
+                                            "title": "Cambodia",
+                                            "value": "Cambodia"
+                                        },
+                                        {
+                                            "title": "Cameroon",
+                                            "value": "Cameroon"
+                                        },
+                                        {
+                                            "title": "Canada",
+                                            "value": "Canada"
+                                        },
+                                        {
+                                            "title": "Cape Verde",
+                                            "value": "Cape Verde"
+                                        },
+                                        {
+                                            "title": "Central African Republic",
+                                            "value": "Central African Republic"
+                                        },
+                                        {
+                                            "title": "Chad",
+                                            "value": "Chad"
+                                        },
+                                        {
+                                            "title": "Chile",
+                                            "value": "Chile"
+                                        },
+                                        {
+                                            "title": "China",
+                                            "value": "China"
+                                        },
+                                        {
+                                            "title": "Colombia",
+                                            "value": "Colombia"
+                                        },
+                                        {
+                                            "title": "Comoros",
+                                            "value": "Comoros"
+                                        },
+                                        {
+                                            "title": "Congo",
+                                            "value": "Congo"
+                                        },
+                                        {
+                                            "title": "Costa Rica",
+                                            "value": "Costa Rica"
+                                        },
+                                        {
+                                            "title": "Croatia",
+                                            "value": "Croatia"
+                                        },
+                                        {
+                                            "title": "Cuba",
+                                            "value": "Cuba"
+                                        },
+                                        {
+                                            "title": "Cyprus",
+                                            "value": "Cyprus"
+                                        },
+                                        {
+                                            "title": "Czech",
+                                            "value": "Czech"
+                                        },
+                                        {
+                                            "title": "Denmark",
+                                            "value": "Denmark"
+                                        },
+                                        {
+                                            "title": "Djibouti",
+                                            "value": "Djibouti"
+                                        },
+                                        {
+                                            "title": "Dominica",
+                                            "value": "Dominica"
+                                        },
+                                        {
+                                            "title": "East Timor",
+                                            "value": "East Timor"
+                                        },
+                                        {
+                                            "title": "Ecuador",
+                                            "value": "Ecuador"
+                                        },
+                                        {
+                                            "title": "Egypt",
+                                            "value": "Egypt"
+                                        },
+                                        {
+                                            "title": "El Salvador",
+                                            "value": "El Salvador"
+                                        },
+                                        {
+                                            "title": "Emirate",
+                                            "value": "Emirate"
+                                        },
+                                        {
+                                            "title": "England",
+                                            "value": "England"
+                                        },
+                                        {
+                                            "title": "Eritrea",
+                                            "value": "Eritrea"
+                                        },
+                                        {
+                                            "title": "Estonia",
+                                            "value": "Estonia"
+                                        },
+                                        {
+                                            "title": "Ethiopia",
+                                            "value": "Ethiopia"
+                                        },
+                                        {
+                                            "title": "Fiji",
+                                            "value": "Fiji"
+                                        },
+                                        {
+                                            "title": "Finland",
+                                            "value": "Finland"
+                                        },
+                                        {
+                                            "title": "France",
+                                            "value": "France"
+                                        },
+                                        {
+                                            "title": "Gabon",
+                                            "value": "Gabon"
+                                        },
+                                        {
+                                            "title": "Gambia",
+                                            "value": "Gambia"
+                                        },
+                                        {
+                                            "title": "Georgia",
+                                            "value": "Georgia"
+                                        },
+                                        {
+                                            "title": "Germany",
+                                            "value": "Germany"
+                                        },
+                                        {
+                                            "title": "Ghana",
+                                            "value": "Ghana"
+                                        },
+                                        {
+                                            "title": "Great Britain",
+                                            "value": "Great Britain"
+                                        },
+                                        {
+                                            "title": "Greece",
+                                            "value": "Greece"
+                                        },
+                                        {
+                                            "title": "Grenada",
+                                            "value": "Grenada"
+                                        },
+                                        {
+                                            "title": "Grenadines",
+                                            "value": "Grenadines"
+                                        },
+                                        {
+                                            "title": "Guatemala",
+                                            "value": "Guatemala"
+                                        },
+                                        {
+                                            "title": "Guinea",
+                                            "value": "Guinea"
+                                        },
+                                        {
+                                            "title": "Guyana",
+                                            "value": "Guyana"
+                                        },
+                                        {
+                                            "title": "Haiti",
+                                            "value": "Haiti"
+                                        },
+                                        {
+                                            "title": "Herzegovina",
+                                            "value": "Herzegovina"
+                                        },
+                                        {
+                                            "title": "Holland",
+                                            "value": "Holland"
+                                        },
+                                        {
+                                            "title": "Honduras",
+                                            "value": "Honduras"
+                                        },
+                                        {
+                                            "title": "Hungary",
+                                            "value": "Hungary"
+                                        },
+                                        {
+                                            "title": "Iceland",
+                                            "value": "Iceland"
+                                        },
+                                        {
+                                            "title": "India",
+                                            "value": "India"
+                                        },
+                                        {
+                                            "title": "Indonesia",
+                                            "value": "Indonesia"
+                                        },
+                                        {
+                                            "title": "Iran",
+                                            "value": "Iran"
+                                        },
+                                        {
+                                            "title": "Iraq",
+                                            "value": "Iraq"
+                                        },
+                                        {
+                                            "title": "Ireland",
+                                            "value": "Ireland"
+                                        },
+                                        {
+                                            "title": "Israel",
+                                            "value": "Israel"
+                                        },
+                                        {
+                                            "title": "Italy",
+                                            "value": "Italy"
+                                        },
+                                        {
+                                            "title": "Ivory Coast",
+                                            "value": "Ivory Coast"
+                                        },
+                                        {
+                                            "title": "Jamaica",
+                                            "value": "Jamaica"
+                                        },
+                                        {
+                                            "title": "Japan",
+                                            "value": "Japan"
+                                        },
+                                        {
+                                            "title": "Jordan",
+                                            "value": "Jordan"
+                                        },
+                                        {
+                                            "title": "Kazakhstan",
+                                            "value": "Kazakhstan"
+                                        },
+                                        {
+                                            "title": "Kenya",
+                                            "value": "Kenya"
+                                        },
+                                        {
+                                            "title": "Kiribati",
+                                            "value": "Kiribati"
+                                        },
+                                        {
+                                            "title": "Korea",
+                                            "value": "Korea"
+                                        },
+                                        {
+                                            "title": "Kosovo",
+                                            "value": "Kosovo"
+                                        },
+                                        {
+                                            "title": "Kuwait",
+                                            "value": "Kuwait"
+                                        },
+                                        {
+                                            "title": "Kyrgyzstan",
+                                            "value": "Kyrgyzstan"
+                                        },
+                                        {
+                                            "title": "Laos",
+                                            "value": "Laos"
+                                        },
+                                        {
+                                            "title": "Latvia",
+                                            "value": "Latvia"
+                                        },
+                                        {
+                                            "title": "Lebanon",
+                                            "value": "Lebanon"
+                                        },
+                                        {
+                                            "title": "Lesotho",
+                                            "value": "Lesotho"
+                                        },
+                                        {
+                                            "title": "Liberia",
+                                            "value": "Liberia"
+                                        },
+                                        {
+                                            "title": "Libya",
+                                            "value": "Libya"
+                                        },
+                                        {
+                                            "title": "Liechtenstein",
+                                            "value": "Liechtenstein"
+                                        },
+                                        {
+                                            "title": "Lithuania",
+                                            "value": "Lithuania"
+                                        },
+                                        {
+                                            "title": "Luxembourg",
+                                            "value": "Luxembourg"
+                                        },
+                                        {
+                                            "title": "Macedonia",
+                                            "value": "Macedonia"
+                                        },
+                                        {
+                                            "title": "Madagascar",
+                                            "value": "Madagascar"
+                                        },
+                                        {
+                                            "title": "Malawi",
+                                            "value": "Malawi"
+                                        },
+                                        {
+                                            "title": "Malaysia",
+                                            "value": "Malaysia"
+                                        },
+                                        {
+                                            "title": "Maldives",
+                                            "value": "Maldives"
+                                        },
+                                        {
+                                            "title": "Mali",
+                                            "value": "Mali"
+                                        },
+                                        {
+                                            "title": "Malta",
+                                            "value": "Malta"
+                                        },
+                                        {
+                                            "title": "Marshall",
+                                            "value": "Marshall"
+                                        },
+                                        {
+                                            "title": "Mauritania",
+                                            "value": "Mauritania"
+                                        },
+                                        {
+                                            "title": "Mauritius",
+                                            "value": "Mauritius"
+                                        },
+                                        {
+                                            "title": "Mexico",
+                                            "value": "Mexico"
+                                        },
+                                        {
+                                            "title": "Micronesia",
+                                            "value": "Micronesia"
+                                        },
+                                        {
+                                            "title": "Moldova",
+                                            "value": "Moldova"
+                                        },
+                                        {
+                                            "title": "Monaco",
+                                            "value": "Monaco"
+                                        },
+                                        {
+                                            "title": "Mongolia",
+                                            "value": "Mongolia"
+                                        },
+                                        {
+                                            "title": "Montenegro",
+                                            "value": "Montenegro"
+                                        },
+                                        {
+                                            "title": "Morocco",
+                                            "value": "Morocco"
+                                        },
+                                        {
+                                            "title": "Mozambique",
+                                            "value": "Mozambique"
+                                        },
+                                        {
+                                            "title": "Myanmar",
+                                            "value": "Myanmar"
+                                        },
+                                        {
+                                            "title": "Namibia",
+                                            "value": "Namibia"
+                                        },
+                                        {
+                                            "title": "Nauru",
+                                            "value": "Nauru"
+                                        },
+                                        {
+                                            "title": "Nepal",
+                                            "value": "Nepal"
+                                        },
+                                        {
+                                            "title": "Netherlands",
+                                            "value": "Netherlands"
+                                        },
+                                        {
+                                            "title": "New Zealand",
+                                            "value": "New Zealand"
+                                        },
+                                        {
+                                            "title": "Nicaragua",
+                                            "value": "Nicaragua"
+                                        },
+                                        {
+                                            "title": "Niger",
+                                            "value": "Niger"
+                                        },
+                                        {
+                                            "title": "Nigeria",
+                                            "value": "Nigeria"
+                                        },
+                                        {
+                                            "title": "Norway",
+                                            "value": "Norway"
+                                        },
+                                        {
+                                            "title": "Oman",
+                                            "value": "Oman"
+                                        },
+                                        {
+                                            "title": "Pakistan",
+                                            "value": "Pakistan"
+                                        },
+                                        {
+                                            "title": "Palau",
+                                            "value": "Palau"
+                                        },
+                                        {
+                                            "title": "Panama",
+                                            "value": "Panama"
+                                        },
+                                        {
+                                            "title": "Papua",
+                                            "value": "Papua"
+                                        },
+                                        {
+                                            "title": "Paraguay",
+                                            "value": "Paraguay"
+                                        },
+                                        {
+                                            "title": "Peru",
+                                            "value": "Peru"
+                                        },
+                                        {
+                                            "title": "Philippines",
+                                            "value": "Philippines"
+                                        },
+                                        {
+                                            "title": "Poland",
+                                            "value": "Poland"
+                                        },
+                                        {
+                                            "title": "Portugal",
+                                            "value": "Portugal"
+                                        },
+                                        {
+                                            "title": "Qatar",
+                                            "value": "Qatar"
+                                        },
+                                        {
+                                            "title": "Romania",
+                                            "value": "Romania"
+                                        },
+                                        {
+                                            "title": "Russia",
+                                            "value": "Russia"
+                                        },
+                                        {
+                                            "title": "Rwanda",
+                                            "value": "Rwanda"
+                                        },
+                                        {
+                                            "title": "Samoa",
+                                            "value": "Samoa"
+                                        },
+                                        {
+                                            "title": "San Marino",
+                                            "value": "San Marino"
+                                        },
+                                        {
+                                            "title": "Sao Tome",
+                                            "value": "Sao Tome"
+                                        },
+                                        {
+                                            "title": "Saudi Arabia",
+                                            "value": "Saudi Arabia"
+                                        },
+                                        {
+                                            "title": "Scotland",
+                                            "value": "Scotland"
+                                        },
+                                        {
+                                            "title": "Scottish",
+                                            "value": "Scottish"
+                                        },
+                                        {
+                                            "title": "Senegal",
+                                            "value": "Senegal"
+                                        },
+                                        {
+                                            "title": "Serbia",
+                                            "value": "Serbia"
+                                        },
+                                        {
+                                            "title": "Seychelles",
+                                            "value": "Seychelles"
+                                        },
+                                        {
+                                            "title": "Sierra Leone",
+                                            "value": "Sierra Leone"
+                                        },
+                                        {
+                                            "title": "Singapore",
+                                            "value": "Singapore"
+                                        },
+                                        {
+                                            "title": "Slovakia",
+                                            "value": "Slovakia"
+                                        },
+                                        {
+                                            "title": "Slovenia",
+                                            "value": "Slovenia"
+                                        },
+                                        {
+                                            "title": "Solomon",
+                                            "value": "Solomon"
+                                        },
+                                        {
+                                            "title": "Somalia",
+                                            "value": "Somalia"
+                                        },
+                                        {
+                                            "title": "South Africa",
+                                            "value": "South Africa"
+                                        },
+                                        {
+                                            "title": "South Sudan",
+                                            "value": "South Sudan"
+                                        },
+                                        {
+                                            "title": "Spain",
+                                            "value": "Spain"
+                                        },
+                                        {
+                                            "title": "Sri Lanka",
+                                            "value": "Sri Lanka"
+                                        },
+                                        {
+                                            "title": "St Kitts",
+                                            "value": "St Kitts"
+                                        },
+                                        {
+                                            "title": "St Lucia",
+                                            "value": "St Lucia"
+                                        },
+                                        {
+                                            "title": "Sudan",
+                                            "value": "Sudan"
+                                        },
+                                        {
+                                            "title": "Suriname",
+                                            "value": "Suriname"
+                                        },
+                                        {
+                                            "title": "Swaziland",
+                                            "value": "Swaziland"
+                                        },
+                                        {
+                                            "title": "Sweden",
+                                            "value": "Sweden"
+                                        },
+                                        {
+                                            "title": "Switzerland",
+                                            "value": "Switzerland"
+                                        },
+                                        {
+                                            "title": "Syria",
+                                            "value": "Syria"
+                                        },
+                                        {
+                                            "title": "Taiwan",
+                                            "value": "Taiwan"
+                                        },
+                                        {
+                                            "title": "Tajikistan",
+                                            "value": "Tajikistan"
+                                        },
+                                        {
+                                            "title": "Tanzania",
+                                            "value": "Tanzania"
+                                        },
+                                        {
+                                            "title": "Thailand",
+                                            "value": "Thailand"
+                                        },
+                                        {
+                                            "title": "Tobago",
+                                            "value": "Tobago"
+                                        },
+                                        {
+                                            "title": "Togo",
+                                            "value": "Togo"
+                                        },
+                                        {
+                                            "title": "Tonga",
+                                            "value": "Tonga"
+                                        },
+                                        {
+                                            "title": "Trinidad",
+                                            "value": "Trinidad"
+                                        },
+                                        {
+                                            "title": "Tunisia",
+                                            "value": "Tunisia"
+                                        },
+                                        {
+                                            "title": "Turkey",
+                                            "value": "Turkey"
+                                        },
+                                        {
+                                            "title": "Turkmenistan",
+                                            "value": "Turkmenistan"
+                                        },
+                                        {
+                                            "title": "Tuvalu",
+                                            "value": "Tuvalu"
+                                        },
+                                        {
+                                            "title": "Uganda",
+                                            "value": "Uganda"
+                                        },
+                                        {
+                                            "title": "Ukraine",
+                                            "value": "Ukraine"
+                                        },
+                                        {
+                                            "title": "United Kingdom",
+                                            "value": "United Kingdom"
+                                        },
+                                        {
+                                            "title": "United States",
+                                            "value": "United States"
+                                        },
+                                        {
+                                            "title": "Uruguay",
+                                            "value": "Uruguay"
+                                        },
+                                        {
+                                            "title": "USA",
+                                            "value": "USA"
+                                        },
+                                        {
+                                            "title": "Uzbekistan",
+                                            "value": "Uzbekistan"
+                                        },
+                                        {
+                                            "title": "Vanuatu",
+                                            "value": "Vanuatu"
+                                        },
+                                        {
+                                            "title": "Vatican",
+                                            "value": "Vatican"
+                                        },
+                                        {
+                                            "title": "Venezuela",
+                                            "value": "Venezuela"
+                                        },
+                                        {
+                                            "title": "Vietnam",
+                                            "value": "Vietnam"
+                                        },
+                                        {
+                                            "title": "Wales",
+                                            "value": "Wales"
+                                        },
+                                        {
+                                            "title": "Welsh",
+                                            "value": "Welsh"
+                                        },
+                                        {
+                                            "title": "Yemen",
+                                            "value": "Yemen"
+                                        },
+                                        {
+                                            "title": "Zambia",
+                                            "value": "Zambia"
+                                        },
+                                        {
+                                            "title": "Zimbabwe",
+                                            "value": "Zimbabwe"
+                                        }
+                                    ],
+                                    "buttons": [
+                                        {
+                                            "title": "Choose a country"
+                                        },
+                                        {
+                                            "title": "Submit"
+                                        }
+                                    ]
                                 }
                             }
                         ]
@@ -157,6 +990,839 @@
                                         {
                                             "url": "{{webviewsUrl}}",
                                             "title": "Choose a country"
+                                        }
+                                    ]
+                                },
+                                "v2template": {
+                                    "type": "single-select",
+                                    "items": [
+                                        {
+                                            "title": "Afghanistan",
+                                            "value": "Afghanistan"
+                                        },
+                                        {
+                                            "title": "Albania",
+                                            "value": "Albania"
+                                        },
+                                        {
+                                            "title": "Algeria",
+                                            "value": "Algeria"
+                                        },
+                                        {
+                                            "title": "America",
+                                            "value": "America"
+                                        },
+                                        {
+                                            "title": "Andorra",
+                                            "value": "Andorra"
+                                        },
+                                        {
+                                            "title": "Angola",
+                                            "value": "Angola"
+                                        },
+                                        {
+                                            "title": "Antigua",
+                                            "value": "Antigua"
+                                        },
+                                        {
+                                            "title": "Argentina",
+                                            "value": "Argentina"
+                                        },
+                                        {
+                                            "title": "Armenia",
+                                            "value": "Armenia"
+                                        },
+                                        {
+                                            "title": "Australia",
+                                            "value": "Australia"
+                                        },
+                                        {
+                                            "title": "Austria",
+                                            "value": "Austria"
+                                        },
+                                        {
+                                            "title": "Azerbaijan",
+                                            "value": "Azerbaijan"
+                                        },
+                                        {
+                                            "title": "Bahamas",
+                                            "value": "Bahamas"
+                                        },
+                                        {
+                                            "title": "Bahrain",
+                                            "value": "Bahrain"
+                                        },
+                                        {
+                                            "title": "Bangladesh",
+                                            "value": "Bangladesh"
+                                        },
+                                        {
+                                            "title": "Barbados",
+                                            "value": "Barbados"
+                                        },
+                                        {
+                                            "title": "Belarus",
+                                            "value": "Belarus"
+                                        },
+                                        {
+                                            "title": "Belgium",
+                                            "value": "Belgium"
+                                        },
+                                        {
+                                            "title": "Belize",
+                                            "value": "Belize"
+                                        },
+                                        {
+                                            "title": "Benin",
+                                            "value": "Benin"
+                                        },
+                                        {
+                                            "title": "Bhutan",
+                                            "value": "Bhutan"
+                                        },
+                                        {
+                                            "title": "Bissau",
+                                            "value": "Bissau"
+                                        },
+                                        {
+                                            "title": "Bolivia",
+                                            "value": "Bolivia"
+                                        },
+                                        {
+                                            "title": "Bosnia",
+                                            "value": "Bosnia"
+                                        },
+                                        {
+                                            "title": "Botswana",
+                                            "value": "Botswana"
+                                        },
+                                        {
+                                            "title": "Brazil",
+                                            "value": "Brazil"
+                                        },
+                                        {
+                                            "title": "British",
+                                            "value": "British"
+                                        },
+                                        {
+                                            "title": "Brunei",
+                                            "value": "Brunei"
+                                        },
+                                        {
+                                            "title": "Bulgaria",
+                                            "value": "Bulgaria"
+                                        },
+                                        {
+                                            "title": "Burkina",
+                                            "value": "Burkina"
+                                        },
+                                        {
+                                            "title": "Burma",
+                                            "value": "Burma"
+                                        },
+                                        {
+                                            "title": "Burundi",
+                                            "value": "Burundi"
+                                        },
+                                        {
+                                            "title": "Cambodia",
+                                            "value": "Cambodia"
+                                        },
+                                        {
+                                            "title": "Cameroon",
+                                            "value": "Cameroon"
+                                        },
+                                        {
+                                            "title": "Canada",
+                                            "value": "Canada"
+                                        },
+                                        {
+                                            "title": "Cape Verde",
+                                            "value": "Cape Verde"
+                                        },
+                                        {
+                                            "title": "Central African Republic",
+                                            "value": "Central African Republic"
+                                        },
+                                        {
+                                            "title": "Chad",
+                                            "value": "Chad"
+                                        },
+                                        {
+                                            "title": "Chile",
+                                            "value": "Chile"
+                                        },
+                                        {
+                                            "title": "China",
+                                            "value": "China"
+                                        },
+                                        {
+                                            "title": "Colombia",
+                                            "value": "Colombia"
+                                        },
+                                        {
+                                            "title": "Comoros",
+                                            "value": "Comoros"
+                                        },
+                                        {
+                                            "title": "Congo",
+                                            "value": "Congo"
+                                        },
+                                        {
+                                            "title": "Costa Rica",
+                                            "value": "Costa Rica"
+                                        },
+                                        {
+                                            "title": "Croatia",
+                                            "value": "Croatia"
+                                        },
+                                        {
+                                            "title": "Cuba",
+                                            "value": "Cuba"
+                                        },
+                                        {
+                                            "title": "Cyprus",
+                                            "value": "Cyprus"
+                                        },
+                                        {
+                                            "title": "Czech",
+                                            "value": "Czech"
+                                        },
+                                        {
+                                            "title": "Denmark",
+                                            "value": "Denmark"
+                                        },
+                                        {
+                                            "title": "Djibouti",
+                                            "value": "Djibouti"
+                                        },
+                                        {
+                                            "title": "Dominica",
+                                            "value": "Dominica"
+                                        },
+                                        {
+                                            "title": "East Timor",
+                                            "value": "East Timor"
+                                        },
+                                        {
+                                            "title": "Ecuador",
+                                            "value": "Ecuador"
+                                        },
+                                        {
+                                            "title": "Egypt",
+                                            "value": "Egypt"
+                                        },
+                                        {
+                                            "title": "El Salvador",
+                                            "value": "El Salvador"
+                                        },
+                                        {
+                                            "title": "Emirate",
+                                            "value": "Emirate"
+                                        },
+                                        {
+                                            "title": "England",
+                                            "value": "England"
+                                        },
+                                        {
+                                            "title": "Eritrea",
+                                            "value": "Eritrea"
+                                        },
+                                        {
+                                            "title": "Estonia",
+                                            "value": "Estonia"
+                                        },
+                                        {
+                                            "title": "Ethiopia",
+                                            "value": "Ethiopia"
+                                        },
+                                        {
+                                            "title": "Fiji",
+                                            "value": "Fiji"
+                                        },
+                                        {
+                                            "title": "Finland",
+                                            "value": "Finland"
+                                        },
+                                        {
+                                            "title": "France",
+                                            "value": "France"
+                                        },
+                                        {
+                                            "title": "Gabon",
+                                            "value": "Gabon"
+                                        },
+                                        {
+                                            "title": "Gambia",
+                                            "value": "Gambia"
+                                        },
+                                        {
+                                            "title": "Georgia",
+                                            "value": "Georgia"
+                                        },
+                                        {
+                                            "title": "Germany",
+                                            "value": "Germany"
+                                        },
+                                        {
+                                            "title": "Ghana",
+                                            "value": "Ghana"
+                                        },
+                                        {
+                                            "title": "Great Britain",
+                                            "value": "Great Britain"
+                                        },
+                                        {
+                                            "title": "Greece",
+                                            "value": "Greece"
+                                        },
+                                        {
+                                            "title": "Grenada",
+                                            "value": "Grenada"
+                                        },
+                                        {
+                                            "title": "Grenadines",
+                                            "value": "Grenadines"
+                                        },
+                                        {
+                                            "title": "Guatemala",
+                                            "value": "Guatemala"
+                                        },
+                                        {
+                                            "title": "Guinea",
+                                            "value": "Guinea"
+                                        },
+                                        {
+                                            "title": "Guyana",
+                                            "value": "Guyana"
+                                        },
+                                        {
+                                            "title": "Haiti",
+                                            "value": "Haiti"
+                                        },
+                                        {
+                                            "title": "Herzegovina",
+                                            "value": "Herzegovina"
+                                        },
+                                        {
+                                            "title": "Holland",
+                                            "value": "Holland"
+                                        },
+                                        {
+                                            "title": "Honduras",
+                                            "value": "Honduras"
+                                        },
+                                        {
+                                            "title": "Hungary",
+                                            "value": "Hungary"
+                                        },
+                                        {
+                                            "title": "Iceland",
+                                            "value": "Iceland"
+                                        },
+                                        {
+                                            "title": "India",
+                                            "value": "India"
+                                        },
+                                        {
+                                            "title": "Indonesia",
+                                            "value": "Indonesia"
+                                        },
+                                        {
+                                            "title": "Iran",
+                                            "value": "Iran"
+                                        },
+                                        {
+                                            "title": "Iraq",
+                                            "value": "Iraq"
+                                        },
+                                        {
+                                            "title": "Ireland",
+                                            "value": "Ireland"
+                                        },
+                                        {
+                                            "title": "Israel",
+                                            "value": "Israel"
+                                        },
+                                        {
+                                            "title": "Italy",
+                                            "value": "Italy"
+                                        },
+                                        {
+                                            "title": "Ivory Coast",
+                                            "value": "Ivory Coast"
+                                        },
+                                        {
+                                            "title": "Jamaica",
+                                            "value": "Jamaica"
+                                        },
+                                        {
+                                            "title": "Japan",
+                                            "value": "Japan"
+                                        },
+                                        {
+                                            "title": "Jordan",
+                                            "value": "Jordan"
+                                        },
+                                        {
+                                            "title": "Kazakhstan",
+                                            "value": "Kazakhstan"
+                                        },
+                                        {
+                                            "title": "Kenya",
+                                            "value": "Kenya"
+                                        },
+                                        {
+                                            "title": "Kiribati",
+                                            "value": "Kiribati"
+                                        },
+                                        {
+                                            "title": "Korea",
+                                            "value": "Korea"
+                                        },
+                                        {
+                                            "title": "Kosovo",
+                                            "value": "Kosovo"
+                                        },
+                                        {
+                                            "title": "Kuwait",
+                                            "value": "Kuwait"
+                                        },
+                                        {
+                                            "title": "Kyrgyzstan",
+                                            "value": "Kyrgyzstan"
+                                        },
+                                        {
+                                            "title": "Laos",
+                                            "value": "Laos"
+                                        },
+                                        {
+                                            "title": "Latvia",
+                                            "value": "Latvia"
+                                        },
+                                        {
+                                            "title": "Lebanon",
+                                            "value": "Lebanon"
+                                        },
+                                        {
+                                            "title": "Lesotho",
+                                            "value": "Lesotho"
+                                        },
+                                        {
+                                            "title": "Liberia",
+                                            "value": "Liberia"
+                                        },
+                                        {
+                                            "title": "Libya",
+                                            "value": "Libya"
+                                        },
+                                        {
+                                            "title": "Liechtenstein",
+                                            "value": "Liechtenstein"
+                                        },
+                                        {
+                                            "title": "Lithuania",
+                                            "value": "Lithuania"
+                                        },
+                                        {
+                                            "title": "Luxembourg",
+                                            "value": "Luxembourg"
+                                        },
+                                        {
+                                            "title": "Macedonia",
+                                            "value": "Macedonia"
+                                        },
+                                        {
+                                            "title": "Madagascar",
+                                            "value": "Madagascar"
+                                        },
+                                        {
+                                            "title": "Malawi",
+                                            "value": "Malawi"
+                                        },
+                                        {
+                                            "title": "Malaysia",
+                                            "value": "Malaysia"
+                                        },
+                                        {
+                                            "title": "Maldives",
+                                            "value": "Maldives"
+                                        },
+                                        {
+                                            "title": "Mali",
+                                            "value": "Mali"
+                                        },
+                                        {
+                                            "title": "Malta",
+                                            "value": "Malta"
+                                        },
+                                        {
+                                            "title": "Marshall",
+                                            "value": "Marshall"
+                                        },
+                                        {
+                                            "title": "Mauritania",
+                                            "value": "Mauritania"
+                                        },
+                                        {
+                                            "title": "Mauritius",
+                                            "value": "Mauritius"
+                                        },
+                                        {
+                                            "title": "Mexico",
+                                            "value": "Mexico"
+                                        },
+                                        {
+                                            "title": "Micronesia",
+                                            "value": "Micronesia"
+                                        },
+                                        {
+                                            "title": "Moldova",
+                                            "value": "Moldova"
+                                        },
+                                        {
+                                            "title": "Monaco",
+                                            "value": "Monaco"
+                                        },
+                                        {
+                                            "title": "Mongolia",
+                                            "value": "Mongolia"
+                                        },
+                                        {
+                                            "title": "Montenegro",
+                                            "value": "Montenegro"
+                                        },
+                                        {
+                                            "title": "Morocco",
+                                            "value": "Morocco"
+                                        },
+                                        {
+                                            "title": "Mozambique",
+                                            "value": "Mozambique"
+                                        },
+                                        {
+                                            "title": "Myanmar",
+                                            "value": "Myanmar"
+                                        },
+                                        {
+                                            "title": "Namibia",
+                                            "value": "Namibia"
+                                        },
+                                        {
+                                            "title": "Nauru",
+                                            "value": "Nauru"
+                                        },
+                                        {
+                                            "title": "Nepal",
+                                            "value": "Nepal"
+                                        },
+                                        {
+                                            "title": "Netherlands",
+                                            "value": "Netherlands"
+                                        },
+                                        {
+                                            "title": "New Zealand",
+                                            "value": "New Zealand"
+                                        },
+                                        {
+                                            "title": "Nicaragua",
+                                            "value": "Nicaragua"
+                                        },
+                                        {
+                                            "title": "Niger",
+                                            "value": "Niger"
+                                        },
+                                        {
+                                            "title": "Nigeria",
+                                            "value": "Nigeria"
+                                        },
+                                        {
+                                            "title": "Norway",
+                                            "value": "Norway"
+                                        },
+                                        {
+                                            "title": "Oman",
+                                            "value": "Oman"
+                                        },
+                                        {
+                                            "title": "Pakistan",
+                                            "value": "Pakistan"
+                                        },
+                                        {
+                                            "title": "Palau",
+                                            "value": "Palau"
+                                        },
+                                        {
+                                            "title": "Panama",
+                                            "value": "Panama"
+                                        },
+                                        {
+                                            "title": "Papua",
+                                            "value": "Papua"
+                                        },
+                                        {
+                                            "title": "Paraguay",
+                                            "value": "Paraguay"
+                                        },
+                                        {
+                                            "title": "Peru",
+                                            "value": "Peru"
+                                        },
+                                        {
+                                            "title": "Philippines",
+                                            "value": "Philippines"
+                                        },
+                                        {
+                                            "title": "Poland",
+                                            "value": "Poland"
+                                        },
+                                        {
+                                            "title": "Portugal",
+                                            "value": "Portugal"
+                                        },
+                                        {
+                                            "title": "Qatar",
+                                            "value": "Qatar"
+                                        },
+                                        {
+                                            "title": "Romania",
+                                            "value": "Romania"
+                                        },
+                                        {
+                                            "title": "Russia",
+                                            "value": "Russia"
+                                        },
+                                        {
+                                            "title": "Rwanda",
+                                            "value": "Rwanda"
+                                        },
+                                        {
+                                            "title": "Samoa",
+                                            "value": "Samoa"
+                                        },
+                                        {
+                                            "title": "San Marino",
+                                            "value": "San Marino"
+                                        },
+                                        {
+                                            "title": "Sao Tome",
+                                            "value": "Sao Tome"
+                                        },
+                                        {
+                                            "title": "Saudi Arabia",
+                                            "value": "Saudi Arabia"
+                                        },
+                                        {
+                                            "title": "Scotland",
+                                            "value": "Scotland"
+                                        },
+                                        {
+                                            "title": "Scottish",
+                                            "value": "Scottish"
+                                        },
+                                        {
+                                            "title": "Senegal",
+                                            "value": "Senegal"
+                                        },
+                                        {
+                                            "title": "Serbia",
+                                            "value": "Serbia"
+                                        },
+                                        {
+                                            "title": "Seychelles",
+                                            "value": "Seychelles"
+                                        },
+                                        {
+                                            "title": "Sierra Leone",
+                                            "value": "Sierra Leone"
+                                        },
+                                        {
+                                            "title": "Singapore",
+                                            "value": "Singapore"
+                                        },
+                                        {
+                                            "title": "Slovakia",
+                                            "value": "Slovakia"
+                                        },
+                                        {
+                                            "title": "Slovenia",
+                                            "value": "Slovenia"
+                                        },
+                                        {
+                                            "title": "Solomon",
+                                            "value": "Solomon"
+                                        },
+                                        {
+                                            "title": "Somalia",
+                                            "value": "Somalia"
+                                        },
+                                        {
+                                            "title": "South Africa",
+                                            "value": "South Africa"
+                                        },
+                                        {
+                                            "title": "South Sudan",
+                                            "value": "South Sudan"
+                                        },
+                                        {
+                                            "title": "Spain",
+                                            "value": "Spain"
+                                        },
+                                        {
+                                            "title": "Sri Lanka",
+                                            "value": "Sri Lanka"
+                                        },
+                                        {
+                                            "title": "St Kitts",
+                                            "value": "St Kitts"
+                                        },
+                                        {
+                                            "title": "St Lucia",
+                                            "value": "St Lucia"
+                                        },
+                                        {
+                                            "title": "Sudan",
+                                            "value": "Sudan"
+                                        },
+                                        {
+                                            "title": "Suriname",
+                                            "value": "Suriname"
+                                        },
+                                        {
+                                            "title": "Swaziland",
+                                            "value": "Swaziland"
+                                        },
+                                        {
+                                            "title": "Sweden",
+                                            "value": "Sweden"
+                                        },
+                                        {
+                                            "title": "Switzerland",
+                                            "value": "Switzerland"
+                                        },
+                                        {
+                                            "title": "Syria",
+                                            "value": "Syria"
+                                        },
+                                        {
+                                            "title": "Taiwan",
+                                            "value": "Taiwan"
+                                        },
+                                        {
+                                            "title": "Tajikistan",
+                                            "value": "Tajikistan"
+                                        },
+                                        {
+                                            "title": "Tanzania",
+                                            "value": "Tanzania"
+                                        },
+                                        {
+                                            "title": "Thailand",
+                                            "value": "Thailand"
+                                        },
+                                        {
+                                            "title": "Tobago",
+                                            "value": "Tobago"
+                                        },
+                                        {
+                                            "title": "Togo",
+                                            "value": "Togo"
+                                        },
+                                        {
+                                            "title": "Tonga",
+                                            "value": "Tonga"
+                                        },
+                                        {
+                                            "title": "Trinidad",
+                                            "value": "Trinidad"
+                                        },
+                                        {
+                                            "title": "Tunisia",
+                                            "value": "Tunisia"
+                                        },
+                                        {
+                                            "title": "Turkey",
+                                            "value": "Turkey"
+                                        },
+                                        {
+                                            "title": "Turkmenistan",
+                                            "value": "Turkmenistan"
+                                        },
+                                        {
+                                            "title": "Tuvalu",
+                                            "value": "Tuvalu"
+                                        },
+                                        {
+                                            "title": "Uganda",
+                                            "value": "Uganda"
+                                        },
+                                        {
+                                            "title": "Ukraine",
+                                            "value": "Ukraine"
+                                        },
+                                        {
+                                            "title": "United Kingdom",
+                                            "value": "United Kingdom"
+                                        },
+                                        {
+                                            "title": "United States",
+                                            "value": "United States"
+                                        },
+                                        {
+                                            "title": "Uruguay",
+                                            "value": "Uruguay"
+                                        },
+                                        {
+                                            "title": "USA",
+                                            "value": "USA"
+                                        },
+                                        {
+                                            "title": "Uzbekistan",
+                                            "value": "Uzbekistan"
+                                        },
+                                        {
+                                            "title": "Vanuatu",
+                                            "value": "Vanuatu"
+                                        },
+                                        {
+                                            "title": "Vatican",
+                                            "value": "Vatican"
+                                        },
+                                        {
+                                            "title": "Venezuela",
+                                            "value": "Venezuela"
+                                        },
+                                        {
+                                            "title": "Vietnam",
+                                            "value": "Vietnam"
+                                        },
+                                        {
+                                            "title": "Wales",
+                                            "value": "Wales"
+                                        },
+                                        {
+                                            "title": "Welsh",
+                                            "value": "Welsh"
+                                        },
+                                        {
+                                            "title": "Yemen",
+                                            "value": "Yemen"
+                                        },
+                                        {
+                                            "title": "Zambia",
+                                            "value": "Zambia"
+                                        },
+                                        {
+                                            "title": "Zimbabwe",
+                                            "value": "Zimbabwe"
+                                        }
+                                    ],
+                                    "buttons": [
+                                        {
+                                            "title": "Choose a country"
+                                        },
+                                        {
+                                            "title": "Submit"
                                         }
                                     ]
                                 }
@@ -413,7 +2079,8 @@
                                     "buttons": [
                                         {
                                             "title": "Pick a location"
-                                        }
+                                        },
+                                        {}
                                     ]
                                 }
                             }
