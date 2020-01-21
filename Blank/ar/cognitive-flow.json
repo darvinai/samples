@@ -81,7 +81,7 @@
       "نحن نواجه صعوبات تقنية في هذه اللحظة."
     ],
     "previous-conversation-messages": [
-      "سأعود الآن إلى {{conversation DisplayName}} الآن."
+      "سأعود الآن إلى {{conversationDisplayName}} الآن."
     ]
   },
   "commands": {
