@@ -1,0 +1,24 @@
+{
+    "scenarios": [
+        {
+            "it": "introduces itself and enters into a conversation",
+            "steps": [
+                {
+                    "user": {
+                        "text": "مرحبا"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "هذه محادثة ترحيب ل chatbot الخاص بك."
+                            },
+                            {
+                                "text": "إذا واجهتك مشكلة ، فيمكنك دائمًا إعادة بدء المحادثة من خلال كتابة \"إعادة التشغيل\""
+                            }
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}

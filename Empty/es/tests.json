@@ -1,0 +1,24 @@
+{
+  "scenarios": [
+    {
+      "it": "introduces itself and enters into a conversation",
+      "steps": [
+        {
+          "user": {
+            "text": "hola"
+          },
+          "bot": [
+            [
+              {
+                "text": "Esta es una conversación de bienvenida para tu chatbot"
+              },
+              {
+                "text": "Si quieres reiniciar la conversación puedes, en cualquier momento, escribir 'reiniciar'"
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

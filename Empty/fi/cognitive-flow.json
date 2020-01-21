@@ -1,0 +1,70 @@
+{
+  "conversations": {
+    "welcome": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "Tervetuloa chatbot keskusteluun."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "help",
+          "conditions": [
+            "{{$not ($has conversation) }}"
+          ]
+        }
+      ]
+    },
+    "help": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "Jos olet jumissa, voit aina aloittaa keskustelun uudelleen kirjoittamalla 'restart'."
+            ]
+          ]
+        }
+      ]
+    },
+    "restart": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "Keskustelusi käynnistetään uudelleen."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
+        }
+      ]
+    }
+  },
+  "settings": {
+    "invalid-replies": [
+      "En ole varma, että ymmärsin, mitä sanoit."
+    ],
+    "general-failure": [
+      "Meillä on tällä hetkellä teknisiä vaikeuksia."
+    ],
+    "previous-conversation-messages": [
+      "Palaan takaisin {{ conversationDisplayName }} nyt."
+    ]
+  },
+  "commands": {
+    "NEXT-PAGE": [
+      "Seuraava 5"
+    ],
+    "RESTART": [
+      "restart",
+      "restart"
+    ]
+  }
+}

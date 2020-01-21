@@ -1,0 +1,24 @@
+{
+    "scenarios": [
+        {
+            "it": "introduces itself and enters into a conversation",
+            "steps": [
+                {
+                    "user": {
+                        "text": "嗨"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "这是您的聊天机器人欢迎的对话。"
+                            },
+                            {
+                                "text": "如果您遇到问题，可以通过键入'restart'重新启动对话，"
+                            }
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}

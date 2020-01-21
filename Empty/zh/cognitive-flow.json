@@ -1,0 +1,70 @@
+{
+  "conversations": {
+    "welcome": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "这是您的聊天机器人欢迎的对话。"
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "help",
+          "conditions": [
+            "{{$not ($has conversation) }}"
+          ]
+        }
+      ]
+    },
+    "help": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "如果您遇到问题，可以通过键入'restart'重新启动对话，"
+            ]
+          ]
+        }
+      ]
+    },
+    "restart": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "你的谈话重新开始。"
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
+        }
+      ]
+    }
+  },
+  "settings": {
+    "invalid-replies": [
+      "我不确定我是否理解你所说的。"
+    ],
+    "general-failure": [
+      "目前我们遇到技术困难。"
+    ],
+    "previous-conversation-messages": [
+      "我现在要回到{{ conversationDisplayName }}。"
+    ]
+  },
+  "commands": {
+    "NEXT-PAGE": [
+      "下一个5"
+    ],
+    "RESTART": [
+      "重新开始",
+      "restart"
+    ]
+  }
+}

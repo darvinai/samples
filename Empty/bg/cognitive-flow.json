@@ -1,0 +1,70 @@
+{
+  "conversations": {
+    "welcome": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "Това е началният разговор на твоя бот."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "help",
+          "conditions": [
+            "{{$not ($has conversation) }}"
+          ]
+        }
+      ]
+    },
+    "help": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "Ако искате да започнете разговора отначало, напишете \"рестарт\"."
+            ]
+          ]
+        }
+      ]
+    },
+    "restart": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "Вашият разговор е подновен."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
+        }
+      ]
+    }
+  },
+  "settings": {
+    "invalid-replies": [
+      "Не съм сигурен, че ви разбирам. Може ли да повторите?"
+    ],
+    "general-failure": [
+      "В момента имаме технически проблем, моля да ни извините."
+    ],
+    "previous-conversation-messages": [
+      "Връщам се към {{ conversationDisplayName }}."
+    ]
+  },
+  "commands": {
+    "NEXT-PAGE": [
+      "Следващи 5"
+    ],
+    "RESTART": [
+      "рестарт",
+      "restart"
+    ]
+  }
+}

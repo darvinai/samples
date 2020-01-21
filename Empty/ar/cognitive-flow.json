@@ -1,0 +1,70 @@
+{
+  "conversations": {
+    "welcome": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "هذه محادثة ترحيب ل chatbot الخاص بك."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "help",
+          "conditions": [
+            "{{$not ($has conversation) }}"
+          ]
+        }
+      ]
+    },
+    "help": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "إذا واجهتك مشكلة ، فيمكنك دائمًا إعادة بدء المحادثة من خلال كتابة \"إعادة التشغيل\""
+            ]
+          ]
+        }
+      ]
+    },
+    "restart": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "يتم إعادة تشغيل المحادثة الخاصة بك."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
+        }
+      ]
+    }
+  },
+  "settings": {
+    "invalid-replies": [
+      "لست متأكداً من أنني فهمت ما قلته."
+    ],
+    "general-failure": [
+      "نحن نواجه صعوبات تقنية في هذه اللحظة."
+    ],
+    "previous-conversation-messages": [
+      "سأعود الآن إلى {{conversation DisplayName}} الآن."
+    ]
+  },
+  "commands": {
+    "NEXT-PAGE": [
+      "Next 5"
+    ],
+    "RESTART": [
+      "restart",
+      "إعادة بدء"
+    ]
+  }
+}
