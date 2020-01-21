@@ -2,7 +2,8 @@
   "conversations": {
     "welcome": {
       "type": "support",
-      "steps": [{
+      "steps": [
+        {
           "type": "message",
           "messages": [
             "هذه محادثة ترحيب ل chatbot الخاص بك."
@@ -11,32 +12,29 @@
         {
           "type": "conversation",
           "conversation": "help",
-          "conditions": ["{{$not ($has conversation) }}"]
+          "conditions": [
+            "{{$not ($has conversation) }}"
+          ]
         }
       ]
     },
     "help": {
       "type": "support",
-      "steps": [{
-        "type": "message",
-        "messages": [
-          [
-            "إذا واجهتك مشكلة ، فيمكنك دائمًا إعادة بدء المحادثة من خلال كتابة \"إعادة التشغيل\"",
-            "إليك ما يمكنني فعله لك:"
-          ]
-        ],
-        "display": {
-          "type": "quick-reply",
-          "data": [
-            "المحادثة 1",
-            "المحادثة 2"
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "إذا واجهتك مشكلة ، فيمكنك دائمًا إعادة بدء المحادثة من خلال كتابة \"إعادة التشغيل\""
+            ]
           ]
         }
-      }]
+      ]
     },
     "restart": {
       "type": "support",
-      "steps": [{
+      "steps": [
+        {
           "type": "message",
           "messages": [
             "يتم إعادة تشغيل المحادثة الخاصة بك."
@@ -47,30 +45,6 @@
           "conversation": "welcome"
         }
       ]
-    },
-    "conversationOne": {
-      "type": "goal",
-      "display-name": "محادثة 1",
-      "steps": [{
-        "type": "message",
-        "messages": [
-          [
-            "هذه محادثة 1"
-          ]
-        ]
-      }]
-    },
-    "conversationTwo": {
-      "type": "goal",
-      "display-name": "محادثة 2",
-      "steps": [{
-        "type": "message",
-        "messages": [
-          [
-            "هذه محادثة 2"
-          ]
-        ]
-      }]
     }
   },
   "settings": {

@@ -1,0 +1,69 @@
+{
+  "conversations": {
+    "welcome": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "Salve, la Progress chatbot ti da il benvenuto."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "help",
+          "conditions": [
+            "{{$not ($has conversation) }}"
+          ]
+        }
+      ]
+    },
+    "help": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "Se ti blocchi da qualche parte, puoi sempre riavviare la chat scrivendo 'restart'"
+            ]
+          ]
+        }
+      ]
+    },
+    "restart": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "La conversazione viene riavviata."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
+        }
+      ]
+    }
+  },
+  "settings": {
+    "invalid-replies": [
+      "Non credo di aver capito cosa vuoi dire."
+    ],
+    "general-failure": [
+      "Mi scuso per l'inconveniente ma stiamo sperimentando delle difficoltà tecniche al momento."
+    ],
+    "previous-conversation-messages": [
+      "Adesso ritorno alla conversazione {{ conversationDisplayName }}."
+    ]
+  },
+  "commands": {
+    "NEXT-PAGE": [
+      "Next 5"
+    ],
+    "RESTART": [
+      "restart"
+    ]
+  }
+}

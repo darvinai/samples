@@ -1,0 +1,24 @@
+{
+    "scenarios": [
+        {
+            "it": "introduces itself and enters into a conversation",
+            "steps": [
+                {
+                    "user": {
+                        "text": "Salve"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Salve, la Progress chatbot ti da il benvenuto."
+                            },
+                            {
+                                "text": "Se ti blocchi da qualche parte, puoi sempre riavviare la chat scrivendo 'restart'"
+                            }
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}

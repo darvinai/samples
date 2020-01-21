@@ -1,0 +1,24 @@
+{
+    "scenarios": [
+        {
+            "it": "introduces itself and enters into a conversation",
+            "steps": [
+                {
+                    "user": {
+                        "text": "Hoi"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Dit is een welkoms gesprek voor je chatbot."
+                            },
+                            {
+                                "text": "Als je vastloopt, kun je ons gesprek altijd opnieuw beginnen door 'restart' te typen"
+                            }
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}
