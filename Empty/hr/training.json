@@ -1,0 +1,103 @@
+{
+  "entity-definitions": [
+    {
+      "name": "Conversation",
+      "lookup-strategy": "trait",
+      "data": [
+        {
+          "value": "restart",
+          "expressions": [
+            "restart",
+            "Možemo li početi ispočetka?",
+            "reset",
+            "ponovno pokreni, molim",
+            "započnite opet",
+            "ponovo pokrenuti razgovor",
+            "resetiranje razgovora",
+            "Ponovo pokrenite",
+            "Želim početi iznova",
+            "Možemo li resetirati razgovor?",
+            "možemo li početi opet?",
+            "učinimo to opet",
+            "Je li moguće ponovno pokrenuti razgovor?",
+            "Ponovo pokrenimo",
+            "Želim resetirati razgovor",
+            "Zaboravi na to, resetiraj",
+            "Zaboravite, ponovno pokrenite"
+          ]
+        },
+        {
+          "value": "help",
+          "expressions": [
+            "pomoć",
+            "Želim pomoć",
+            "Što možete učiniti?",
+            "Možete li mi pomoći?",
+            "Kako to djeluje?",
+            "pomozi mi",
+            "što da radim?",
+            "što mogu učiniti?",
+            "što ti znaš?",
+            "pomoć molim",
+            "Ne znam kako",
+            "?"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SmallTalk",
+      "lookup-strategy": "QnA",
+      "data": [
+        {
+          "value": "goodbye",
+          "expressions": [
+            "zbogom",
+            "pozdrav",
+            "doviđenja za sada",
+            "doviđenja",
+            "vidimo se uskoro",
+            "vidimo se",
+            "Ugodan dan!",
+            "Ugodan vikend",
+            "laku noć",
+            "vidimo se kasnije",
+            "do kasnije",
+            "srdačan pozdrav",
+            "Vidimo se opet"
+          ],
+          "answers": [
+            "Pozdrav!",
+            "Vidimo se opet!",
+            "Doviđenja!"
+          ]
+        },
+        {
+          "value": "thanks",
+          "expressions": [
+            "hvala ti",
+            "hvala i vama",
+            "hvala",
+            "hvala bot",
+            "hvala čovječe",
+            "ok hvala",
+            "lijepo hvala",
+            "super! hvala",
+            "sweet thanks",
+            "Cijenim to",
+            "hvala na pomoći",
+            "hvala još jednom",
+            "thanks a lot",
+            "puno hvala"
+          ],
+          "answers": [
+            "Bilo kada :)",
+            "Samo radim svoj posao!",
+            "Za vas svaki put",
+            "Molim"
+          ]
+        }
+      ]
+    }
+  ]
+}

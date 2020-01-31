@@ -1,0 +1,24 @@
+{
+    "scenarios": [
+        {
+            "it": "introduces itself and enters into a conversation",
+            "steps": [
+                {
+                    "user": {
+                        "text": "bok"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Ovo je razgovor dobrodošlice za vaš chatbot."
+                            },
+                            {
+                                "text": "Ako vas zaglavi, naš razgovor možete uvijek pokrenuti upisom 'restart'"
+                            }
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}

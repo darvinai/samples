@@ -1,0 +1,69 @@
+{
+  "conversations": {
+    "welcome": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "Ovo je razgovor dobrodošlice za vaš chatbot."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "help",
+          "conditions": [
+            "{{$not ($has conversation) }}"
+          ]
+        }
+      ]
+    },
+    "help": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "Ako vas zaglavi, naš razgovor možete uvijek pokrenuti upisom 'restart'"
+            ]
+          ]
+        }
+      ]
+    },
+    "restart": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "Vaš se razgovor ponovno pokreće."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
+        }
+      ]
+    }
+  },
+  "settings": {
+    "invalid-replies": [
+      "Nisam siguran da sam razumio ono što ste rekli."
+    ],
+    "general-failure": [
+      "Trenutno imamo tehničkih poteškoća."
+    ],
+    "previous-conversation-messages": [
+      "Vraćam se {{ conversationDisplayName }} sada."
+    ]
+  },
+  "commands": {
+    "NEXT-PAGE": [
+      "Sljedećih 5"
+    ],
+    "RESTART": [
+      "restart"
+    ]
+  }
+}
