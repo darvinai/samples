@@ -1,0 +1,145 @@
+{
+  "conversations": {
+    "help": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "If you would like to see a list of questions, just say: FAQ"
+            ]
+          ]
+        }
+      ]
+    },
+    "welcome": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "Welcome the Coronavirus Q&A chatbot. Ask me anything and I will do my best to help."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conditions": [
+            "{{$not ($has conversation) }}"
+          ],
+          "conversation": "help"
+        }
+      ]
+    },
+    "restart": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "Your conversation is restarted."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
+        }
+      ]
+    },
+    "faq-auto": {
+      "type": "goal",
+      "steps": [
+        {
+          "type": "question",
+          "entity": "finished",
+          "entity-type": "Finished",
+          "conditions": [
+            "{{$has finished}}"
+          ]
+        },
+        {
+          "type": "question",
+          "entity": "entity-name",
+          "entity-type": "CoronaFAQ",
+          "messages": [
+            "Press [Show the FAQ list] to choose your question. Say 'finished' to stop."
+          ],
+          "display": {
+            "button-text": "Ask",
+            "type": "single-select",
+            "title": "Show the FAQ list"
+          },
+          "conditions": [
+            "{{$not ($has finished)}}"
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "type": "goal",
+      "steps": [
+        {
+          "entity-type": "Text",
+          "messages": [
+            "Press [Show the FAQ list] to choose your question. Say 'finished' to stop."
+          ],
+          "type": "question",
+          "entity": "question",
+          "display": {
+            "button-text": "Ask",
+            "type": "single-select",
+            "data": [
+              "What is COVID-19?",
+              "What are the symptoms?",
+              "How to protect myself?",
+              "Are there any employees infected?",
+              "Who to contact with corona safety concerns?",
+              "Where can I learn more?",
+              "What is the status of upcoming company events?",
+              "Attending work-related events",
+              "Scheduling in-person meetings",
+              "What is the travel policy during this situation?",
+              "What if I already booked travel?",
+              "What is the policy on personal travel during this situation? ",
+              "Can I work from home?",
+              "Household member showing symptoms",
+              "Are employees required to get tested?",
+              "I need help with my work-from-home setup",
+              "Will I be paid on time?",
+              "Will the payment schedule to suppliers change?",
+              "Can I expense items for working from home?",
+              "Are there any changes to the expenses process?",
+              "How to submit paper copy for expenses?"
+            ],
+            "title": "Show the FAQ list"
+          }
+        },
+        {
+          "type": "message",
+          "messages": [
+            "I hope this helps."
+          ]
+        }
+      ]
+    }
+  },
+  "settings": {
+    "invalid-replies": [
+      "I am not sure I understood what you said."
+    ],
+    "general-failure": [
+      "We are experiencing technical difficulties at this moment."
+    ],
+    "previous-conversation-messages": [
+      "I am going back to the {{ conversationDisplayName }} now."
+    ]
+  },
+  "commands": {
+    "NEXT-PAGE": [
+      "Next 5"
+    ],
+    "RESTART": [
+      "restart"
+    ]
+  }
+}

@@ -1,0 +1,492 @@
+{
+  "entity-definitions": [
+    {
+      "data": [
+        {
+          "answers": [
+            "According to the WHO, the most common symptoms of COVID-19 are fever, tiredness, and dry cough. Some patients may have aches and pains, nasal congestion, runny nose, sore throat or diarrhea. These symptoms are usually mild and begin gradually. </newline>Some people become infected but don't develop any symptoms and don't feel unwell. Most people (about 80%) recover from the disease without needing special treatment.,</newline> Around 1 out of every 6 people who gets COVID-19 becomes seriously ill and develops difficulty breathing. Older people, and those with underlying medical conditions like high blood pressure, heart disease or diabetes, are more likely to develop serious illness.</newline>People with fever, cough and difficulty breathing should seek medical attention."
+          ],
+          "expressions": [
+            "Tell me the symptoms",
+            "What are the symptoms of Coronavirus, COVID-19?",
+            "What are the symptoms?",
+            "What corona virus symptoms?"
+          ],
+          "ssmlAnswers": [],
+          "value": "general2"
+        },
+        {
+          "answers": [
+            "According to the World Health Organization, Coronaviruses are a large family of viruses which may cause illness in animals or humans.</newline>In humans, coronaviruses are known to cause respiratory infections ranging from the common cold to more severe diseases such as Middle East Respiratory Syndrome (MERS) and Severe Acute Respiratory Syndrome (SARS)."
+          ],
+          "expressions": [
+            "Info on COVID",
+            "Info on corona",
+            "What is COVID-19",
+            "What is corona virus?",
+            "What is corona?"
+          ],
+          "value": "general1"
+        },
+        {
+          "answers": [
+            "All existing business travel should be canceled. If you have booked a trip with a start date within the temporary travel ban period, please contact your local travel counsellors by email or phone to request changes/cancellation of your travel arrangements and a refund, if applicable.</newline>If you need more information or experience difficulties with contacting your travel team, please email travel.help@acme.com."
+          ],
+          "expressions": [
+            "Booked Travel",
+            "I already booked travel  ",
+            "What if I already booked travel  ",
+            "What if I already booked travel for an upcoming trip? "
+          ],
+          "value": "travel2"
+        },
+        {
+          "answers": [
+            "All upcoming live events, including ACMEnext US, and Sales Kickoff are canceled. A full refund will be issued to anyone who registered.</newline>Note: Please do not communicate this update outside of the company until the appropriate customer, partner and vendor notifications are made. "
+          ],
+          "expressions": [
+            "How are ACME events/meetings impacted?",
+            "Status of upcoming events",
+            "What about upcoming events?"
+          ],
+          "value": "meetings1"
+        },
+        {
+          "answers": [
+            "Effective Monday, March 16, 2020, all business travel is suspended indefinitely.</newline>If you feel travel is essential, prior approval from the CEO staff member of your organization is required. Please speak with your manager for information specific to your needs.</newline>Furthermore, Employees should only travel to the office they're are based out of and travel amongst offices should be avoided. The only exclusion is travel to/from Burlington/Bedford for employees based there in the Boston area. "
+          ],
+          "expressions": [
+            "Travel Policy",
+            "What is ACME's policy on business travel during this situation?"
+          ],
+          "value": "travel1"
+        },
+        {
+          "answers": [
+            "Employees are prohibited from attending conferences or events (in person).</newline>Please do not register for any events that will take place before June 30th, unless otherwise notified."
+          ],
+          "expressions": [
+            "Attending conferences",
+            "Attending events",
+            "Can I attend other work related events?",
+            "Can I attend other work-related conferences?",
+            "Can I attend other work-related events?",
+            "I want to attend a conference",
+            "I want to attend an event"
+          ],
+          "value": "meetings2"
+        },
+        {
+          "answers": [
+            "If you have safety concerns and would prefer to work from home, employees can do so. Please speak with your manager accordingly. "
+          ],
+          "expressions": [
+            "Am I required to go to the office? ",
+            "Can I work from home?",
+            "Working from home"
+          ],
+          "ssmlAnswers": [],
+          "value": "travel4"
+        },
+        {
+          "answers": [
+            "If you or a member of your household has been infected, you are not permitted to be in the office, you should follow medical advice, and we advise you to self-quarantine for 14 days.</newline>If a member of your household is subjected to a school or work closure due to an unconfirmed case, we encourage you to notify your manager and work from home.</newline>If the closure was due to a documented case, you are not permitted to be in the office, and we advise you to self-quarantine for 14 days. "
+          ],
+          "expressions": [
+            "Family member infected",
+            "Household member infected",
+            "Household member showing symptoms",
+            "I think someone in my flat might be infected",
+            "My kids are showing symptoms",
+            "My partner is showing symptoms"
+          ],
+          "ssmlAnswers": [],
+          "value": "travel5"
+        },
+        {
+          "answers": [
+            "In most countries an image of a receipt is acceptable to submit in MyACME, therefore there is no change to the current process.</newline>In those countries where a paper copy is required, please submit scanned copies of the bills/receipts in MyACME so the reimbursement can be processed. Where it is required, the Finance team will be requesting any necessary original documents at a later date.</newline>We ask everyone to cooperate and provide the originals for audit purposes once we resume our work back in the office."
+          ],
+          "expressions": [
+            "How do I submit required paper copies for reimbursements?",
+            "How to submit paper copy for expenses?",
+            "How to submit paper receipts?",
+            "Submitting paper receipts"
+          ],
+          "ssmlAnswers": [],
+          "value": "finance5"
+        },
+        {
+          "answers": [
+            "Please arrange for meetings to be held virtually. To avoid large gatherings, in-person meetings of 15+ people are not permitted.</newline>Furthermore, all vendor meetings, trainings and certifications conducted by an outside organization must be held virtually or rescheduled for a later date.</newline>Non-employees are not be permitted into our offices without prior approval from the CEO staff member of your organization. Note: This does not apply to contract employees and interns. "
+          ],
+          "expressions": [
+            "Can I schedule in-person meetings at my home office?",
+            "Schedule face to face meetings",
+            "Scheduling in-person meetings"
+          ],
+          "value": "meetings3"
+        },
+        {
+          "answers": [
+            "Please reach out to your manager or HC Business Partner if you have any concerns related to COVID-19 and your work environment."
+          ],
+          "expressions": [
+            "I have safety concerns",
+            "Who should I contact with work safety related COVID-19 concerns?",
+            "Who to contact with COVID concerns?",
+            "Who to contact with corona safety concerns?"
+          ],
+          "value": "general5"
+        },
+        {
+          "answers": [
+            "The WHO recommends four steps to help protect yourself: </newline>,Frequent hand washing, regardless of whether the hands appear dirty </newline>,Maintain social distancing, that is keeping at least three feet between yourself and other people, particularly those who are coughing, sneezing and have a fever  </newline>,Avoid touching eyes, nose and mouth </newline>,If you have fever, cough and difficulty breathing, seek medical care early,This video provides more?information on how to protect yourself and others from getting the virus</newline>"
+          ],
+          "expressions": [
+            "How can I protect myself?",
+            "What can I do to protect myself?",
+            "What precautions to take?"
+          ],
+          "value": "general3"
+        },
+        {
+          "answers": [
+            "There are currently no confirmed cases of COVID-19 amongst our employee base.</newline>If you're concerned that you may have been exposed, please speak with your manager and self-quarantine for 14 days. "
+          ],
+          "expressions": [
+            "Any infected employees?",
+            "Are there any infected employees?",
+            "Are there employees infected with COVID-19 within the office?"
+          ],
+          "value": "general4"
+        },
+        {
+          "answers": [
+            "There are no planned changes to our existing expense reimbursement process."
+          ],
+          "expressions": [
+            "Any changes to the expenses process?",
+            "Anything different about submitting expenses?",
+            "Are there any changes to the expenses process?",
+            "Is there any change to our internal expense reimbursement process?"
+          ],
+          "ssmlAnswers": [],
+          "value": "finance4"
+        },
+        {
+          "answers": [
+            "There are no planned changes to our existing payroll process and schedules."
+          ],
+          "expressions": [
+            "When will I get paid?",
+            "Will I be paid on time?",
+            "Will the process or payroll schedule change for employees?"
+          ],
+          "ssmlAnswers": [],
+          "value": "finance1"
+        },
+        {
+          "answers": [
+            "There are no planned changes to the approval and payment process to our vendors and 999 contractors. Certainly, this is easier for our vendors who email invoices. For invoices that are mailed to an office, we have arranged to have them scanned and emailed to AP teams for processing."
+          ],
+          "expressions": [
+            "Any changes to contractors payment?",
+            "Any changes to suppliers payment?",
+            "Will the payment schedule to contractors change?",
+            "Will the payment schedule to suppliers change?"
+          ],
+          "ssmlAnswers": [],
+          "value": "finance2"
+        },
+        {
+          "answers": [
+            "Visit the World Health Organization(https://www.who.int) for the latest news and resources.</newline>Also, check for real-time information on individual destinations/regions on My ACME(https://my.acme.com/sites/Finance/SitePages/Travel.aspx)"
+          ],
+          "expressions": [
+            "Where can I learn more?",
+            "need more info"
+          ],
+          "value": "general6"
+        },
+        {
+          "answers": [
+            "We are not requiring testing but If you or a family member have been exposed to COVID-19 or have traveled through a restricted area recently, please disclose this to your manager immediately and self-quarantine for no less than 14 days. We are asking all employees to complete a self-disclosure report for any travel (personal or professional) in the last 30 days. "
+          ],
+          "expressions": [
+            "Are employees required to get tested?",
+            "Is ACME requiring employees in affected areas to get tested?"
+          ],
+          "ssmlAnswers": [],
+          "value": "travel6"
+        },
+        {
+          "answers": [
+            "We cannot restrict personal travel but do urge all employees to pay close attention to country travel advisories.</newline>However, to ensure the safety of all AMCE employees, we are asking all employees to notify their managers or Human Capital of any travel during the past 30 days."
+          ],
+          "expressions": [
+            "Personal travels",
+            "What about personal travel",
+            "What is the policy on personal travel during this situation? "
+          ],
+          "ssmlAnswers": [],
+          "value": "travel3"
+        },
+        {
+          "answers": [
+            "Work with your manager to identify any issues you may have in order to productively work from home (e.g., laptop). "
+          ],
+          "expressions": [
+            "Help with work-from-home setup",
+            "I am not currently set up to work from home",
+            "I am not currently set up to work from home, who should I contact?",
+            "I need help with my work-from-home setup"
+          ],
+          "value": "travel7"
+        },
+        {
+          "answers": [
+            "You should work with your manager to obtain pre-approval before making any purchases or reimbursement requests that are outside of Progress’s normal policies. If approved by your manager, you can submit via MyACME for an expense reimbursement."
+          ],
+          "expressions": [
+            "Can I expense items for working from home?",
+            "WFH expenses",
+            "What should I do if I need to incur cost to work from home?",
+            "Working form home expenses"
+          ],
+          "ssmlAnswers": [],
+          "value": "finance3"
+        }
+      ],
+      "lookup-strategy": "QnA",
+      "name": "CoronaFAQ"
+    },
+    {
+      "data": [
+        {
+          "answers": [
+            "Any time :)",
+            "Just doing my job!",
+            "You're welcome :)"
+          ],
+          "expressions": [
+            "I appreciate that",
+            "I know. thank you",
+            "I really appreciate it",
+            "awesome thanks",
+            "awesome thx",
+            "cool ty",
+            "good to know. thanks",
+            "great! thanks",
+            "great, thank you",
+            "many thanks",
+            "nice thanks",
+            "nice, thank you",
+            "ok thanks",
+            "ok thx",
+            "okay, thank you",
+            "sweet thanks",
+            "thank you buddy",
+            "thank you for showing me that",
+            "thank you so much",
+            "thank you very much",
+            "thank you",
+            "thank",
+            "thanks a lot",
+            "thanks again",
+            "thanks bot",
+            "thanks for the help",
+            "thanks for your help",
+            "thanks man",
+            "thanks you too",
+            "thanks",
+            "thankssssssssss",
+            "that's very kind",
+            "thnaks",
+            "thnx",
+            "thx dude",
+            "thx mate",
+            "thx",
+            "ty",
+            "you saved my day",
+            "you're good"
+          ],
+          "value": "thanks"
+        },
+        {
+          "answers": [
+            "Bye!",
+            "Good bye!",
+            "See you!"
+          ],
+          "expressions": [
+            "++",
+            "I go bye",
+            "I have to go",
+            "I said bye",
+            "I'll see you",
+            "I'm outa here",
+            "See you later",
+            "adieu",
+            "adios",
+            "au revoir",
+            "awesome see ya",
+            "best regards",
+            "best wishes",
+            "bye bye",
+            "bye now",
+            "bye",
+            "bye+",
+            "bye-bye",
+            "byebye",
+            "byeee",
+            "byeeeee",
+            "catch you later",
+            "cia",
+            "cool see you next time",
+            "cya l8er",
+            "cya",
+            "excellent bye",
+            "excellent bye-bye",
+            "good night",
+            "goodbye",
+            "goodnight then",
+            "got to go",
+            "great bye",
+            "gtg",
+            "hasta la vista",
+            "have a good day",
+            "have a great weekend",
+            "have a nice day",
+            "later",
+            "ok I have to go thanks",
+            "ok, bye",
+            "see u",
+            "see ya",
+            "see you soon",
+            "see you",
+            "see yu",
+            "so long",
+            "talk to you soon",
+            "tciao"
+          ],
+          "value": "goodbye"
+        }
+      ],
+      "lookup-strategy": "QnA",
+      "name": "SmallTalk"
+    },
+    {
+      "data": [
+        {
+          "expressions": [
+            "Are you intelligent?",
+            "Are you useless?",
+            "Can you help me?",
+            "Commands",
+            "Help me",
+            "Help me, please.",
+            "Help",
+            "How can I use you?",
+            "How can you help me?",
+            "I am lost",
+            "I don't know what to do",
+            "I need some assistance",
+            "I need some help !",
+            "I want to know more about you",
+            "Please help me",
+            "Show me what you do",
+            "What are my options?",
+            "What are you built for?",
+            "What are you doing?",
+            "What are your abilities?",
+            "What can I say?",
+            "What can you do?",
+            "What can you do?",
+            "What can you tell me?",
+            "What do you do?",
+            "What makes you unique?",
+            "What's your purpose?",
+            "What's your utility?",
+            "You're useless.",
+            "are you useful?",
+            "assist me",
+            "could you help me",
+            "give me help",
+            "help please?",
+            "how does this work?",
+            "how to",
+            "i am confused",
+            "i cant find the way i need help",
+            "i need help",
+            "list help",
+            "menu",
+            "more help",
+            "need guidance",
+            "need some guidance",
+            "not sure what to do here",
+            "show help",
+            "stop",
+            "what do you know to do?",
+            "what is this",
+            "what is your usage",
+            "what should I do?",
+            "what the bot knows to do?",
+            "who are you?"
+          ],
+          "value": "help"
+        },
+        {
+          "expressions": [
+            "Can we reset the conversation?",
+            "Can we start over?",
+            "Forget about it, reset",
+            "Forget, restart",
+            "I want to reset the conversation",
+            "I want to start again",
+            "It is possible to restart the conversation?",
+            "Let's restart",
+            "Please reboot",
+            "Reboot the flow",
+            "can we start again?",
+            "let's do it again",
+            "reset conversation",
+            "reset",
+            "restart conversation",
+            "restart",
+            "restart, plase",
+            "start again"
+          ],
+          "value": "restart"
+        },
+        {
+          "expressions": [
+            "FAQ"
+          ],
+          "value": "faq"
+        },
+        {
+          "expressions": [
+            "auto"
+          ],
+          "value": "faq-auto"
+        }
+      ],
+      "lookup-strategy": "trait",
+      "name": "Conversation"
+    },
+    {
+      "data": [
+        {
+          "synonyms": [
+            "no more questions",
+            "that is all"
+          ],
+          "value": "finished"
+        }
+      ],
+      "lookup-strategy": "keywords",
+      "name": "Finished"
+    }
+  ]
+}
