@@ -6,9 +6,11 @@
         {
           "type": "message",
           "messages": [
-            [
-              "If you would like to see a list of questions, just say: FAQ"
-            ]
+            "Ask me anything.</newline>Hint: you can also say: \"Covid Questions\", to get a list of questions about Covid-19.",
+            "Ask me anything.</newline>Hint: you can also say: \"Travel Questions\", to get a list of questions about Travel.",
+            "Ask me anything.</newline>Hint: you can also say: \"Finance Questions\", to get a list of questions about Finance.",
+            "Ask me anything.</newline>Hint: you can also say: \"Meetings Questions\", to get a list of questions about Meetings.",
+            "Ask me anything.</newline>Hint: you can also say: \"WFH Questions\", to get a list of questions about working from home."
           ]
         }
       ]
@@ -19,13 +21,15 @@
         {
           "type": "message",
           "messages": [
-            "Welcome the Coronavirus Q&A chatbot. Ask me anything and I will do my best to help."
+            [
+              "I am a bot that can answer your questions about Covid."
+            ]
           ]
         },
         {
           "type": "conversation",
           "conditions": [
-            "{{$not ($has conversation) }}"
+            "{{ $not ($has conversation) }}"
           ],
           "conversation": "help"
         }
@@ -46,79 +50,107 @@
         }
       ]
     },
-    "faq-auto": {
+    "no-more-questions": {
       "type": "goal",
       "steps": [
         {
-          "type": "question",
-          "entity": "finished",
-          "entity-type": "Finished",
-          "conditions": [
-            "{{$has finished}}"
-          ]
-        },
-        {
-          "type": "question",
-          "entity": "entity-name",
-          "entity-type": "CoronaFAQ",
-          "messages": [
-            "Press [Show the FAQ list] to choose your question. Say 'finished' to stop."
-          ],
-          "display": {
-            "button-text": "Ask",
-            "type": "single-select",
-            "title": "Show the FAQ list"
-          },
-          "conditions": [
-            "{{$not ($has finished)}}"
-          ]
+          "type": "command",
+          "command": "go-to help"
         }
       ]
     },
-    "faq": {
+    "covid-19-qna": {
       "type": "goal",
       "steps": [
         {
-          "entity-type": "Text",
-          "messages": [
-            "Press [Show the FAQ list] to choose your question. Say 'finished' to stop."
-          ],
           "type": "question",
-          "entity": "question",
-          "display": {
-            "button-text": "Ask",
-            "type": "single-select",
-            "data": [
-              "What is COVID-19?",
-              "What are the symptoms?",
-              "How to protect myself?",
-              "Are there any employees infected?",
-              "Who to contact with corona safety concerns?",
-              "Where can I learn more?",
-              "What is the status of upcoming company events?",
-              "Attending work-related events",
-              "Scheduling in-person meetings",
-              "What is the travel policy during this situation?",
-              "What if I already booked travel?",
-              "What is the policy on personal travel during this situation? ",
-              "Can I work from home?",
-              "Household member showing symptoms",
-              "Are employees required to get tested?",
-              "I need help with my work-from-home setup",
-              "Will I be paid on time?",
-              "Will the payment schedule to suppliers change?",
-              "Can I expense items for working from home?",
-              "Are there any changes to the expenses process?",
-              "How to submit paper copy for expenses?"
-            ],
-            "title": "Show the FAQ list"
-          }
-        },
-        {
-          "type": "message",
+          "entity": "q",
+          "entity-type": "Covid19QnA",
           "messages": [
-            "I hope this helps."
-          ]
+            [
+              "Check the COVID-19 answers for:",
+              "Hint: To stop repeating questions, say: \"no more questions\" "
+            ]
+          ],
+          "display": {
+            "type": "quick-reply"
+          }
+        }
+      ]
+    },
+    "travel-qna": {
+      "type": "goal",
+      "steps": [
+        {
+          "type": "question",
+          "entity": "q",
+          "entity-type": "TravelQnA",
+          "messages": [
+            [
+              "Check the Travel answers for:",
+              "Hint: To stop repeating questions, say: \"no more questions\" "
+            ]
+          ],
+          "display": {
+            "type": "quick-reply"
+          }
+        }
+      ]
+    },
+    "meetings-qna": {
+      "type": "goal",
+      "steps": [
+        {
+          "type": "question",
+          "entity": "q",
+          "entity-type": "MeetingsQnA",
+          "messages": [
+            [
+              "Check the Meetings answers for:",
+              "Hint: To stop repeating questions, say: \"no more questions\" "
+            ]
+          ],
+          "display": {
+            "type": "quick-reply"
+          }
+        }
+      ]
+    },
+    "finance-qna": {
+      "type": "goal",
+      "steps": [
+        {
+          "type": "question",
+          "entity": "q",
+          "entity-type": "FinanceQnA",
+          "messages": [
+            [
+              "Check the Finance answers for:",
+              "Hint: To stop repeating questions, say: \"no more questions\" "
+            ]
+          ],
+          "display": {
+            "type": "quick-reply"
+          }
+        }
+      ]
+    },
+    "wfh-qna": {
+      "type": "goal",
+      "steps": [
+        {
+          "type": "question",
+          "entity": "q",
+          "entity-type": "WFHQnA",
+          "messages": [
+            [
+              "Check the WFH answers for:",
+              "Hint: To stop repeating questions, say: \"no more questions\" "
+            ]
+          ],
+          "display": {
+            "type": "quick-reply"
+          }
         }
       ]
     }
