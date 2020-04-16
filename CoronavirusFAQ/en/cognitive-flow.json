@@ -22,7 +22,7 @@
           "type": "message",
           "messages": [
             [
-              "I am a bot that can answer your questions about Covid."
+              "I am a bot that can answer your questions about Covid-19."
             ]
           ]
         },
@@ -55,7 +55,7 @@
       "steps": [
         {
           "type": "command",
-          "command": "go-to help"
+          "command": "invalidate-entity conversation"
         }
       ]
     },
