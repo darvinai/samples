@@ -6,7 +6,7 @@
         {
           "type": "message",
           "messages": [
-            "Bu, chat botunuza hoşgeldiniz görüşmesidir."
+            "Bu görüşme chatbotun karşılama görüşmesidir."
           ]
         },
         {
@@ -25,7 +25,7 @@
           "type": "message",
           "messages": [
             [
-              "Eğer takılırsanız, 'restart' yazarak görüşmemizi her zaman yeniden başlatabilirsiniz"
+              "Eğer görüşmede takılı kalırsanız 'yeniden baslat' yazarak görüşmeyi yeniden başlatabilirsiniz."
             ]
           ]
         }
@@ -49,13 +49,13 @@
   },
   "settings": {
     "invalid-replies": [
-      "Ne demek istediğini anlayamadım."
+      "Söylediğiniz şeyi anladığıma emin değilim."
     ],
     "general-failure": [
-      "Şu anda bazı teknik aksaklıklar yaşıyoruz."
+      "Şu anda teknik aksaklıklar yaşıyoruz."
     ],
     "previous-conversation-messages": [
-      "Şu anda {{ conversationDisplayName }} görüşmesine dönüyorum."
+      "Şimdi, {{ conversationDisplayName }} görüşmesine geri dönüyorum."
     ]
   },
   "commands": {

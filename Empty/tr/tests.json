@@ -10,10 +10,10 @@
                     "bot": [
                         [
                             {
-                                "text": "Bu, chat botunuza hoşgeldiniz görüşmesidir."
+                                "text": "Bu görüşme chatbotun karşılama görüşmesidir."
                             },
                             {
-                                "text": "Eğer takılırsanız, 'restart' yazarak görüşmemizi her zaman yeniden başlatabilirsiniz"
+                                "text": "Eğer görüşmede takılı kalırsanız 'yeniden baslat' yazarak görüşmeyi yeniden başlatabilirsiniz."
                             }
                         ]
                     ]
