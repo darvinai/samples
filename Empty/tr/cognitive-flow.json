@@ -1,0 +1,69 @@
+{
+  "conversations": {
+    "welcome": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "Bu görüşme chatbotun karşılama görüşmesidir."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "help",
+          "conditions": [
+            "{{$not ($has conversation) }}"
+          ]
+        }
+      ]
+    },
+    "help": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+              "Eğer görüşmede takılı kalırsanız 'yeniden baslat' yazarak görüşmeyi yeniden başlatabilirsiniz."
+            ]
+          ]
+        }
+      ]
+    },
+    "restart": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "Görüşmeniz yeniden başlatıldı."
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
+        }
+      ]
+    }
+  },
+  "settings": {
+    "invalid-replies": [
+      "Söylediğiniz şeyi anladığıma emin değilim."
+    ],
+    "general-failure": [
+      "Şu anda teknik aksaklıklar yaşıyoruz."
+    ],
+    "previous-conversation-messages": [
+      "Şimdi, {{ conversationDisplayName }} görüşmesine geri dönüyorum."
+    ]
+  },
+  "commands": {
+    "NEXT-PAGE": [
+      "Sonraki 5"
+    ],
+    "RESTART": [
+      "restart"
+    ]
+  }
+}

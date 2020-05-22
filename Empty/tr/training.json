@@ -1,0 +1,135 @@
+{
+  "entity-definitions": [
+      {
+          "data": [
+              {
+                  "answers": [
+                      "Benim işim bu!",
+                      "Her zaman :)",
+                      "Rica ederim :)",
+                      "Yardımcı olabildiğim için mutluyum :)"
+                  ],
+                  "expressions": [
+                      "ben de teşekkür ederim",
+                      "muhteşem teşekkürler",
+                      "muhteşem, teşekkürler",
+                      "süper teşekkürler",
+                      "tamam teşekkür dostum",
+                      "tamam teşekkür",
+                      "tamam teşekkürler bot",
+                      "tamam teşekkürler dostum",
+                      "tamam teşekkürler",
+                      "tamam, ben de teşekkür ederim",
+                      "tamamdır teşekkürler",
+                      "tekrar teşekkürler",
+                      "teşekkür dostum",
+                      "teşekkür",
+                      "teşekkürler bot",
+                      "teşekkürler dostum",
+                      "teşekkürler",
+                      "teşekkürlerrrr",
+                      "tşk",
+                      "yardımın için teşekkür ederim",
+                      "yardımın için teşekkürler"
+                  ],
+                  "value": "thanks"
+              },
+              {
+                  "answers": [
+                      "Bye Bye!",
+                      "Güle güle!",
+                      "Hoşçakal!"
+                  ],
+                  "expressions": [
+                      "adios",
+                      "adios",
+                      "ben kaçıyorum",
+                      "bye",
+                      "bye-bye",
+                      "bye-bye",
+                      "güle güle",
+                      "güle güle",
+                      "güle güle",
+                      "güle güle",
+                      "güle güle",
+                      "hasta la vista",
+                      "hayırlı günler",
+                      "hoşçakal",
+                      "iyi akşamlar",
+                      "iyi akşamlar",
+                      "iyi akşamlar",
+                      "iyi geceler",
+                      "iyi hafta sonları",
+                      "iyi tatiller",
+                      "iyi çalışmalar",
+                      "kaçtım",
+                      "mükemmel",
+                      "mükemmel",
+                      "çıkıyorum",
+                      "çıkıyorum"
+                  ],
+                  "ssmlAnswers": [],
+                  "value": "goodbye"
+              }
+          ],
+          "lookup-strategy": "QnA",
+          "name": "SmallTalk"
+      },
+      {
+          "data": [
+              {
+                  "expressions": [
+                      "Akışı yeniden başlat",
+                      "Baştan başlayabilir miyiz?",
+                      "Lütfen yeniden başlat",
+                      "Lütfen yeniden başlatır mısın?",
+                      "Neyse, yeniden başlayalım",
+                      "Tekrar başlayalım",
+                      "Unut, Yeniden başlayalım",
+                      "Yeniden başlamak istiyorum",
+                      "Yeniden başlat",
+                      "baştan başla",
+                      "görüşmeyi sıfırla",
+                      "görüşmeyi tekrar başlat",
+                      "reset",
+                      "restart",
+                      "yeniden baslat"
+                  ],
+                  "value": "restart"
+              },
+              {
+                  "expressions": [
+                      "Amacın nedir?",
+                      "Bana ne yapacağını gösterir misin?",
+                      "Bana yardım et",
+                      "Bu nasıl çalışıyor?",
+                      "Bu nedir?",
+                      "Kiminle görüşüyorum?",
+                      "Kimsin?",
+                      "Kullanışlı mısın?",
+                      "Lütfen Yardım et",
+                      "Nasıl yardım edebilirsin?",
+                      "Nasıl çalışıyorsun?",
+                      "Ne yapabilirsin?",
+                      "Ne yapacağımı anlamadım",
+                      "Ne yapacağımı bilmiyorum",
+                      "Ne yaparsın?",
+                      "Sen kimsin?",
+                      "Seni nasıl kullanabilirim?",
+                      "Yardım eder misin?",
+                      "Yardım et",
+                      "Yardım et?",
+                      "Yardım",
+                      "Yardıma ihtiyacım var!",
+                      "dur",
+                      "menu",
+                      "menü"
+                  ],
+                  "value": "help"
+              }
+          ],
+          "lookup-strategy": "trait",
+          "name": "Conversation"
+      }
+  ]
+}
