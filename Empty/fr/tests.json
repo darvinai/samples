@@ -1,0 +1,24 @@
+{
+    "scenarios": [
+        {
+            "it": "introduces itself and enters into a conversation",
+            "steps": [
+                {
+                    "user": {
+                        "text": "salut"
+                    },
+                    "bot": [
+                        [
+                            {
+                                "text": "Ceci est un message de bienvenu pour votre Chatbot."
+                            },
+                            {
+                                "text": "Si vous êtes bloqué, vous pouvez toujours relancer notre conversation en tapant 'redémarrer'."
+                            }
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}
