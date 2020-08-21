@@ -81,6 +81,20 @@
                                     "New insurance",
                                     "Fill a claim",
                                     "Contact operator"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "New insurance",
+                                        "value": "New insurance"
+                                    },
+                                    {
+                                        "title": "Fill a claim",
+                                        "value": "Fill a claim"
+                                    },
+                                    {
+                                        "title": "Contact operator",
+                                        "value": "Contact operator"
+                                    }
                                 ]
                             }
                         ]
@@ -1848,6 +1862,32 @@
                                     "1 April 2015",
                                     "Bulgaria",
                                     "Italy"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Confirm",
+                                        "value": "Confirm"
+                                    },
+                                    {
+                                        "title": "30",
+                                        "value": "30"
+                                    },
+                                    {
+                                        "title": "11 March 2015",
+                                        "value": "11 March 2015"
+                                    },
+                                    {
+                                        "title": "1 April 2015",
+                                        "value": "1 April 2015"
+                                    },
+                                    {
+                                        "title": "Bulgaria",
+                                        "value": "Bulgaria"
+                                    },
+                                    {
+                                        "title": "Italy",
+                                        "value": "Italy"
+                                    }
                                 ]
                             }
                         ]
@@ -1864,6 +1904,16 @@
                                 "quickReplies": [
                                     "Yes",
                                     "No"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Yes",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "title": "No",
+                                        "value": "No"
+                                    }
                                 ]
                             }
                         ]
@@ -1893,6 +1943,32 @@
                                     "1 April 2015",
                                     "Bulgaria",
                                     "Italy"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Confirm",
+                                        "value": "Confirm"
+                                    },
+                                    {
+                                        "title": "30",
+                                        "value": "30"
+                                    },
+                                    {
+                                        "title": "11 March 2015",
+                                        "value": "11 March 2015"
+                                    },
+                                    {
+                                        "title": "1 April 2015",
+                                        "value": "1 April 2015"
+                                    },
+                                    {
+                                        "title": "Bulgaria",
+                                        "value": "Bulgaria"
+                                    },
+                                    {
+                                        "title": "Italy",
+                                        "value": "Italy"
+                                    }
                                 ]
                             }
                         ]
@@ -1925,6 +2001,32 @@
                                     "1 April 2015",
                                     "Bulgaria",
                                     "Italy"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Confirm",
+                                        "value": "Confirm"
+                                    },
+                                    {
+                                        "title": "30",
+                                        "value": "30"
+                                    },
+                                    {
+                                        "title": "11 March 2015",
+                                        "value": "11 March 2015"
+                                    },
+                                    {
+                                        "title": "1 April 2015",
+                                        "value": "1 April 2015"
+                                    },
+                                    {
+                                        "title": "Bulgaria",
+                                        "value": "Bulgaria"
+                                    },
+                                    {
+                                        "title": "Italy",
+                                        "value": "Italy"
+                                    }
                                 ]
                             }
                         ]
@@ -2005,6 +2107,16 @@
                                 "quickReplies": [
                                     "Yes",
                                     "No"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Yes",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "title": "No",
+                                        "value": "No"
+                                    }
                                 ]
                             }
                         ]
@@ -2059,6 +2171,16 @@
                                 "quickReplies": [
                                     "Yes",
                                     "No"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Yes",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "title": "No",
+                                        "value": "No"
+                                    }
                                 ]
                             }
                         ]
@@ -2158,6 +2280,20 @@
                                     "New insurance",
                                     "Fill a claim",
                                     "Contact operator"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "New insurance",
+                                        "value": "New insurance"
+                                    },
+                                    {
+                                        "title": "Fill a claim",
+                                        "value": "Fill a claim"
+                                    },
+                                    {
+                                        "title": "Contact operator",
+                                        "value": "Contact operator"
+                                    }
                                 ]
                             }
                         ]
@@ -2185,6 +2321,16 @@
                                 "quickReplies": [
                                     "Yes",
                                     "No"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Yes",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "title": "No",
+                                        "value": "No"
+                                    }
                                 ]
                             }
                         ]
@@ -2201,6 +2347,16 @@
                                 "quickReplies": [
                                     "Yes",
                                     "No"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Yes",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "title": "No",
+                                        "value": "No"
+                                    }
                                 ]
                             }
                         ]
@@ -2220,6 +2376,16 @@
                                 "quickReplies": [
                                     "Yes",
                                     "No"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Yes",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "title": "No",
+                                        "value": "No"
+                                    }
                                 ]
                             }
                         ]
@@ -2237,6 +2403,20 @@
                                     "AN192181B",
                                     "NB887712C",
                                     "OA298717J"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "AN192181B",
+                                        "value": "AN192181B"
+                                    },
+                                    {
+                                        "title": "NB887712C",
+                                        "value": "NB887712C"
+                                    },
+                                    {
+                                        "title": "OA298717J",
+                                        "value": "OA298717J"
+                                    }
                                 ]
                             }
                         ]
@@ -2288,6 +2468,24 @@
                                     "AN192181B",
                                     "558.25",
                                     "Receipt picture"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Confirm",
+                                        "value": "Confirm"
+                                    },
+                                    {
+                                        "title": "AN192181B",
+                                        "value": "AN192181B"
+                                    },
+                                    {
+                                        "title": "558.25",
+                                        "value": "558.25"
+                                    },
+                                    {
+                                        "title": "Receipt picture",
+                                        "value": "Receipt picture"
+                                    }
                                 ]
                             }
                         ]
@@ -2333,6 +2531,20 @@
                                     "New insurance",
                                     "Fill a claim",
                                     "Contact operator"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "New insurance",
+                                        "value": "New insurance"
+                                    },
+                                    {
+                                        "title": "Fill a claim",
+                                        "value": "Fill a claim"
+                                    },
+                                    {
+                                        "title": "Contact operator",
+                                        "value": "Contact operator"
+                                    }
                                 ]
                             }
                         ]
@@ -2360,6 +2572,16 @@
                                 "quickReplies": [
                                     "Yes",
                                     "No"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Yes",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "title": "No",
+                                        "value": "No"
+                                    }
                                 ]
                             }
                         ]
@@ -2406,6 +2628,20 @@
                                     "New insurance",
                                     "Fill a claim",
                                     "Contact operator"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "New insurance",
+                                        "value": "New insurance"
+                                    },
+                                    {
+                                        "title": "Fill a claim",
+                                        "value": "Fill a claim"
+                                    },
+                                    {
+                                        "title": "Contact operator",
+                                        "value": "Contact operator"
+                                    }
                                 ]
                             }
                         ]

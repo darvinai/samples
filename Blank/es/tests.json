@@ -17,7 +17,20 @@
               },
               {
                 "text": "Esto es lo que puedo hacer por ti:",
-                "quickReplies": ["Conversación 1", "Conversación 2"]
+                "quickReplies": [
+                  "Conversación 1",
+                  "Conversación 2"
+                ],
+                "richQuickReplies": [
+                  {
+                    "title": "Conversación 1",
+                    "value": "Conversación 1"
+                  },
+                  {
+                    "title": "Conversación 2",
+                    "value": "Conversación 2"
+                  }
+                ]
               }
             ]
           ]
