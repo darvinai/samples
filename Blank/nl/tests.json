@@ -20,6 +20,16 @@
                                 "quickReplies": [
                                     "Gesprek 1",
                                     "Gesprek 2"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Gesprek 1",
+                                        "value": "Gesprek 1"
+                                    },
+                                    {
+                                        "title": "Gesprek 2",
+                                        "value": "Gesprek 2"
+                                    }
                                 ]
                             }
                         ]

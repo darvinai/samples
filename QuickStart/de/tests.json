@@ -1,12 +1,15 @@
 {
-    "scenarios": [{
+    "scenarios": [
+        {
             "it": "completes a straightforward conversation",
-            "steps": [{
+            "steps": [
+                {
                     "user": {
                         "text": "Hallo"
                     },
                     "bot": [
-                        [{
+                        [
+                            {
                                 "text": "Hallo, ich bin der virtuelle Assistent des ACME-Krankenhauses mit künstlicher Intelligenz."
                             },
                             {
@@ -17,6 +20,16 @@
                                 "quickReplies": [
                                     "Buchen Sie einen Arzt",
                                     "Kontakt Betreiber"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Buchen Sie einen Arzt",
+                                        "value": "Buchen Sie einen Arzt"
+                                    },
+                                    {
+                                        "title": "Kontakt Betreiber",
+                                        "value": "Kontakt Betreiber"
+                                    }
                                 ]
                             }
                         ]
@@ -27,14 +40,30 @@
                         "text": "Buchen Sie einen Arzt"
                     },
                     "bot": [
-                        [{
-                            "text": "Wie heißt der Arzt, den du sehen willst?",
-                            "quickReplies": [
-                                "Dr. David Alcutt",
-                                "Dr. John Burke",
-                                "Dr. Mary Cannon"
-                            ]
-                        }]
+                        [
+                            {
+                                "text": "Wie heißt der Arzt, den du sehen willst?",
+                                "quickReplies": [
+                                    "Dr. David Alcutt",
+                                    "Dr. John Burke",
+                                    "Dr. Mary Cannon"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Dr. David Alcutt",
+                                        "value": "Dr. David Alcutt"
+                                    },
+                                    {
+                                        "title": "Dr. John Burke",
+                                        "value": "Dr. John Burke"
+                                    },
+                                    {
+                                        "title": "Dr. Mary Cannon",
+                                        "value": "Dr. Mary Cannon"
+                                    }
+                                ]
+                            }
+                        ]
                     ]
                 },
                 {
@@ -42,14 +71,30 @@
                         "text": "John Burke"
                     },
                     "bot": [
-                        [{
-                            "text": "Mit welchem ​​Datum möchten Sie sich mit Dr. John Burke treffen?",
-                            "quickReplies": [
-                                "2017-08-07",
-                                "2017-08-15",
-                                "2017-08-24"
-                            ]
-                        }]
+                        [
+                            {
+                                "text": "Mit welchem ​​Datum möchten Sie sich mit Dr. John Burke treffen?",
+                                "quickReplies": [
+                                    "2017-08-07",
+                                    "2017-08-15",
+                                    "2017-08-24"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "2017-08-07",
+                                        "value": "2017-08-07"
+                                    },
+                                    {
+                                        "title": "2017-08-15",
+                                        "value": "2017-08-15"
+                                    },
+                                    {
+                                        "title": "2017-08-24",
+                                        "value": "2017-08-24"
+                                    }
+                                ]
+                            }
+                        ]
                     ]
                 },
                 {
@@ -57,14 +102,30 @@
                         "text": "2017-08-07"
                     },
                     "bot": [
-                        [{
-                            "text": "Wann möchten Sie Dr. John Burke am 2017.08.07 treffen?",
-                            "quickReplies": [
-                                "9:30",
-                                "10:00",
-                                "10:30"
-                            ]
-                        }]
+                        [
+                            {
+                                "text": "Wann möchten Sie Dr. John Burke am 2017.08.07 treffen?",
+                                "quickReplies": [
+                                    "9:30",
+                                    "10:00",
+                                    "10:30"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "9:30",
+                                        "value": "9:30"
+                                    },
+                                    {
+                                        "title": "10:00",
+                                        "value": "10:00"
+                                    },
+                                    {
+                                        "title": "10:30",
+                                        "value": "10:30"
+                                    }
+                                ]
+                            }
+                        ]
                     ]
                 },
                 {
@@ -72,9 +133,11 @@
                         "text": "10:00"
                     },
                     "bot": [
-                        [{
-                            "text": "Was sind deine Vor- und Nachnamen?"
-                        }]
+                        [
+                            {
+                                "text": "Was sind deine Vor- und Nachnamen?"
+                            }
+                        ]
                     ]
                 },
                 {
@@ -82,7 +145,8 @@
                         "text": "John Smith"
                     },
                     "bot": [
-                        [{
+                        [
+                            {
                                 "text": "Ich buche Ihnen am 2017.08.07 um 10:00 einen Termin für Dr. John Burke."
                             },
                             {
@@ -92,6 +156,24 @@
                                     "Dr. John Burke",
                                     "2017.08.07",
                                     "10:00"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Bestätigen",
+                                        "value": "Bestätigen"
+                                    },
+                                    {
+                                        "title": "Dr. John Burke",
+                                        "value": "Dr. John Burke"
+                                    },
+                                    {
+                                        "title": "2017.08.07",
+                                        "value": "2017.08.07"
+                                    },
+                                    {
+                                        "title": "10:00",
+                                        "value": "10:00"
+                                    }
                                 ]
                             }
                         ]
@@ -102,9 +184,11 @@
                         "text": "Bestätigen"
                     },
                     "bot": [
-                        [{
-                            "text": "Herzlichen Glückwunsch. Sie haben einen Termin mit Dr. John Burke für 2017.08.07 um 10:00. Bis bald!"
-                        }]
+                        [
+                            {
+                                "text": "Herzlichen Glückwunsch. Sie haben einen Termin mit Dr. John Burke für 2017.08.07 um 10:00. Bis bald!"
+                            }
+                        ]
                     ]
                 }
             ],
@@ -130,12 +214,14 @@
         },
         {
             "it": "completes a short conversation",
-            "steps": [{
+            "steps": [
+                {
                     "user": {
                         "text": "Hallo! Ich möchte 8 am August 2017 um 15:00 einen Termin für Dr. Burke buchen."
                     },
                     "bot": [
-                        [{
+                        [
+                            {
                                 "text": "Hallo, ich bin der virtuelle Assistent des ACME-Krankenhauses mit künstlicher Intelligenz."
                             },
                             {
@@ -152,7 +238,8 @@
                         "text": "John Smith"
                     },
                     "bot": [
-                        [{
+                        [
+                            {
                                 "text": "Ich buche Ihnen am 2017.08.08 um 15:00 einen Termin für Dr. John Burke."
                             },
                             {
@@ -162,6 +249,24 @@
                                     "Dr. John Burke",
                                     "2017.08.08",
                                     "15:00"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Bestätigen",
+                                        "value": "Bestätigen"
+                                    },
+                                    {
+                                        "title": "Dr. John Burke",
+                                        "value": "Dr. John Burke"
+                                    },
+                                    {
+                                        "title": "2017.08.08",
+                                        "value": "2017.08.08"
+                                    },
+                                    {
+                                        "title": "15:00",
+                                        "value": "15:00"
+                                    }
                                 ]
                             }
                         ]
@@ -172,9 +277,11 @@
                         "text": "Bestätigen"
                     },
                     "bot": [
-                        [{
-                            "text": "Herzlichen Glückwunsch. Sie haben einen Termin mit Dr. John Burke für 2017.08.08 um 15:00. Bis bald!"
-                        }]
+                        [
+                            {
+                                "text": "Herzlichen Glückwunsch. Sie haben einen Termin mit Dr. John Burke für 2017.08.08 um 15:00. Bis bald!"
+                            }
+                        ]
                     ]
                 }
             ],
@@ -200,20 +307,37 @@
         },
         {
             "it": "transfers chat to operator",
-            "steps": [{
+            "steps": [
+                {
                     "user": {
                         "text": "Hallo"
                     },
                     "bot": [
-                        [{
-                            "text": "Hallo, ich bin der virtuelle Assistent des ACME-Krankenhauses mit künstlicher Intelligenz."
-                        }, {
-                            "text": "Wenn Sie nicht weiterkommen, können Sie unsere Konversation jederzeit mit 'Neustart' neu starten."
-                        }, {
-                            "text": "Hier ist was ich für dich tun kann:",
-                            "quickReplies": ["Buchen Sie einen Arzt", "Kontakt Betreiber"]
-                        }]
-
+                        [
+                            {
+                                "text": "Hallo, ich bin der virtuelle Assistent des ACME-Krankenhauses mit künstlicher Intelligenz."
+                            },
+                            {
+                                "text": "Wenn Sie nicht weiterkommen, können Sie unsere Konversation jederzeit mit 'Neustart' neu starten."
+                            },
+                            {
+                                "text": "Hier ist was ich für dich tun kann:",
+                                "quickReplies": [
+                                    "Buchen Sie einen Arzt",
+                                    "Kontakt Betreiber"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Buchen Sie einen Arzt",
+                                        "value": "Buchen Sie einen Arzt"
+                                    },
+                                    {
+                                        "title": "Kontakt Betreiber",
+                                        "value": "Kontakt Betreiber"
+                                    }
+                                ]
+                            }
+                        ]
                     ]
                 },
                 {
@@ -221,11 +345,25 @@
                         "text": "Kontaktieren Sie Support"
                     },
                     "bot": [
-                        [{
-                            "text": "Möchten Sie die Konversation mit einem Operator fortsetzen?",
-                            "quickReplies": ["Ja", "Nein"]
-                        }]
-
+                        [
+                            {
+                                "text": "Möchten Sie die Konversation mit einem Operator fortsetzen?",
+                                "quickReplies": [
+                                    "Ja",
+                                    "Nein"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Ja",
+                                        "value": "Ja"
+                                    },
+                                    {
+                                        "title": "Nein",
+                                        "value": "Nein"
+                                    }
+                                ]
+                            }
+                        ]
                     ]
                 },
                 {
@@ -233,9 +371,11 @@
                         "text": "Ja"
                     },
                     "bot": [
-                        [{
-                            "text": "Ich übergebe Sie an einen Operator, und ich werde die nächsten 60 Minuten still bleiben. Wenn Sie zu mir zurückkehren wollen, geben Sie bitte 'neustart' ein."
-                        }]
+                        [
+                            {
+                                "text": "Ich übergebe Sie an einen Operator, und ich werde die nächsten 60 Minuten still bleiben. Wenn Sie zu mir zurückkehren wollen, geben Sie bitte 'neustart' ein."
+                            }
+                        ]
                     ]
                 },
                 {

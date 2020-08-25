@@ -20,6 +20,16 @@
                                 "quickReplies": [
                                     "Book a doctor",
                                     "Contact operator"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Book a doctor",
+                                        "value": "Book a doctor"
+                                    },
+                                    {
+                                        "title": "Contact operator",
+                                        "value": "Contact operator"
+                                    }
                                 ]
                             }
                         ]
@@ -37,6 +47,20 @@
                                     "Dr. David Alcutt",
                                     "Dr. John Burke",
                                     "Dr. Mary Cannon"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Dr. David Alcutt",
+                                        "value": "Dr. David Alcutt"
+                                    },
+                                    {
+                                        "title": "Dr. John Burke",
+                                        "value": "Dr. John Burke"
+                                    },
+                                    {
+                                        "title": "Dr. Mary Cannon",
+                                        "value": "Dr. Mary Cannon"
+                                    }
                                 ]
                             }
                         ]
@@ -54,6 +78,20 @@
                                     "2017-08-07",
                                     "2017-08-15",
                                     "2017-08-24"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "2017-08-07",
+                                        "value": "2017-08-07"
+                                    },
+                                    {
+                                        "title": "2017-08-15",
+                                        "value": "2017-08-15"
+                                    },
+                                    {
+                                        "title": "2017-08-24",
+                                        "value": "2017-08-24"
+                                    }
                                 ]
                             }
                         ]
@@ -71,6 +109,20 @@
                                     "9:30",
                                     "10:00",
                                     "10:30"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "9:30",
+                                        "value": "9:30"
+                                    },
+                                    {
+                                        "title": "10:00",
+                                        "value": "10:00"
+                                    },
+                                    {
+                                        "title": "10:30",
+                                        "value": "10:30"
+                                    }
                                 ]
                             }
                         ]
@@ -104,6 +156,24 @@
                                     "Dr. John Burke",
                                     "2017.08.07",
                                     "10:00"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Confirm",
+                                        "value": "Confirm"
+                                    },
+                                    {
+                                        "title": "Dr. John Burke",
+                                        "value": "Dr. John Burke"
+                                    },
+                                    {
+                                        "title": "2017.08.07",
+                                        "value": "2017.08.07"
+                                    },
+                                    {
+                                        "title": "10:00",
+                                        "value": "10:00"
+                                    }
                                 ]
                             }
                         ]
@@ -179,6 +249,24 @@
                                     "Dr. John Burke",
                                     "2017.08.08",
                                     "15:00"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Confirm",
+                                        "value": "Confirm"
+                                    },
+                                    {
+                                        "title": "Dr. John Burke",
+                                        "value": "Dr. John Burke"
+                                    },
+                                    {
+                                        "title": "2017.08.08",
+                                        "value": "2017.08.08"
+                                    },
+                                    {
+                                        "title": "15:00",
+                                        "value": "15:00"
+                                    }
                                 ]
                             }
                         ]
@@ -237,6 +325,16 @@
                                 "quickReplies": [
                                     "Book a doctor",
                                     "Contact operator"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Book a doctor",
+                                        "value": "Book a doctor"
+                                    },
+                                    {
+                                        "title": "Contact operator",
+                                        "value": "Contact operator"
+                                    }
                                 ]
                             }
                         ]
@@ -253,6 +351,16 @@
                                 "quickReplies": [
                                     "Yes",
                                     "No"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Yes",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "title": "No",
+                                        "value": "No"
+                                    }
                                 ]
                             }
                         ]

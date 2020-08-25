@@ -20,6 +20,16 @@
                                 "quickReplies": [
                                     "Keskustelu 1",
                                     "Keskustelu 2"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "Keskustelu 1",
+                                        "value": "Keskustelu 1"
+                                    },
+                                    {
+                                        "title": "Keskustelu 2",
+                                        "value": "Keskustelu 2"
+                                    }
                                 ]
                             }
                         ]
