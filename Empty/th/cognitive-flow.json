@@ -1,0 +1,70 @@
+{
+  "conversations": {
+    "welcome": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "นี่คือข้อความต้อนรับสำหรับ Chatbot"
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "help",
+          "conditions": [
+            "{{$not ($has conversation) }}"
+          ]
+        }
+      ]
+    },
+    "help": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            [
+                "หากพบปัญหาการใช้งาน คุณสามารถเริ่มต้นบทสนทนาใหม่ได้ โดยพิมพ์ว่า 'เริ่มใหม่'"
+            ]
+          ]
+        }
+      ]
+    },
+    "restart": {
+      "type": "support",
+      "steps": [
+        {
+          "type": "message",
+          "messages": [
+            "บทสนทนาของคุณได้เริ่มต้นใหม่"
+          ]
+        },
+        {
+          "type": "conversation",
+          "conversation": "welcome"
+        }
+      ]
+    }
+  },
+  "settings": {
+    "invalid-replies": [
+      "ฉันไม่เข้าใจสิ่งที่คุณพูด"
+    ],
+    "general-failure": [
+      "เรากำลังประสบปัญหาทางเทคนิคขณะนี้"
+    ],
+    "previous-conversation-messages": [
+      "ฉันกำลังกลับไปที่ {{ conversationDisplayName }}"
+    ]
+  },
+  "commands": {
+    "NEXT-PAGE": [
+      "ถัดไป 5"
+    ],
+    "RESTART": [
+      "เริ่มต้นใหม่",
+      "restart"
+    ]
+  }
+}
