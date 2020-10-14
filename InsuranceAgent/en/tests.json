@@ -2699,6 +2699,20 @@
                                     "New insurance",
                                     "Fill a claim",
                                     "Contact operator"
+                                ],
+                                "richQuickReplies": [
+                                    {
+                                        "title": "New insurance",
+                                        "value": "New insurance"
+                                    },
+                                    {
+                                        "title": "Fill a claim",
+                                        "value": "Fill a claim"
+                                    },
+                                    {
+                                        "title": "Contact operator",
+                                        "value": "Contact operator"
+                                    }
                                 ]
                             }
                         ]
